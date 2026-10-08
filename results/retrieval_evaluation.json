@@ -1,0 +1,368 @@
+{
+  "created_at": "2026-10-03T23:08:45",
+  "settings": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_weight": 0.5,
+    "max_chunk_words": 250,
+    "num_chunks": 211,
+    "top_k_values": [
+      1,
+      3,
+      5
+    ],
+    "hit_definition": "A question is a hit if one retrieved chunk covers at least 50% of a gold evidence paragraph (4-gram overlap)",
+    "first_hit_rank": "Rank of the first covering chunk; null means a miss within the top 5"
+  },
+  "modes": {
+    "paper_scoped": {
+      "questions_evaluated": 32,
+      "hit_counts": {
+        "hit@1": 10,
+        "hit@3": 21,
+        "hit@5": 26
+      },
+      "hit_rates": {
+        "hit@1": 0.3125,
+        "hit@3": 0.6562,
+        "hit@5": 0.8125
+      },
+      "per_question": [
+        {
+          "question_id": "9ee07edc371e014df686ced4fb0c3a7b9ce3d5dc",
+          "question": "On which benchmarks they achieve the state of the art?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "d3aa0449708cc861a51551b128d73e11d62207d2",
+          "question": "What they use in their propsoed framework?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "cfbec1ef032ac968560a7c76dec70faf1269b27c",
+          "question": "What does KBQA abbreviate for",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "c0e341c4d2253eb42c8840381b082aae274eddad",
+          "question": "What is te core component for KBQA?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "66c96c297c2cffdf5013bab5e95b59101cb38655",
+          "question": "What is the performance of BERT on the task?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "6b53e1f46ae4ba9b75117fc6e593abded89366be",
+          "question": "What are the other algorithms tested?",
+          "first_hit_rank": 5
+        },
+        {
+          "question_id": "c0bee6539eb6956a7347daa9d2419b367bd02064",
+          "question": "Does BERT reach the best performance among all the algorithms compared?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "3de0487276bb5961586acc6e9f82934ef8cb668c",
+          "question": "What are the clinical datasets used in the paper?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "e97186c51d4af490dba6faaf833d269c8256426c",
+          "question": "Are the automatically constructed datasets subject to quality control?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "5bb3c27606c59d73fd6944ba7382096de4fa58d8",
+          "question": "Do they focus on Reading Comprehension or multiple choice question answering?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "8de9f14c7c4f37ab103bc8a639d6d80ade1bc27b",
+          "question": "After how many hops does accuracy decrease?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "85590bb26fed01a802241bc537d85ba5ef1c6dc2",
+          "question": "How do they control for annotation artificats?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "75ff6e425ce304a35f18c0230c0d13d3913a31a9",
+          "question": "Is WordNet useful for taxonomic reasoning for this task?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "37be0d479480211291e068d0d3823ad0c13321d3",
+          "question": "What is the model performance on target language reading comprehension?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "a3d9b101765048f4b61cbd3eaa2439582ebb5c77",
+          "question": "What source-target language pairs were used in this work? ",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "009ce6f2bea67e7df911b3f93443b23467c9f4a1",
+          "question": "What model is used as a baseline?  ",
+          "first_hit_rank": 3
+        },
+        {
+          "question_id": "55569d0a4586d20c01268a80a7e31a17a18198e2",
+          "question": "what does the model learn in zero-shot setting?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "23b2901264bda91045258b5d4120879ae292e950",
+          "question": "What are method improvements of F1 for paraphrase identification?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "b5bc34e1e381dbf972d0b594fe8c66ff75305d71",
+          "question": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "72f7ef55e150e16dcf97fe443aff9971a32414ef",
+          "question": "What are method's improvements of F1 w.r.t. baseline BERT tagger for Chinese POS datasets?",
+          "first_hit_rank": 3
+        },
+        {
+          "question_id": "20e38438471266ce021817c6364f6a46d01564f2",
+          "question": "How are weights dynamically adjusted?",
+          "first_hit_rank": 4
+        },
+        {
+          "question_id": "5c88d601e8fca96bffebfa9ef22331ecf31c6d75",
+          "question": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "first_hit_rank": 4
+        },
+        {
+          "question_id": "71bd5db79635d48a0730163a9f2e8ef19a86cd66",
+          "question": "What features are absent from MRC gold standards that can result in potential lexical ambiguity?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "9ecde59ffab3c57ec54591c3c7826a9188b2b270",
+          "question": "What modern MRC gold standards are analyzed?",
+          "first_hit_rank": 4
+        },
+        {
+          "question_id": "005cca3c8ab6c3a166e315547a2259020f318ffb",
+          "question": "How does proposed qualitative annotation schema looks like?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "9b97805a0c093df405391a85e4d3ab447671c86a",
+          "question": "What evaluation metrics were used?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "38f58f13c7f23442d5952c8caf126073a477bac0",
+          "question": "What was the score of the proposed model?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "7ee5c45b127fb284a4a9e72bb9b980a602f7445a",
+          "question": "What was the previous best model?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "ddf5e1f600b9ce2e8f63213982ef4209bab01fd8",
+          "question": "Which datasets did they use for evaluation?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "91bc8c0bc1634045177065536dd311f89134630b",
+          "question": "Is the model tested against any baseline?",
+          "first_hit_rank": 4
+        },
+        {
+          "question_id": "fe1dcd6ef1f8618bbceee418f07cafe63a8efe08",
+          "question": "What is the language model combination technique used in the paper?",
+          "first_hit_rank": 3
+        },
+        {
+          "question_id": "53f74250948015c394e7b8438a2041fdeb330911",
+          "question": "What are the deep learning architectures used in the task?",
+          "first_hit_rank": 2
+        }
+      ]
+    },
+    "global": {
+      "questions_evaluated": 32,
+      "hit_counts": {
+        "hit@1": 6,
+        "hit@3": 14,
+        "hit@5": 19
+      },
+      "hit_rates": {
+        "hit@1": 0.1875,
+        "hit@3": 0.4375,
+        "hit@5": 0.5938
+      },
+      "per_question": [
+        {
+          "question_id": "9ee07edc371e014df686ced4fb0c3a7b9ce3d5dc",
+          "question": "On which benchmarks they achieve the state of the art?",
+          "first_hit_rank": 5
+        },
+        {
+          "question_id": "d3aa0449708cc861a51551b128d73e11d62207d2",
+          "question": "What they use in their propsoed framework?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "cfbec1ef032ac968560a7c76dec70faf1269b27c",
+          "question": "What does KBQA abbreviate for",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "c0e341c4d2253eb42c8840381b082aae274eddad",
+          "question": "What is te core component for KBQA?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "66c96c297c2cffdf5013bab5e95b59101cb38655",
+          "question": "What is the performance of BERT on the task?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "6b53e1f46ae4ba9b75117fc6e593abded89366be",
+          "question": "What are the other algorithms tested?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "c0bee6539eb6956a7347daa9d2419b367bd02064",
+          "question": "Does BERT reach the best performance among all the algorithms compared?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "3de0487276bb5961586acc6e9f82934ef8cb668c",
+          "question": "What are the clinical datasets used in the paper?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "e97186c51d4af490dba6faaf833d269c8256426c",
+          "question": "Are the automatically constructed datasets subject to quality control?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "5bb3c27606c59d73fd6944ba7382096de4fa58d8",
+          "question": "Do they focus on Reading Comprehension or multiple choice question answering?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "8de9f14c7c4f37ab103bc8a639d6d80ade1bc27b",
+          "question": "After how many hops does accuracy decrease?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "85590bb26fed01a802241bc537d85ba5ef1c6dc2",
+          "question": "How do they control for annotation artificats?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "75ff6e425ce304a35f18c0230c0d13d3913a31a9",
+          "question": "Is WordNet useful for taxonomic reasoning for this task?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "37be0d479480211291e068d0d3823ad0c13321d3",
+          "question": "What is the model performance on target language reading comprehension?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "a3d9b101765048f4b61cbd3eaa2439582ebb5c77",
+          "question": "What source-target language pairs were used in this work? ",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "009ce6f2bea67e7df911b3f93443b23467c9f4a1",
+          "question": "What model is used as a baseline?  ",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "55569d0a4586d20c01268a80a7e31a17a18198e2",
+          "question": "what does the model learn in zero-shot setting?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "23b2901264bda91045258b5d4120879ae292e950",
+          "question": "What are method improvements of F1 for paraphrase identification?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "b5bc34e1e381dbf972d0b594fe8c66ff75305d71",
+          "question": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "72f7ef55e150e16dcf97fe443aff9971a32414ef",
+          "question": "What are method's improvements of F1 w.r.t. baseline BERT tagger for Chinese POS datasets?",
+          "first_hit_rank": 3
+        },
+        {
+          "question_id": "20e38438471266ce021817c6364f6a46d01564f2",
+          "question": "How are weights dynamically adjusted?",
+          "first_hit_rank": 4
+        },
+        {
+          "question_id": "5c88d601e8fca96bffebfa9ef22331ecf31c6d75",
+          "question": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "first_hit_rank": 4
+        },
+        {
+          "question_id": "71bd5db79635d48a0730163a9f2e8ef19a86cd66",
+          "question": "What features are absent from MRC gold standards that can result in potential lexical ambiguity?",
+          "first_hit_rank": 2
+        },
+        {
+          "question_id": "9ecde59ffab3c57ec54591c3c7826a9188b2b270",
+          "question": "What modern MRC gold standards are analyzed?",
+          "first_hit_rank": 4
+        },
+        {
+          "question_id": "005cca3c8ab6c3a166e315547a2259020f318ffb",
+          "question": "How does proposed qualitative annotation schema looks like?",
+          "first_hit_rank": 1
+        },
+        {
+          "question_id": "9b97805a0c093df405391a85e4d3ab447671c86a",
+          "question": "What evaluation metrics were used?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "38f58f13c7f23442d5952c8caf126073a477bac0",
+          "question": "What was the score of the proposed model?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "7ee5c45b127fb284a4a9e72bb9b980a602f7445a",
+          "question": "What was the previous best model?",
+          "first_hit_rank": 5
+        },
+        {
+          "question_id": "ddf5e1f600b9ce2e8f63213982ef4209bab01fd8",
+          "question": "Which datasets did they use for evaluation?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "91bc8c0bc1634045177065536dd311f89134630b",
+          "question": "Is the model tested against any baseline?",
+          "first_hit_rank": null
+        },
+        {
+          "question_id": "fe1dcd6ef1f8618bbceee418f07cafe63a8efe08",
+          "question": "What is the language model combination technique used in the paper?",
+          "first_hit_rank": 3
+        },
+        {
+          "question_id": "53f74250948015c394e7b8438a2041fdeb330911",
+          "question": "What are the deep learning architectures used in the task?",
+          "first_hit_rank": null
+        }
+      ]
+    }
+  }
+}

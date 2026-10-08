@@ -1,0 +1,74 @@
+{
+  "created_at": "2026-10-03T01:55:55",
+  "settings": {
+    "chunks": 211,
+    "evaluated_questions": 32,
+    "top_k_values": [
+      1,
+      3,
+      5
+    ],
+    "overall_hit_rate": "Mean of every hit@k value across both modes"
+  },
+  "ranking": [
+    "sentence-transformers/all-MiniLM-L6-v2",
+    "BAAI/bge-small-en-v1.5",
+    "sentence-transformers/multi-qa-MiniLM-L6-cos-v1"
+  ],
+  "models": {
+    "sentence-transformers/all-MiniLM-L6-v2": {
+      "dimension": 384,
+      "max_sequence_length": 256,
+      "index_build_seconds": 5.26,
+      "hit_rates": {
+        "paper_scoped": {
+          "hit@1": 0.25,
+          "hit@3": 0.6562,
+          "hit@5": 0.8125
+        },
+        "global": {
+          "hit@1": 0.1562,
+          "hit@3": 0.4062,
+          "hit@5": 0.4688
+        }
+      },
+      "overall_hit_rate": 0.4583
+    },
+    "sentence-transformers/multi-qa-MiniLM-L6-cos-v1": {
+      "dimension": 384,
+      "max_sequence_length": 512,
+      "index_build_seconds": 8.48,
+      "hit_rates": {
+        "paper_scoped": {
+          "hit@1": 0.2188,
+          "hit@3": 0.5312,
+          "hit@5": 0.75
+        },
+        "global": {
+          "hit@1": 0.1562,
+          "hit@3": 0.25,
+          "hit@5": 0.4062
+        }
+      },
+      "overall_hit_rate": 0.3854
+    },
+    "BAAI/bge-small-en-v1.5": {
+      "dimension": 384,
+      "max_sequence_length": 512,
+      "index_build_seconds": 16.83,
+      "hit_rates": {
+        "paper_scoped": {
+          "hit@1": 0.3125,
+          "hit@3": 0.5938,
+          "hit@5": 0.7812
+        },
+        "global": {
+          "hit@1": 0.1875,
+          "hit@3": 0.3438,
+          "hit@5": 0.4062
+        }
+      },
+      "overall_hit_rate": 0.4375
+    }
+  }
+}

@@ -1,0 +1,1322 @@
+{
+  "created_at": "2026-10-03T23:42:28",
+  "settings": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "top_k": 5,
+    "temperature": 0.1,
+    "max_tokens": 400,
+    "sample_seed": 42,
+    "in_scope_questions": 20,
+    "out_of_scope_questions": 5,
+    "metric_definitions": {
+      "mean_f1": "Token-overlap F1 against the best matching gold answer",
+      "mean_recall": "Share of gold answer tokens found in the answer, best gold answer",
+      "citation_rate": "Share of in-scope answers containing a [n] citation",
+      "false_refusal_rate": "Share of in-scope answers where the model wrongly refused",
+      "correct_refusal_rate": "Share of out-of-scope questions the model refused",
+      "avg_seconds_per_answer": "Mean generation time per in-scope answer",
+      "errors": "Number of failed API calls"
+    }
+  },
+  "ranking_by_mean_f1": [
+    "gemma3:1b",
+    "llama3.2:3b",
+    "qwen2.5:3b",
+    "qwen3:8b"
+  ],
+  "skipped_models": [],
+  "models": {
+    "gemma3:1b": {
+      "summary": {
+        "mean_f1": 0.2179,
+        "mean_recall": 0.409,
+        "citation_rate": 0.25,
+        "false_refusal_rate": 0.0,
+        "correct_refusal_rate": 0.2,
+        "avg_seconds_per_answer": 0.78,
+        "errors": 0
+      },
+      "in_scope_details": [
+        {
+          "question": "What are the clinical datasets used in the paper?",
+          "answer": "The clinical datasets used in the paper are the NUBes-PHI and MEDDOCAN 2019 datasets. [3]",
+          "gold_answers": [
+            "MEDDOCAN NUBes-PHI",
+            "MEDDOCAN NUBes"
+          ],
+          "f1": 0.3158,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.68,
+          "error": null
+        },
+        {
+          "question": "On which benchmarks they achieve the state of the art?",
+          "answer": "Table 2 shows the results on two relation detection tasks. The AMPCNN result is from, which yielded state-of-the-art scores by outperforming several attention-based methods.",
+          "gold_answers": [
+            "SimpleQuestions WebQSP",
+            "WebQSP SimpleQuestions"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.83,
+          "error": null
+        },
+        {
+          "question": "What modern MRC gold standards are analyzed?",
+          "answer": "The modern MRC gold standards analyzed in the paper are those selected contemporary MRC benchmarks.",
+          "gold_answers": [
+            "fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations",
+            "MSMARCO, HOTPOTQA, RECORD, MULTIRC, NEWSQA, and DROP."
+          ],
+          "f1": 0.1081,
+          "recall": 0.0909,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.58,
+          "error": null
+        },
+        {
+          "question": "Are the automatically constructed datasets subject to quality control?",
+          "answer": "Yes, the automatically constructed datasets are subject to quality control. The passages detail the challenges of validating the quality of such data, highlighting vulnerabilities to annotation artifacts and the need for careful control.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.77,
+          "error": null
+        },
+        {
+          "question": "What are the deep learning architectures used in the task?",
+          "answer": "The deep learning architectures used in the task are a DNN-based acoustic model and a DNN-HMM hybrid system.",
+          "gold_answers": [
+            "DNN-based acoustic model"
+          ],
+          "f1": 0.3333,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.63,
+          "error": null
+        },
+        {
+          "question": "What was the previous best model?",
+          "answer": "The previous best model was row (c)",
+          "gold_answers": [
+            "(c) previous best model trained on S-SQuAD by using Dr.QA"
+          ],
+          "f1": 0.4211,
+          "recall": 0.3333,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.56,
+          "error": null
+        },
+        {
+          "question": "What is the performance of BERT on the task?",
+          "answer": "BERT demonstrates the highest robustness to training-data scarcity, achieving a 7-point F1-score loss of 7 when trained on 230 instances instead of 21,371.",
+          "gold_answers": [
+            "F1 scores are: HUBES-PHI: Detection(0.965), Classification relaxed (0.95), Classification strict (0.937) Medoccan: Detection(0.972), Classification (0.967)",
+            "BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated Table"
+          ],
+          "f1": 0.1562,
+          "recall": 0.1351,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.85,
+          "error": null
+        },
+        {
+          "question": "Is the model tested against any baseline?",
+          "answer": "The text states that the VLSP 2018 test set contains relatively 5 hours of short audio voices with 796 samples, while the VLSP 2019 test set contains more than 17 hours with 16,214 short audio samples.  The text also mentions that the VLSP 2019 set is “difficult because audio contains more noise and having more informal speaking style.” Therefore, the text does not provide a baseline for comparison.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 1.22,
+          "error": null
+        },
+        {
+          "question": "What is te core component for KBQA?",
+          "answer": "The core component for KBQA is a hierarchical recurrent neural network enhanced by residual learning. [1]",
+          "gold_answers": [
+            "answer questions by obtaining information from KB tuples",
+            "hierarchical matching between questions and relations with residual learning"
+          ],
+          "f1": 0.24,
+          "recall": 0.3333,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.67,
+          "error": null
+        },
+        {
+          "question": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "answer": "Yes, the passages indicate that the authors have attempted to correct MRC gold standards. [1] states that “We select contemporary MRC benchmarks to represent all four commonly used problem definitions.” [2] details the process of selecting gold standards, including a step to “correct” them based on identified weaknesses. [3] describes the methodology for categorizing gold standards, including a qualitative annotation schema. [4] outlines a future research goal to extend the framework to identify exploitable cues.",
+          "gold_answers": [
+            "Yes",
+            "No"
+          ],
+          "f1": 0.0263,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.19,
+          "error": null
+        },
+        {
+          "question": "What are method improvements of F1 for paraphrase identification?",
+          "answer": "The paper demonstrates that the proposed training objective, utilizing dice loss, leads to significant performance boosts on part-of-speech, named entity recognition, machine reading comprehension, and paraphrase identification tasks. [4]",
+          "gold_answers": [
+            "Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP",
+            "+0.58"
+          ],
+          "f1": 0.125,
+          "recall": 0.1765,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.73,
+          "error": null
+        },
+        {
+          "question": "What does KBQA abbreviate for",
+          "answer": "KBQA abbreviates to Knowledge Base Question Answering.",
+          "gold_answers": [
+            "Knowledge Base Question Answering",
+            "Knowledge Base Question Answering"
+          ],
+          "f1": 0.7273,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.6,
+          "error": null
+        },
+        {
+          "question": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "answer": "The proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively on English datasets, and achieves F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively.",
+          "gold_answers": [
+            "English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively",
+            "For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively"
+          ],
+          "f1": 0.8406,
+          "recall": 0.7838,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.9,
+          "error": null
+        },
+        {
+          "question": "What is the model performance on target language reading comprehension?",
+          "answer": "The model performance on target language reading comprehension is significantly better than data translated into the target language.",
+          "gold_answers": [
+            "Table Table",
+            "when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8 F1 score is only 44.1 for the model training on Zh-En"
+          ],
+          "f1": 0.2083,
+          "recall": 0.1667,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.59,
+          "error": null
+        },
+        {
+          "question": "What they use in their propsoed framework?",
+          "answer": "In the provided text, the authors use the SimpleQuestions and WebQSP datasets. [1]",
+          "gold_answers": [
+            "break the relation names into word sequences relation-level and word-level relation representations bidirectional LSTMs (BiLSTMs) residual learning method",
+            "break the relation names into word sequences for question-relation matching build both relation-level and word-level relation representations use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations residual learning method for sequence matching a simple KBQA implementation composed of two-step relation detection"
+          ],
+          "f1": 0.1212,
+          "recall": 0.1,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.69,
+          "error": null
+        },
+        {
+          "question": "What is the language model combination technique used in the paper?",
+          "answer": "The paper describes a language model combination technique that utilizes a large amount of writing style text and small number of conversation text data.",
+          "gold_answers": [
+            "system combination on the decoding lattice level combination weights",
+            "system combination on the decoding lattice level"
+          ],
+          "f1": 0.129,
+          "recall": 0.2857,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.64,
+          "error": null
+        },
+        {
+          "question": "How are weights dynamically adjusted?",
+          "answer": "The passage states that “This strategy helps to deemphasize confident examples during training as their $p$ approaches the value of 1, makes the model attentive to hard-negative examples, and thus alleviates the dominating effect of easy-negative examples.”",
+          "gold_answers": [
+            "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+            "associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds"
+          ],
+          "f1": 0.2585,
+          "recall": 0.35,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.9,
+          "error": null
+        },
+        {
+          "question": "How does proposed qualitative annotation schema looks like?",
+          "answer": "The proposed qualitative annotation schema consists of two parts: a qualitative annotation schema for the first and a set of approximative metrics for the second. The qualitative annotation schema focuses on linguistic features, required reasoning, and background knowledge, while the approximative metrics aim to approximate a lower bound for the complexity of reading comprehension.",
+          "gold_answers": [
+            "The resulting taxonomy of the framework is shown in Figure",
+            ""
+          ],
+          "f1": 0.0938,
+          "recall": 0.3,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.94,
+          "error": null
+        },
+        {
+          "question": "What source-target language pairs were used in this work? ",
+          "answer": "In this work, the authors explored zero-shot cross-lingual transfer learning on reading comprehension tasks with a language representation model pre-trained on multi-lingual corpus.",
+          "gold_answers": [
+            "En-Fr, En-Zh, En-Jp, En-Kr, Zh-En, Zh-Fr, Zh-Jp, Zh-Kr to English, Chinese or Korean",
+            "English Chinese"
+          ],
+          "f1": 0.093,
+          "recall": 0.125,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.69,
+          "error": null
+        },
+        {
+          "question": "Which datasets did they use for evaluation?",
+          "answer": "Here’s the answer to your question, based on the provided text:\n\nThey used the following datasets for evaluation:\n\n*   SQuAD\n*   Spoken-SQuAD\n*   ODSQA",
+          "gold_answers": [
+            "Spoken-SQuAD testing set",
+            "Spoken-SQuAD"
+          ],
+          "f1": 0.16,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.89,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "Who won the 2018 FIFA World Cup?",
+          "answer": "The passages do not provide information about the 2018 FIFA World Cup.",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "What is the capital of Australia?",
+          "answer": "The capital of Australia is Canberra.",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "How do I bake sourdough bread?",
+          "answer": "The passage states that the system generates synthetic dataset probes (MCQA renderings of the target information) from expert knowledge sources, and these probes are used to ask two empirical questions: 1) how well do models trained on benchmark tasks perform on these probing tasks and 2) can such models be re-trained to master new challenges with minimal performance loss on their original tasks.",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "What is the boiling point of water at sea level?",
+          "answer": "The boiling point of water at sea level is 100 degrees Celsius.",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "Who wrote the novel Don Quixote?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    },
+    "llama3.2:3b": {
+      "summary": {
+        "mean_f1": 0.2179,
+        "mean_recall": 0.522,
+        "citation_rate": 0.75,
+        "false_refusal_rate": 0.05,
+        "correct_refusal_rate": 1.0,
+        "avg_seconds_per_answer": 1.59,
+        "errors": 0
+      },
+      "in_scope_details": [
+        {
+          "question": "What are the clinical datasets used in the paper?",
+          "answer": "The two clinical datasets used in the paper are MEDDOCAN 2019 shared task competition dataset and NUBes-PHI, a corpus of real medical reports manually annotated with sensitive information. The MEDDOCAN dataset is publicly available, while NUBes-PHI is not publicly available due to its manual annotation with sensitive information [1].",
+          "gold_answers": [
+            "MEDDOCAN NUBes-PHI",
+            "MEDDOCAN NUBes"
+          ],
+          "f1": 0.1111,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.16,
+          "error": null
+        },
+        {
+          "question": "On which benchmarks they achieve the state of the art?",
+          "answer": "They achieve the state-of-the-art on both SimpleQuestions and WebQSP. [1]",
+          "gold_answers": [
+            "SimpleQuestions WebQSP",
+            "WebQSP SimpleQuestions"
+          ],
+          "f1": 0.2667,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.08,
+          "error": null
+        },
+        {
+          "question": "What modern MRC gold standards are analyzed?",
+          "answer": "The paper analyzes four commonly used modern MRC gold standards, which were selected from contemporary MRC benchmarks that fit their problem definition and were published between 2016 and 2019. The specific datasets analyzed are not listed in passage [4], but they can be found in Table (not explicitly provided) in the appendix.",
+          "gold_answers": [
+            "fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations",
+            "MSMARCO, HOTPOTQA, RECORD, MULTIRC, NEWSQA, and DROP."
+          ],
+          "f1": 0.2703,
+          "recall": 0.4545,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.57,
+          "error": null
+        },
+        {
+          "question": "Are the automatically constructed datasets subject to quality control?",
+          "answer": "Our evaluation confirms that transformer-based QA models are already predisposed to recognize certain types of structural lexical knowledge, but their performance degrades substantially with even a slight increase in the number of hops in the underlying taxonomic hierarchy, or as more challenging distractor candidate answers are introduced. [4] \n\nAdditionally, we show that accurately probing QA models via synthetic datasets is not straightforward, as unexpected artifacts can easily arise in such data. This motivates our carefully constructed baselines and close data inspection to ensure probe quality. [5]\n\nHigh agreement across probes was found in initial crowd-sourcing experiments that looked at validating samples of our data, with human scores correlating with the model trends across the probe categories. [2]",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 2.91,
+          "error": null
+        },
+        {
+          "question": "What are the deep learning architectures used in the task?",
+          "answer": "The DNN-based acoustic model uses 11 hidden layers. [2] \n\nAdditionally, it is mentioned that the state priors log $p(s_j )$ can be estimated using the state alignments on the training speech data, but no specific architecture is described for this step.",
+          "gold_answers": [
+            "DNN-based acoustic model"
+          ],
+          "f1": 0.1739,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.37,
+          "error": null
+        },
+        {
+          "question": "What was the previous best model?",
+          "answer": "The previous best model is Dr.QA, which achieved performance comparable to the proposed approach but not better than it. [4]",
+          "gold_answers": [
+            "(c) previous best model trained on S-SQuAD by using Dr.QA"
+          ],
+          "f1": 0.303,
+          "recall": 0.4167,
+          "refused": false,
+          "cited": true,
+          "seconds": 2.68,
+          "error": null
+        },
+        {
+          "question": "What is the performance of BERT on the task?",
+          "answer": "BERT achieves a remarkably high recall of 0.979 in the detection scenario, improving by more than 4 points the second-best system, spaCy. \n\n[1] [4]",
+          "gold_answers": [
+            "F1 scores are: HUBES-PHI: Detection(0.965), Classification relaxed (0.95), Classification strict (0.937) Medoccan: Detection(0.972), Classification (0.967)",
+            "BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated Table"
+          ],
+          "f1": 0.2222,
+          "recall": 0.1892,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.38,
+          "error": null
+        },
+        {
+          "question": "Is the model tested against any baseline?",
+          "answer": "The results of the system combination are compared with the single models, and it is shown that system combination significantly reduces the Word Error Rate (WER) for both test sets. The best result for VLSP2018 is 4.85% WER, which is lower than the single model's WER of 15.47%. For VLSP2019, the single model yielded a WER of 15.09%, which is higher than the system combination's WER of 15.09%.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 1.97,
+          "error": null
+        },
+        {
+          "question": "What is te core component for KBQA?",
+          "answer": "Relation detection is a core component for Knowledge Base Question Answering (KBQA). [1]",
+          "gold_answers": [
+            "answer questions by obtaining information from KB tuples",
+            "hierarchical matching between questions and relations with residual learning"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.08,
+          "error": null
+        },
+        {
+          "question": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "answer": "They have not explicitly stated that they attempted to correct the MRC gold standards. However, they do mention that future research goals include studying how to introduce semantics-altering grammatical modifiers into gold standards and observing whether state-of-the-art MRC models are capable of performing reading comprehension on text containing them [4].",
+          "gold_answers": [
+            "Yes",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.51,
+          "error": null
+        },
+        {
+          "question": "What are method improvements of F1 for paraphrase identification?",
+          "answer": "I could not find the answer in the provided documents.",
+          "gold_answers": [
+            "Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP",
+            "+0.58"
+          ],
+          "f1": 0.0741,
+          "recall": 0.0588,
+          "refused": true,
+          "cited": false,
+          "seconds": 0.61,
+          "error": null
+        },
+        {
+          "question": "What does KBQA abbreviate for",
+          "answer": "KBQA stands for Knowledge Base Question Answering.",
+          "gold_answers": [
+            "Knowledge Base Question Answering",
+            "Knowledge Base Question Answering"
+          ],
+          "f1": 0.7273,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 0.93,
+          "error": null
+        },
+        {
+          "question": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "answer": "Our proposed method outperforms BERT-MRCBIBREF38 by +0.96 on OntoNotes5.0 (English) and +2.36 on MSRA (Chinese), achieving the highest F1 scores on all four NER datasets, with the highest F1 for Chinese OntoNotes4.0 being 84.67 when $\\alpha$ is set to 0.6.",
+          "gold_answers": [
+            "English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively",
+            "For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively"
+          ],
+          "f1": 0.5843,
+          "recall": 0.6486,
+          "refused": false,
+          "cited": false,
+          "seconds": 1.82,
+          "error": null
+        },
+        {
+          "question": "What is the model performance on target language reading comprehension?",
+          "answer": "The experimental results show that fine-tuning on un-translated target language data achieves much better performance than data translated into the target language, and translating the source data into the target language degrades the performance. [1] [3]",
+          "gold_answers": [
+            "Table Table",
+            "when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8 F1 score is only 44.1 for the model training on Zh-En"
+          ],
+          "f1": 0.1471,
+          "recall": 0.1667,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.27,
+          "error": null
+        },
+        {
+          "question": "What they use in their propsoed framework?",
+          "answer": "They use two types of relation representations: word-level and relation-level. The word-level representation treats the relation as a sequence of words from the tokenized relation name, while the relation-level representation focuses on global information (long phrases and skip-grams). [3]",
+          "gold_answers": [
+            "break the relation names into word sequences relation-level and word-level relation representations bidirectional LSTMs (BiLSTMs) residual learning method",
+            "break the relation names into word sequences for question-relation matching build both relation-level and word-level relation representations use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations residual learning method for sequence matching a simple KBQA implementation composed of two-step relation detection"
+          ],
+          "f1": 0.3913,
+          "recall": 0.5,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.7,
+          "error": null
+        },
+        {
+          "question": "What is the language model combination technique used in the paper?",
+          "answer": "The language model combination technique used in the paper involves combining two types of language models: general language models and conversation-specific language models. The combination weights are set to 0.6 for the general language model and 0.4 for the conversation-specific language model, which results in a best WER of 15.09% on the VLSP 2019 data set. [3]",
+          "gold_answers": [
+            "system combination on the decoding lattice level combination weights",
+            "system combination on the decoding lattice level"
+          ],
+          "f1": 0.1408,
+          "recall": 0.5556,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.74,
+          "error": null
+        },
+        {
+          "question": "How are weights dynamically adjusted?",
+          "answer": "In this work, each training example is associated with a weight in proportion to $(1-p)$, where $p$ is the probability assigned by the model to the positive class. This weight dynamically changes as training proceeds, helping to deemphasize confident examples during training and making the model attentive to hard-negative examples. [4]",
+          "gold_answers": [
+            "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+            "associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds"
+          ],
+          "f1": 0.5205,
+          "recall": 0.95,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.82,
+          "error": null
+        },
+        {
+          "question": "How does proposed qualitative annotation schema looks like?",
+          "answer": "The proposed qualitative annotation schema is described as a high-level categorization system that uses three dimensions: linguistic complexity, required reasoning and background knowledge, and factual correctness. The exact structure of the schema is not explicitly stated in the provided passages, but it is mentioned that it is used to annotate question, expected answer, and corresponding context.",
+          "gold_answers": [
+            "The resulting taxonomy of the framework is shown in Figure",
+            ""
+          ],
+          "f1": 0.1493,
+          "recall": 0.5,
+          "refused": false,
+          "cited": false,
+          "seconds": 1.49,
+          "error": null
+        },
+        {
+          "question": "What source-target language pairs were used in this work? ",
+          "answer": "The paper explores cross-lingual zero-shot transfer learning on reading comprehension tasks with a multilingual representation model pre-trained on multi-lingual corpus. The authors test the model in various combinations of source-target language pairs, including English-Chinese, to explore its ability to transfer between low lexical similarity languages. Specifically, they find that the models have the ability to transfer between English and Chinese, two languages with low lexical similarity [1].",
+          "gold_answers": [
+            "En-Fr, En-Zh, En-Jp, En-Kr, Zh-En, Zh-Fr, Zh-Jp, Zh-Kr to English, Chinese or Korean",
+            "English Chinese"
+          ],
+          "f1": 0.1798,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.77,
+          "error": null
+        },
+        {
+          "question": "Which datasets did they use for evaluation?",
+          "answer": "The authors used Spoken-SQuAD as the target domain data for training and testing, with 37,111 and 5,351 question answer pairs in the training and testing sets, respectively. They also used Text-SQuAD as the source domain data, which is an automatically generated corpus where only question answering pairs appearing in Spoken-SQuAD are utilized [2].",
+          "gold_answers": [
+            "Spoken-SQuAD testing set",
+            "Spoken-SQuAD"
+          ],
+          "f1": 0.0968,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 2.02,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "Who won the 2018 FIFA World Cup?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "What is the capital of Australia?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "How do I bake sourdough bread?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "What is the boiling point of water at sea level?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "Who wrote the novel Don Quixote?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    },
+    "qwen2.5:3b": {
+      "summary": {
+        "mean_f1": 0.216,
+        "mean_recall": 0.4674,
+        "citation_rate": 0.75,
+        "false_refusal_rate": 0.2,
+        "correct_refusal_rate": 1.0,
+        "avg_seconds_per_answer": 1.38,
+        "errors": 0
+      },
+      "in_scope_details": [
+        {
+          "question": "What are the clinical datasets used in the paper?",
+          "answer": "The clinical datasets used in the paper are NUBes-PHI and MEDDOCAN 2019 shared task competition dataset. [1] and [3] provide details about these datasets being utilized for experiments involving BERT, a sequence labelling approach applied to Spanish clinical text.",
+          "gold_answers": [
+            "MEDDOCAN NUBes-PHI",
+            "MEDDOCAN NUBes"
+          ],
+          "f1": 0.1395,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.96,
+          "error": null
+        },
+        {
+          "question": "On which benchmarks they achieve the state of the art?",
+          "answer": "[1] Table 3 compares our system with two published baselines (1) STAGG, the state-of-the-art on WebQSP and (2) AMPCNN, the state-of-the-art on SimpleQuestions.",
+          "gold_answers": [
+            "SimpleQuestions WebQSP",
+            "WebQSP SimpleQuestions"
+          ],
+          "f1": 0.129,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.47,
+          "error": null
+        },
+        {
+          "question": "What modern MRC gold standards are analyzed?",
+          "answer": "[3] proposes a unifying framework to systematically investigate the present linguistic features, required reasoning and background knowledge and factual correctness on one hand, and the presence of lexical cues as a lower bound for the requirement of understanding on the other hand. We propose a qualitative annotation schema for the first and a set of approximative metrics for the latter. In a first application of the framework, we analyse modern MRC gold standards and present our findings:",
+          "gold_answers": [
+            "fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations",
+            "MSMARCO, HOTPOTQA, RECORD, MULTIRC, NEWSQA, and DROP."
+          ],
+          "f1": 0.101,
+          "recall": 0.2273,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.89,
+          "error": null
+        },
+        {
+          "question": "Are the automatically constructed datasets subject to quality control?",
+          "answer": "[1] and [4] discuss the use of automatically generated datasets for evaluating semantic clusters and model robustness, highlighting that these datasets are vulnerable to annotation artifacts. While [1] mentions taking a \"grain of salt\" with positive results due to potential biases in synthetic datasets, [4] explicitly states that their methodology introduces challenges such as vulnerability to annotation artifacts which need careful control. Therefore, the automatically constructed datasets are indeed subject to quality control through methods like carefully controlling for these artifacts.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 2.17,
+          "error": null
+        },
+        {
+          "question": "What are the deep learning architectures used in the task?",
+          "answer": "I could not find the answer in the provided documents.",
+          "gold_answers": [
+            "DNN-based acoustic model"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": true,
+          "cited": false,
+          "seconds": 0.66,
+          "error": null
+        },
+        {
+          "question": "What was the previous best model?",
+          "answer": "The previous best model is trained on S-SQuAD by using Dr.QA. [5]",
+          "gold_answers": [
+            "(c) previous best model trained on S-SQuAD by using Dr.QA"
+          ],
+          "f1": 0.8462,
+          "recall": 0.9167,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.98,
+          "error": null
+        },
+        {
+          "question": "What is the performance of BERT on the task?",
+          "answer": "The BERT-based model shows the highest robustness to training-data scarcity, loosing only 7 points of F1-score when trained on 230 instances instead of 21,371. This observation aligns with results from other NLP tasks using BERT. [1]",
+          "gold_answers": [
+            "F1 scores are: HUBES-PHI: Detection(0.965), Classification relaxed (0.95), Classification strict (0.937) Medoccan: Detection(0.972), Classification (0.967)",
+            "BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated Table"
+          ],
+          "f1": 0.2078,
+          "recall": 0.2162,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.69,
+          "error": null
+        },
+        {
+          "question": "Is the model tested against any baseline?",
+          "answer": "I could not find the answer in the provided documents.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": true,
+          "cited": false,
+          "seconds": 0.62,
+          "error": null
+        },
+        {
+          "question": "What is te core component for KBQA?",
+          "answer": "Relation detection is the core component for KBQA. [1] mentions this as a key aspect of many NLP applications, including Knowledge Base Question Answering (KBQA).",
+          "gold_answers": [
+            "answer questions by obtaining information from KB tuples",
+            "hierarchical matching between questions and relations with residual learning"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.29,
+          "error": null
+        },
+        {
+          "question": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "answer": "[4] shows an example of applying the introduced framework to analyse popular state-of-the-art gold standards for machine reading comprehension, revealing issues with factual correctness and presence of lexical cues. This indicates that efforts have been made to correct or address these issues in MRC gold standards based on their findings.",
+          "gold_answers": [
+            "Yes",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.43,
+          "error": null
+        },
+        {
+          "question": "What are method improvements of F1 for paraphrase identification?",
+          "answer": "I could not find the answer in the provided documents.",
+          "gold_answers": [
+            "Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP",
+            "+0.58"
+          ],
+          "f1": 0.0741,
+          "recall": 0.0588,
+          "refused": true,
+          "cited": false,
+          "seconds": 0.59,
+          "error": null
+        },
+        {
+          "question": "What does KBQA abbreviate for",
+          "answer": "KBQA stands for Knowledge Base Question Answering. [2]",
+          "gold_answers": [
+            "Knowledge Base Question Answering",
+            "Knowledge Base Question Answering"
+          ],
+          "f1": 0.6667,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.94,
+          "error": null
+        },
+        {
+          "question": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "answer": "[1] Table shows experimental results on NER datasets. For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. For Chinese datasets, it achieves F1 improvements of +0.97 on MSRA and +2.36 on OntoNotes4.0.",
+          "gold_answers": [
+            "English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively",
+            "For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively"
+          ],
+          "f1": 0.7865,
+          "recall": 0.8919,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.91,
+          "error": null
+        },
+        {
+          "question": "What is the model performance on target language reading comprehension?",
+          "answer": "I could not find the answer in the provided documents.",
+          "gold_answers": [
+            "Table Table",
+            "when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8 F1 score is only 44.1 for the model training on Zh-En"
+          ],
+          "f1": 0.1,
+          "recall": 0.0667,
+          "refused": true,
+          "cited": false,
+          "seconds": 0.69,
+          "error": null
+        },
+        {
+          "question": "What they use in their propsoed framework?",
+          "answer": "In their proposed framework, they use both word-level and relation-level representations for the input relation. The relation is treated as a sequence of words from the tokenized relation name at the word-level, which has better generalization but suffers from lack of global information from the original relation names. At the relation-level, the whole relation is considered as a single token (relation id), allowing them to learn correspondences between this token and phrases like \"tv show\" or \"play on\".",
+          "gold_answers": [
+            "break the relation names into word sequences relation-level and word-level relation representations bidirectional LSTMs (BiLSTMs) residual learning method",
+            "break the relation names into word sequences for question-relation matching build both relation-level and word-level relation representations use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations residual learning method for sequence matching a simple KBQA implementation composed of two-step relation detection"
+          ],
+          "f1": 0.3385,
+          "recall": 0.55,
+          "refused": false,
+          "cited": false,
+          "seconds": 2.3,
+          "error": null
+        },
+        {
+          "question": "What is the language model combination technique used in the paper?",
+          "answer": "The language model combination technique used in the paper involves training multiple n-gram language models for different domains and then combining these models based on perplexity. These combined language models are utilized in two decoding passes; first, they are integrated with acoustic and lexicon models to form a full decoding graph, which uses pruning methods to keep the models small. In the second stage, an un-pruned language model is used for rescored decoded lattices. [5]",
+          "gold_answers": [
+            "system combination on the decoding lattice level combination weights",
+            "system combination on the decoding lattice level"
+          ],
+          "f1": 0.0952,
+          "recall": 0.5714,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.92,
+          "error": null
+        },
+        {
+          "question": "How are weights dynamically adjusted?",
+          "answer": "Weights for training examples are dynamically adjusted in proportion to $(1-p)$, where $p$ is the predicted probability of the positive class. This adjustment strategy helps to deemphasize confident examples during training as their $p$ approaches 1 and makes the model attentive to hard-negative examples, alleviating the dominating effect of easy-negative examples. [4]",
+          "gold_answers": [
+            "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+            "associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds"
+          ],
+          "f1": 0.3436,
+          "recall": 0.55,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.82,
+          "error": null
+        },
+        {
+          "question": "How does proposed qualitative annotation schema looks like?",
+          "answer": "The proposed qualitative annotation schema categorizes gold standards according to linguistic complexity, required reasoning and background knowledge, and their factual correctness. It also enriches these qualitative annotations with a metric based on lexical cues to approximate the lower bound for the complexity of the reading comprehension task. [1]",
+          "gold_answers": [
+            "The resulting taxonomy of the framework is shown in Figure",
+            ""
+          ],
+          "f1": 0.1034,
+          "recall": 0.3,
+          "refused": false,
+          "cited": true,
+          "seconds": 1.32,
+          "error": null
+        },
+        {
+          "question": "What source-target language pairs were used in this work? ",
+          "answer": "[1] Surprisingly, we find that the models have the ability to transfer between low lexical similarity language pair, such as English and Chinese.",
+          "gold_answers": [
+            "En-Fr, En-Zh, En-Jp, En-Kr, Zh-En, Zh-Fr, Zh-Jp, Zh-Kr to English, Chinese or Korean",
+            "English Chinese"
+          ],
+          "f1": 0.2564,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 0.87,
+          "error": null
+        },
+        {
+          "question": "Which datasets did they use for evaluation?",
+          "answer": "They used Spoken-SQuAD for both training and testing, as indicated in [2] where it mentions \"Spoken-SQuAD is chosen as the target domain data for training and testing.\" Additionally, Text-SQuAD was utilized as the source domain data during training. [1] further supports this by mentioning that performance evaluation on Spoken-SQuAD testing set was conducted.",
+          "gold_answers": [
+            "Spoken-SQuAD testing set",
+            "Spoken-SQuAD"
+          ],
+          "f1": 0.1311,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 2.0,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "Who won the 2018 FIFA World Cup?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "What is the capital of Australia?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "How do I bake sourdough bread?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "What is the boiling point of water at sea level?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "Who wrote the novel Don Quixote?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    },
+    "qwen3:8b": {
+      "summary": {
+        "mean_f1": 0.1709,
+        "mean_recall": 0.3363,
+        "citation_rate": 0.6,
+        "false_refusal_rate": 0.1,
+        "correct_refusal_rate": 1.0,
+        "avg_seconds_per_answer": 39.33,
+        "errors": 0
+      },
+      "in_scope_details": [
+        {
+          "question": "What are the clinical datasets used in the paper?",
+          "answer": "",
+          "gold_answers": [
+            "MEDDOCAN NUBes-PHI",
+            "MEDDOCAN NUBes"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 43.36,
+          "error": null
+        },
+        {
+          "question": "On which benchmarks they achieve the state of the art?",
+          "answer": "The system achieves state-of-the-art results on Simple",
+          "gold_answers": [
+            "SimpleQuestions WebQSP",
+            "WebQSP SimpleQuestions"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 44.81,
+          "error": null
+        },
+        {
+          "question": "What modern MRC gold standards are analyzed?",
+          "answer": "The modern MRC gold standards analyzed are contemporary benchmarks selected between 2016 and 2019, with at least $(2019 - publication\\ year) \\times 20$ citations, grouped by answer selection styles [4]. Specific dataset names are not listed in the provided text.",
+          "gold_answers": [
+            "fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations",
+            "MSMARCO, HOTPOTQA, RECORD, MULTIRC, NEWSQA, and DROP."
+          ],
+          "f1": 0.4262,
+          "recall": 0.5909,
+          "refused": false,
+          "cited": true,
+          "seconds": 41.61,
+          "error": null
+        },
+        {
+          "question": "Are the automatically constructed datasets subject to quality control?",
+          "answer": "The automatically constructed datasets are subject to quality control challenges, as they are vulnerable to systematic biases and annotation artifacts [1], and validating their quality at scale is difficult [2]. However, the authors address these issues through validation studies, crowd-sourcing experiments showing high agreement, and carefully constructed baselines to ensure probe quality [2][4][5].",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 31.23,
+          "error": null
+        },
+        {
+          "question": "What are the deep learning architectures used in the task?",
+          "answer": "The deep learning architecture used is a DNN-based acoustic model with 11 hidden layers [2]. This model incorporates a hybrid system combining DNNs with HMM-GMM frameworks for state emission calculations.",
+          "gold_answers": [
+            "DNN-based acoustic model"
+          ],
+          "f1": 0.2222,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 40.44,
+          "error": null
+        },
+        {
+          "question": "What was the previous best model?",
+          "answer": "",
+          "gold_answers": [
+            "(c) previous best model trained on S-SQuAD by using Dr.QA"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 48.19,
+          "error": null
+        },
+        {
+          "question": "What is the performance of BERT on the task?",
+          "answer": "",
+          "gold_answers": [
+            "F1 scores are: HUBES-PHI: Detection(0.965), Classification relaxed (0.95), Classification strict (0.937) Medoccan: Detection(0.972), Classification (0.967)",
+            "BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated Table"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 45.04,
+          "error": null
+        },
+        {
+          "question": "Is the model tested against any baseline?",
+          "answer": "I could not find the answer in the provided documents.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": true,
+          "cited": false,
+          "seconds": 38.76,
+          "error": null
+        },
+        {
+          "question": "What is te core component for KBQA?",
+          "answer": "The core component for Knowledge Base Question Answering (KBQA) is relation detection, as explicitly stated in the passage [1]. This task is critical for identifying the KB relations a question refers to, which is further emphasized in the integration of relation detection with entity linking in the KBQA pipeline [2].",
+          "gold_answers": [
+            "answer questions by obtaining information from KB tuples",
+            "hierarchical matching between questions and relations with residual learning"
+          ],
+          "f1": 0.0678,
+          "recall": 0.2222,
+          "refused": false,
+          "cited": true,
+          "seconds": 31.88,
+          "error": null
+        },
+        {
+          "question": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "answer": "I could not find the answer in the provided documents.",
+          "gold_answers": [
+            "Yes",
+            "No"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": true,
+          "cited": false,
+          "seconds": 39.95,
+          "error": null
+        },
+        {
+          "question": "What are method improvements of F1 for paraphrase identification?",
+          "answer": "",
+          "gold_answers": [
+            "Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP",
+            "+0.58"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 43.23,
+          "error": null
+        },
+        {
+          "question": "What does KBQA abbreviate for",
+          "answer": "KBQA stands for Knowledge Base Question Answering, as defined in the context [2].",
+          "gold_answers": [
+            "Knowledge Base Question Answering",
+            "Knowledge Base Question Answering"
+          ],
+          "f1": 0.4706,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 25.86,
+          "error": null
+        },
+        {
+          "question": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "answer": "The method achieves F1 improvements of +0.29 on CoNLL2003 and +0.96 on OntoNotes5.0 for English datasets [1], and +0.97 on MSRA and +2.36 on OntoNotes4.0 for Chinese datasets [1].",
+          "gold_answers": [
+            "English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively",
+            "For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively"
+          ],
+          "f1": 0.7013,
+          "recall": 0.6757,
+          "refused": false,
+          "cited": true,
+          "seconds": 40.71,
+          "error": null
+        },
+        {
+          "question": "What is the model performance on target language reading comprehension?",
+          "answer": "The model performs better on target language reading comprehension when fine-tuned on un-translated target language data compared to translated data, as evidenced by significant performance degradation when translation is applied [1][3]. Additionally, the analysis shows that the characteristics of the training data (e.g., untranslated corpus) are",
+          "gold_answers": [
+            "Table Table",
+            "when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8 F1 score is only 44.1 for the model training on Zh-En"
+          ],
+          "f1": 0.275,
+          "recall": 0.3667,
+          "refused": false,
+          "cited": true,
+          "seconds": 43.53,
+          "error": null
+        },
+        {
+          "question": "What they use in their propsoed framework?",
+          "answer": "They use a hierarchical matching approach combining word-level and relation-level representations [3], with BiL",
+          "gold_answers": [
+            "break the relation names into word sequences relation-level and word-level relation representations bidirectional LSTMs (BiLSTMs) residual learning method",
+            "break the relation names into word sequences for question-relation matching build both relation-level and word-level relation representations use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations residual learning method for sequence matching a simple KBQA implementation composed of two-step relation detection"
+          ],
+          "f1": 0.3333,
+          "recall": 0.3,
+          "refused": false,
+          "cited": true,
+          "seconds": 45.93,
+          "error": null
+        },
+        {
+          "question": "What is the language model combination technique used in the paper?",
+          "answer": "The language model combination technique used in the paper involves combining multiple language models (over 10) based on perplexity calculated on a small domain-specific text, optimized for different domains [5]. This technique is integrated into a two-pass decoding",
+          "gold_answers": [
+            "system combination on the decoding lattice level combination weights",
+            "system combination on the decoding lattice level"
+          ],
+          "f1": 0.1702,
+          "recall": 0.5714,
+          "refused": false,
+          "cited": true,
+          "seconds": 43.8,
+          "error": null
+        },
+        {
+          "question": "How are weights dynamically adjusted?",
+          "answer": "Weights are dynamically adjusted by associating each training example with a weight proportional to $(1-p)$, where $p$ is the model's predicted probability for the example. This weight changes during training, reducing the emphasis on confident examples (as $p$ approaches 1) and prioritizing hard-negative examples [4].",
+          "gold_answers": [
+            "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+            "associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds"
+          ],
+          "f1": 0.4706,
+          "recall": 0.8,
+          "refused": false,
+          "cited": true,
+          "seconds": 34.69,
+          "error": null
+        },
+        {
+          "question": "How does proposed qualitative annotation schema looks like?",
+          "answer": "The proposed qualitative annotation schema categorizes gold standards based on linguistic complexity, required reasoning, background knowledge, and factual correctness as high-level dimensions [1], and integrates linguistic features from the GLUE suite and reasoning categories from the WorldTree dataset [3]. It also incorporates lexical cues as a metric to approximate a lower bound for reading comprehension task complexity [1].",
+          "gold_answers": [
+            "The resulting taxonomy of the framework is shown in Figure",
+            ""
+          ],
+          "f1": 0.058,
+          "recall": 0.2,
+          "refused": false,
+          "cited": true,
+          "seconds": 28.38,
+          "error": null
+        },
+        {
+          "question": "What source-target language pairs were used in this work? ",
+          "answer": "The source-target language pairs used in this work include English and Chinese, as explicitly mentioned in the context [1].",
+          "gold_answers": [
+            "En-Fr, En-Zh, En-Jp, En-Kr, Zh-En, Zh-Fr, Zh-Jp, Zh-Kr to English, Chinese or Korean",
+            "English Chinese"
+          ],
+          "f1": 0.2222,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "seconds": 29.76,
+          "error": null
+        },
+        {
+          "question": "Which datasets did they use for evaluation?",
+          "answer": "The datasets",
+          "gold_answers": [
+            "Spoken-SQuAD testing set",
+            "Spoken-SQuAD"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "seconds": 45.51,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "Who won the 2018 FIFA World Cup?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "What is the capital of Australia?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "How do I bake sourdough bread?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "What is the boiling point of water at sea level?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "Who wrote the novel Don Quixote?",
+          "answer": "I could not find the answer in the provided documents.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    }
+  }
+}
