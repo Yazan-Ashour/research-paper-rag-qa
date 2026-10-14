@@ -1,0 +1,486 @@
+[
+  {
+    "question_id": "9ee07edc371e014df686ced4fb0c3a7b9ce3d5dc",
+    "paper_id": "1704.06194",
+    "text": "On which benchmarks they achieve the state of the art?",
+    "gold_answers": [
+      "SimpleQuestions WebQSP",
+      "WebQSP SimpleQuestions"
+    ],
+    "gold_evidence": [
+      "Finally, like STAGG, which uses multiple relation detectors (see yih2015semantic for the three models used), we also try to use the top-3 relation detectors from Section \"Relation Detection Results\". As shown on the last row of Table 3, this gives a significant performance boost, resulting in a new state-of-the-art result on SimpleQuestions and a result comparable to the state-of-the-art on WebQSP.",
+      "Table 2 shows the results on two relation detection tasks. The AMPCNN result is from, which yielded state-of-the-art scores by outperforming several attention-based methods. We re-implemented the BiCNN model from, where both questions and relations are represented with the word hash trick on character tri-grams. The baseline BiLSTM with relation word sequence appears to be the best baseline on WebQSP and is close to the previous best result of AMPCNN on SimpleQuestions. Our proposed HR-BiLSTM outperformed the best baselines on both tasks by margins of 2-3% (p $<$ 0.001 and 0.01 compared to the best baseline BiLSTM w/ words on SQ and WQ respectively)."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "d3aa0449708cc861a51551b128d73e11d62207d2",
+    "paper_id": "1704.06194",
+    "text": "What they use in their propsoed framework?",
+    "gold_answers": [
+      "break the relation names into word sequences relation-level and word-level relation representations bidirectional LSTMs (BiLSTMs) residual learning method",
+      "break the relation names into word sequences for question-relation matching build both relation-level and word-level relation representations use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations residual learning method for sequence matching a simple KBQA implementation composed of two-step relation detection"
+    ],
+    "gold_evidence": [
+      "In order to assess how the proposed improved relation detection could benefit the KBQA end task, we also propose a simple KBQA implementation composed of two-step relation detection. Given an input question and a set of candidate entities retrieved by an entity linker based on the question, our proposed relation detection model plays a key role in the KBQA process: (1) Re-ranking the entity candidates according to whether they connect to high confident relations detected from the raw question text by the relation detection model. This step is important to deal with the ambiguities normally present in entity linking results. (2) Finding the core relation (chains) for each topic entity selection from a much smaller candidate entity set after re-ranking. The above steps are followed by an optional constraint detection step, when the question cannot be answered by single relations (e.g., multiple entities in the question). Finally the highest scored query from the above steps is used to query the KB for answers.",
+      "This paper improves KB relation detection to cope with the problems mentioned above. First, in order to deal with the unseen relations, we propose to break the relation names into word sequences for question-relation matching. Second, noticing that original relation names can sometimes help to match longer question contexts, we propose to build both relation-level and word-level relation representations. Third, we use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations in order to match the different levels of relation information. Finally, we propose a residual learning method for sequence matching, which makes the model training easier and results in more abstract (deeper) question representations, thus improves hierarchical matching."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "cfbec1ef032ac968560a7c76dec70faf1269b27c",
+    "paper_id": "1704.06194",
+    "text": "What does KBQA abbreviate for",
+    "gold_answers": [
+      "Knowledge Base Question Answering",
+      "Knowledge Base Question Answering"
+    ],
+    "gold_evidence": [
+      "Knowledge Base Question Answering (KBQA) systems answer questions by obtaining information from KB tuples. For an input question, these systems typically generate a KB query, which can be executed to retrieve the answers from a KB. Figure 1 illustrates the process used to parse two sample questions in a KBQA system: (a) a single-relation question, which can be answered with a single $<$ head-entity, relation, tail-entity $>$ KB tuple,; and (b) a more complex case, where some constraints need to be handled for multiple entities in the question. The KBQA system in the figure performs two key tasks: (1) entity linking, which links $n$ -grams in questions to KB entities, and (2) relation detection, which identifies the KB relation(s) a question refers to."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "c0e341c4d2253eb42c8840381b082aae274eddad",
+    "paper_id": "1704.06194",
+    "text": "What is te core component for KBQA?",
+    "gold_answers": [
+      "answer questions by obtaining information from KB tuples",
+      "hierarchical matching between questions and relations with residual learning"
+    ],
+    "gold_evidence": [
+      "Knowledge Base Question Answering (KBQA) systems answer questions by obtaining information from KB tuples. For an input question, these systems typically generate a KB query, which can be executed to retrieve the answers from a KB. Figure 1 illustrates the process used to parse two sample questions in a KBQA system: (a) a single-relation question, which can be answered with a single $<$ head-entity, relation, tail-entity $>$ KB tuple,; and (b) a more complex case, where some constraints need to be handled for multiple entities in the question. The KBQA system in the figure performs two key tasks: (1) entity linking, which links $n$ -grams in questions to KB entities, and (2) relation detection, which identifies the KB relation(s) a question refers to.",
+      "Our main contributions include: (i) An improved relation detection model by hierarchical matching between questions and relations with residual learning; (ii) We demonstrate that the improved relation detector enables our simple KBQA system to achieve state-of-the-art results on both single-relation and multi-relation KBQA tasks."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "66c96c297c2cffdf5013bab5e95b59101cb38655",
+    "paper_id": "2003.03106",
+    "text": "What is the performance of BERT on the task?",
+    "gold_answers": [
+      "F1 scores are: HUBES-PHI: Detection(0.965), Classification relaxed (0.95), Classification strict (0.937) Medoccan: Detection(0.972), Classification (0.967)",
+      "BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated Table"
+    ],
+    "gold_evidence": [
+      "In this experiment set, our BERT implementation is compared to several systems that participated in the MEDDOCAN challenge: a CRF classifier, a spaCy entity recogniser, and NLNDE, the winner of the shared task and current state of the art for sensitive information detection and classification in Spanish clinical text. Specifically, we include the results of a domain-independent NLNDE model (S2), and the results of a model enriched with domain-specific embeddings (S3). Finally, we include the results obtained by mao2019hadoken with a CRF output layer on top of BERT embeddings. MEDDOCAN consists of two scenarios:",
+      "The results of the two MEDDOCAN scenarios –detection and classification– are shown in Table. These results follow the same pattern as in the previous experiments, with the CRF classifier being the most precise of all, and BERT outperforming both the CRF and spaCy classifiers thanks to its greater recall. We also show the results of mao2019hadoken who, despite of having used a BERT-based system, achieve lower scores than our models. The reason why it should be so remain unclear.",
+      "To finish with this experiment set, Table also shows the strict classification precision, recall and F1-score for the compared systems. Despite the fact that, in general, the systems obtain high values, BERT outperforms them again. BERT's F1-score is 1.9 points higher than the next most competitive result in the comparison. More remarkably, the recall obtained by BERT is about 5 points above."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "6b53e1f46ae4ba9b75117fc6e593abded89366be",
+    "paper_id": "2003.03106",
+    "text": "What are the other algorithms tested?",
+    "gold_answers": [
+      "NER model CRF classifier trained with sklearn-crfsuite classifier has been developed that consists of regular-expressions and dictionary look-up",
+      "As the simplest baseline, a sensitive data recogniser and classifier Conditional Random Fields (CRF) spaCy"
+    ],
+    "gold_evidence": [
+      "Apart from experimenting with a pre-trained BERT model, we have run experiments with other systems and baselines, to compare them and obtain a better perspective about BERT's performance in these datasets.",
+      "As the simplest baseline, a sensitive data recogniser and classifier has been developed that consists of regular-expressions and dictionary look-ups. For each category to detect a specific method has been implemented. For instance, the Date, Age, Time and Doctor detectors are based on regular-expressions; Hospital, Sex, Kinship, Location, Patient and Job are looked up in dictionaries. The dictionaries are hand-crafted from the training data available, except for the Patient's case, for which the possible candidates considered are the 100 most common female and male names in Spain according to the Instituto Nacional de Estadística (INE; Spanish Statistical Office).",
+      "Conditional Random Fields (CRF) have been extensively used for tasks of sequential nature. In this paper, we propose as one of the competitive baselines a CRF classifier trained with sklearn-crfsuite for Python 3.5 and the following configuration: algorithm = lbfgs; maximum iterations = 100; c1 = c2 = 0.1; all transitions = true; optimise = false. The features extracted from each token are as follows:",
+      "spaCy is a widely used NLP library that implements state-of-the-art text processing pipelines, including a sequence-labelling pipeline similar to the one described by strubell2017fast. spaCy offers several pre-trained models in Spanish, which perform basic NLP tasks such as Named Entity Recognition (NER). In this paper, we have trained a new NER model to detect NUBes-PHI labels. For this purpose, the new model uses all the labels of the training corpus coded with its context at sentence level. The network optimisation parameters and dropout values are the ones recommended in the documentation for small datasets. Finally, the model is trained using batches of size 64. No more features are included, so the classifier is language-dependent but not domain-dependent."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "c0bee6539eb6956a7347daa9d2419b367bd02064",
+    "paper_id": "2003.03106",
+    "text": "Does BERT reach the best performance among all the algorithms compared?",
+    "gold_answers": [
+      "No",
+      "No"
+    ],
+    "gold_evidence": [
+      "In this experiment set, our BERT implementation is compared to several systems that participated in the MEDDOCAN challenge: a CRF classifier, a spaCy entity recogniser, and NLNDE, the winner of the shared task and current state of the art for sensitive information detection and classification in Spanish clinical text. Specifically, we include the results of a domain-independent NLNDE model (S2), and the results of a model enriched with domain-specific embeddings (S3). Finally, we include the results obtained by mao2019hadoken with a CRF output layer on top of BERT embeddings. MEDDOCAN consists of two scenarios:",
+      "The experiments with the MEDDOCAN 2019 shared task dataset follow the same pattern. In this case, the BERT-based model falls 0.3 F1-score points behind the shared task winning system, but it would have achieved the second position in the competition with no further refinement.",
+      "The results of the experiments show that, in NUBes-PHI, the BERT-based model outperforms the other systems without requiring any adaptation or domain-specific feature engineering, just by being trained on the provided labelled data. Interestingly, the BERT-based model obtains a remarkably higher recall than the other systems. High recall is a desirable outcome because, when anonymising sensible documents, the accidental leak of sensible data is likely to be more dangerous than the unintended over-obfuscation of non-sensitive text.",
+      "With regard to the winner of the MEDDOCAN shared task, the BERT-based model has not improved the scores obtained by neither the domain-dependent (S3) nor the domain-independent (S2) NLNDE model. However, attending to the obtained results, BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated, the task can be considered almost solved, and it is not clear if the differences among the systems are actually significant, or whether they stem from minor variations in initialisation or a long-tail of minor labelling inconsistencies."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "3de0487276bb5961586acc6e9f82934ef8cb668c",
+    "paper_id": "2003.03106",
+    "text": "What are the clinical datasets used in the paper?",
+    "gold_answers": [
+      "MEDDOCAN NUBes-PHI",
+      "MEDDOCAN NUBes"
+    ],
+    "gold_evidence": [
+      "NUBes is a corpus of around 7,000 real medical reports written in Spanish and annotated with negation and uncertainty information. Before being published, sensitive information had to be manually annotated and replaced for the corpus to be safely shared. In this article, we work with the NUBes version prior to its anonymisation, that is, with the manual annotations of sensitive information. It follows that the version we work with is not publicly available and, due to contractual restrictions, we cannot reveal the provenance of the data. In order to avoid confusion between the two corpus versions, we henceforth refer to the version relevant in this paper as NUBes-PHI (from `NUBes with Personal Health Information').",
+      "The anonymisation systems based on NLP techniques perform reasonably well, but are far from perfect. Depending on the difficulty posed by each dataset or the amount of available data for training machine learning models, the performance achieved by these methods is not enough to fully rely on them in certain situations. However, in the last two years, the NLP community has reached an important milestone thanks to the appearance of the so-called Transformers neural network architectures. In this paper, we conduct several experiments in sensitive information detection and classification on Spanish clinical text using BERT (from `Bidirectional Encoder Representations from Transformers') as the base for a sequence labelling approach. The experiments are carried out on two datasets: the MEDDOCAN: Medical Document Anonymization shared task dataset, and NUBes, a corpus of real medical reports in Spanish. In these experiments, we compare the performance of BERT with other machine-learning-based systems, some of which use language-specific features. Our aim is to evaluate how good a BERT-based model performs without language nor domain specialisation apart from the training data labelled for the task at hand.",
+      "The organisers of the MEDDOCAN shared task curated a synthetic corpus of clinical cases enriched with sensitive information by health documentalists. In this regard, the MEDDOCAN evaluation scenario could be said to be somewhat far from the real use case the technology developed for the shared task is supposed to be applied in. However, at the moment it also provides the only public means for a rigorous comparison between systems for sensitive health information detection in Spanish texts.",
+      "Two datasets are exploited in this article. Both datasets consist of plain text containing clinical narrative written in Spanish, and their respective manual annotations of sensitive information in BRAT standoff format. In order to feed the data to the different algorithms presented in Section, these datasets were transformed to comply with the commonly used BIO sequence representation scheme."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "e97186c51d4af490dba6faaf833d269c8256426c",
+    "paper_id": "1912.13337",
+    "text": "Are the automatically constructed datasets subject to quality control?",
+    "gold_answers": [
+      "No",
+      "No"
+    ],
+    "gold_evidence": [
+      "An example of how distractors are generated is shown in Figure, which relies on similar principles as above. For each concept $c$, we choose 4 distractor answers that are close in the WordNet semantic space. For example, when constructing hypernymy tests for $c$ from the set hops$(c,\\uparrow )$, we build distractors by drawing from $\\textsc {hops}(c,\\downarrow )$ (and vice versa), as well as from the $\\ell $-deep sister family of $c$, defined as follows. The 1-deep sister family is simply $c$'s siblings or sisters, i.e., the other children $\\tilde{c} \\ne c$ of the parent node $c^{\\prime }$ of $c$. For $\\ell > 1$, the $\\ell $-deep sister family also includes all descendants of each $\\tilde{c}$ up to $\\ell -1$ levels deep, denoted $\\textsc {hops}_{\\ell -1}(\\tilde{c},\\downarrow )$. Formally:",
+      "Based on how we generate data, for each concept $c$ (i.e., atomic WordNet synset) and probe type (i.e., definitions, hypernymy, etc.), we have a wide variety of questions related to $c$ that manipulate 1) the complexity of reasoning that is involved (e.g., the number of inferential hops) and; 2) the types of distractors (or distractor perturbations) that are employed. We call such sets semantic clusters. As we describe in the next section, semantic clusters allow us to devise new types of evaluation that reveal whether models have comprehensive and consistent knowledge of target concepts (e.g., evaluating whether a model can correctly answer several questions associated with a concept, as opposed to a few disjoint instances).",
+      "Dataset Probes and Construction",
+      "Dataset Probes and Construction::: DictionaryQA",
+      "Dataset Probes and Construction::: DictionaryQA::: Example and Distractor Generation.",
+      "Dataset Probes and Construction::: WordNetQA",
+      "Dataset Probes and Construction::: WordNetQA::: Distractor Generation: @!START@$\\textsc {distr}(\\tau ^{\\prime })$@!END@.",
+      "Dataset Probes and Construction::: WordNetQA::: Example Generation @!START@$\\textsc {gen}(\\tau )$@!END@.",
+      "Dataset Probes and Construction::: WordNetQA::: Perturbations and Semantic Clusters",
+      "Details of the individual datasets are shown in Table. From these sets, we follow in allocating a maximum of 3k examples for training and reserve the rest for development and testing. Since we are interested in probing, having large held-out sets allows us to do detailed analysis and cluster-based evaluation.",
+      "For convenience, we will describe each source of expert knowledge as a directed, edge-labeled graph $G$. The nodes of this graph are $\\mathcal {V} = \\mathcal {C} \\cup \\mathcal {W} \\cup \\mathcal {S} \\cup \\mathcal {D}$, where $\\mathcal {C}$ is a set of atomic concepts, $\\mathcal {W}$ a set of words, $\\mathcal {S}$ a set of sentences, and $\\mathcal {D}$ a set of definitions (see Table for details for WordNet and GCIDE). Each edge of $G$ is directed from an atomic concept in $\\mathcal {C}$ to another node in $V$, and is labeled with a relation, such as hypernym or isa$^\\uparrow $, from a set of relations $\\mathcal {R}$ (see Table ).",
+      "For definitions and synonyms we build distractors from all of these sets (with a similar restriction on the depth of sister distractors as noted above). In doing this, we can systematically investigate model performance on a wide range of distractor sets.",
+      "For example, suppose we wish to create a question $\\textbf {q}$ about the definition of a target concept $c \\in \\mathcal {C}$. We first select a question template from $\\mathcal {Q}$ that first introduces the concept $c$ and its lemma $l \\in \\mathcal {W}$ in context using the example sentence $s \\in \\mathcal {S}$, and then asks to identify the corresponding WordNet gloss $d \\in \\mathcal {D}$, which serves as the gold answer $\\textbf {a}$. The same is done for ISA reasoning; each question about a hypernym/hyponym relation between two concepts $c \\rightarrow ^{\\uparrow /\\downarrow } c^{\\prime } \\in \\mathcal {T}_{i}$ (e.g., $\\texttt {dog} \\rightarrow ^{\\uparrow /\\downarrow } \\texttt {animal/terrier}$) first introduces a context for $c$ and then asks for an answer that identifies $c^{\\prime }$ (which is also provided with a gloss so as to contain all available context).",
+      "In the latter case, the rules $(\\texttt {isa}^{r},c,c^{\\prime }) \\in \\mathcal {T}_i$ in Table cover only direct ISA links from $c$ in direction $r \\in \\lbrace \\uparrow,\\downarrow \\rbrace $. In practice, for each $c$ and direction $r$, we construct tests that cover the set HOPS$(c,r)$ of all direct as well as derived ISA relations of $c$:",
+      "Our probing methodology starts by constructing challenge datasets (Figure, yellow box) from a target set of knowledge resources. Each of our probing datasets consists of multiple-choice questions that include a question $\\textbf {q}$ and a set of answer choices or candidates $\\lbrace a_{1}...a_{N}\\rbrace $. This section describes in detail the 5 different datasets we build, which are drawn from two sources of expert knowledge, namely WordNet and the GNU Collaborative International Dictionary of English (GCIDE). We describe each resource in turn, and explain how the resulting dataset probes, which we call WordNetQA and DictionaryQA, are constructed.",
+      "The DictionaryQA dataset is created from the GCIDE dictionary, which is a comprehensive open-source English dictionary built largely from the Webster's Revised Unabridged Dictionary. Each entry consists of a word, its part-of-speech, its definition, and an optional example sentence (see Table ). Overall, 33k entries (out of a total of 155k) contain example sentences/usages. As with the WordNet probes, we focus on this subset so as to contextualize each word being probed. In contrast to WordNet, GCIDE does not have ISA relations or explicit synsets, so we take each unique entry to be a distinct sense. We then use the dictionary entries to create a probe that centers around word-sense disambiguation, as described below.",
+      "This allows us to evaluate the extent to which models are able to handle complex forms of reasoning that require several inferential steps or hops.",
+      "To construct probe datasets, we rely on two heuristic functions, defined below for each individual probe: $\\textsc {gen}_{\\mathcal {Q}}(\\tau )$, which generates gold question-answer pairs $(\\textbf {q},\\textbf {a})$ from a set of triples $\\tau \\subseteq \\mathcal {T}$ and question templates $\\mathcal {Q}$, and $\\textsc {distr}(\\tau ^{\\prime })$, which generates distractor answers choices $\\lbrace a^{\\prime }_{1}...a^{\\prime }_{N-1} \\rbrace $ based on another set of triples $\\tau ^{\\prime }$ (where usually $\\tau \\subset \\tau ^{\\prime }$). For brevity, we will use $\\textsc {gen}(\\tau )$ to denote $\\textsc {gen}_{\\mathcal {Q}}(\\tau )$, leaving question templates $\\mathcal {Q}$ implicit.",
+      "To generate gold questions and answers, we use the same generation templates for definitions exemplified in Figure for WordNetQA. To generate distractors, we simply take alternative definitions for the target words that represent a different word sense (e.g., the alternative definitions of gift shown in Table ), as well as randomly chosen definitions if needed to create a 5-way multiple choice question. As above, we reserve a maximum of 3k examples for training. Since we have only 9k examples in total in this dataset (see WordSense in Table ), we also reserve 3k each for development and testing.",
+      "We build 4 individual datasets based on semantic relations native to WordNet (see ): hypernymy (i.e., generalization or ISA reasoning up a taxonomy, ISA$^\\uparrow $), hyponymy (ISA$^{\\downarrow }$), synonymy, and definitions. To generate a set of questions in each case, we employ a number of rule templates $\\mathcal {Q}$ that operate over tuples. A subset of such templates is shown in Table. The templates were designed to mimic naturalistic questions we observed in our science benchmarks.",
+      "We emphasize that using synthetic versus naturalistic QA data comes with important trade-offs. While we are able to generate large amounts of systematically controlled data at virtually no cost or need for manual annotation, it is much harder to validate the quality of such data at such a scale and such varying levels of complexity. Conversely, with benchmark QA datasets, it is much harder to perform the type of careful manipulations and cluster-based analyses we report here. While we assume that the expert knowledge we employ, in virtue of being hand-curated by human experts, is generally correct, we know that such resources are fallible and error-prone. Initial crowd-sourcing experiments that look at validating samples of our data show high agreement across probes and that human scores correlate with the model trends across the probe categories. More details of these studies are left for future work.",
+      "We note that initial attempts to build this dataset through standard random splitting gave rise to certain systematic biases that were exploited by the choice-only baseline models described in the next section, and hence inflated overall model scores. After several efforts at filtering we found that, among other factors, using definitions from entries without example sentences as distractors (e.g., the first two entries in Table ) had a surprising correlation with such biases. This suggests that possible biases involving differences between dictionary entries with and without examples can taint the resulting automatically generated MCQA dataset (for more discussion on the pitfalls involved with automatic dataset construction, see Section ).",
+      "When defining our probe question templates, it will be useful to view $G$ as a set of (relation, source, target) triples $\\mathcal {T} \\subseteq \\mathcal {R} \\times \\mathcal {C} \\times \\mathcal {V}$. Due to their origin in an expert knowledge source, such triples preserve semantic consistency. For instance, when the relation in a triple is def, the corresponding edge maps a concept in $\\mathcal {C}$ to a definition in $\\mathcal {D}$.",
+      "WordNet is an English lexical database consisting of around 117k concepts, which are organized into groups of synsets that each contain a gloss (i.e., a definition of the target concept), a set of representative English words (called lemmas), and, in around 33k synsets, example sentences. In addition, many synsets have ISA links to other synsets that express complex taxonomic relations. Figure shows an example and Table summarizes how we formulate WordNet as a set of triples $\\mathcal {T}$ of various types. These triples together represent a directed, edge-labeled graph $G$. Our main motivation for using WordNet, as opposed to a resource such as ConceptNet, is the availability of glosses ($\\mathcal {D}$) and example sentences ($\\mathcal {S}$), which allows us to construct natural language questions that contextualize the types of concepts we want to probe."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "5bb3c27606c59d73fd6944ba7382096de4fa58d8",
+    "paper_id": "1912.13337",
+    "text": "Do they focus on Reading Comprehension or multiple choice question answering?",
+    "gold_answers": [
+      "MULTIPLE CHOICE QUESTION ANSWERING",
+      "multiple-choice"
+    ],
+    "gold_evidence": [
+      "Automatically answering questions, especially in the open-domain setting (i.e., where minimal or no contextual knowledge is explicitly provided), requires bringing to bear considerable amount of background knowledge and reasoning abilities. For example, knowing the answers to the two questions in Figure requires identifying a specific ISA relation (i.e., that cooking is a type of learned behavior) as well as recalling the definition of a concept (i.e., that global warming is defined as a worldwide increase in temperature). In the multiple-choice setting, which is the variety of question-answering (QA) that we focus on in this paper, there is also pragmatic reasoning involved in selecting optimal answer choices (e.g., while greenhouse effect might in some other context be a reasonable answer to the second question in Figure, global warming is a preferable candidate).",
+      "Our probing methodology starts by constructing challenge datasets (Figure, yellow box) from a target set of knowledge resources. Each of our probing datasets consists of multiple-choice questions that include a question $\\textbf {q}$ and a set of answer choices or candidates $\\lbrace a_{1}...a_{N}\\rbrace $. This section describes in detail the 5 different datasets we build, which are drawn from two sources of expert knowledge, namely WordNet and the GNU Collaborative International Dictionary of English (GCIDE). We describe each resource in turn, and explain how the resulting dataset probes, which we call WordNetQA and DictionaryQA, are constructed."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "8de9f14c7c4f37ab103bc8a639d6d80ade1bc27b",
+    "paper_id": "1912.13337",
+    "text": "After how many hops does accuracy decrease?",
+    "gold_answers": [
+      "1-hop links to 2-hops",
+      "one additional hop"
+    ],
+    "gold_evidence": [
+      "Our comprehensive assessment reveals several interesting nuances to the overall positive trend. For example, the performance of even the best QA models degrades substantially on our hyponym probes (by 8-15%) when going from 1-hop links to 2-hops. Further, the accuracy of even our best models on the WordNetQA probe drops by 14-44% under our cluster-based analysis, which assesses whether a model knows several facts about each individual concept, rather than just being good at answering isolated questions. State-of-the-art QA models thus have much room to improve even in some fundamental building blocks, namely definitions and taxonomic hierarchies, of more complex forms of reasoning."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "85590bb26fed01a802241bc537d85ba5ef1c6dc2",
+    "paper_id": "1912.13337",
+    "text": "How do they control for annotation artificats?",
+    "gold_answers": [
+      "we use several of the MCQA baseline models first introduced in",
+      "Choice-Only model, which is a variant of the well-known hypothesis-only baseline Choice-to-choice model, tries to single out a given answer choice relative to other choices Question-to-choice model, in contrast, uses the contextual representations for each question and individual choice and an attention model Att model to get a score"
+    ],
+    "gold_evidence": [
+      "A Question-to-choice model, in contrast, uses the contextual representations for each question and individual choice and an attention model Att model to get a score $\\alpha ^{(j)}_{q,i} = \\textsc {Att}(r^{(j)}_{q},r^{(j)}_{c_{i}}) \\in \\mathbb {R}$ as above. Here we also experiment with using ESIM to generate the contextual representations $r$, as well as a simpler VecSimilarity model that measures the average vector similarity between question and answer tokens: $\\alpha ^{(j)}_{q,i} = \\textsc {Sim}(\\textsc {embed}(q^{(j)}),\\textsc {embed}(c^{(j)}_{i}))$. In contrast to the models above, these sets of baselines are used to check for artifacts between questions and answers that are not captured in the partial-input baselines (see discussion in ) and ensure that the overall MCQA tasks are sufficiently difficult for our transformer models.",
+      "A slight variant of this model, the Choice-to-choice model, tries to single out a given answer choice relative to other choices by scoring all choice pairs $\\alpha _{i,i^{\\prime }}^{(j)} = \\textsc {Att}(r^{(j)}_{c_{i}},r^{(j)}_{c_{i^{\\prime }}}) \\in \\mathbb {R}$ using a learned attention mechanism Att and finding the choice with the minimal similarity to other options (for full details, see their original paper). In using these partial-input baselines, which we train directly on each target probe, we can check whether systematic biases related to answer choices were introduced into the data creation process.",
+      "Following the notation from, for any given sequence $s$ of tokens in $\\lbrace q^{(j)}, a_{1}^{(j)}...,a_{N}^{(j)}\\rbrace $ in $D$, an encoding of $s$ is given as $h_{s}^{(j)} = \\textbf {BiLSTM}(\\textsc {embed}(s)) \\in \\mathbb {R}^{|s| \\times 2h}$ (where $h$ is the dimension of the hidden state in each directional network, and embed$(\\cdot )$ is an embedding function that assigns token-level embeddings to each token in $s$). A contextual representation for each $s$ is then built by applying an element-wise max operation over $h_{s}$ as follows:",
+      "Probing Methodology and Modeling::: Task Definition and Modeling::: Baselines and Sanity Checks.",
+      "When creating synthetic datasets, it is important to ensure that systematic biases, or annotation artifacts, are not introduced into the resulting probes and that the target datasets are sufficiently challenging (or good, in the sense of ). To test for this, we use several of the MCQA baseline models first introduced in, which take inspiration from the LSTM-based models used in for NLI and various partial-input baselines based on these models.",
+      "With these contextual representations, different baseline models can be constructed. For example, a Choice-Only model, which is a variant of the well-known hypothesis-only baseline used in NLI, scores each choice $c_{i}$ in the following way:",
+      "for $\\textbf {W}^{T} \\in \\mathbb {R}^{2h}$ independently of the question and assigns a probability to each answer $p_{i}^{(j)} \\propto e^{\\alpha _{i}^{(j)}}$."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "75ff6e425ce304a35f18c0230c0d13d3913a31a9",
+    "paper_id": "1912.13337",
+    "text": "Is WordNet useful for taxonomic reasoning for this task?",
+    "gold_answers": [
+      "Yes"
+    ],
+    "gold_evidence": [
+      "While our methodology is amenable to any knowledge source and set of models/benchmark tasks, we focus on probing state-of-the-art transformer models, in the domain of science MCQA. For sources of expert knowledge, we use WordNet, a comprehensive lexical ontology, and other publicly available dictionary resources. We devise probes that measure model competence in definition and taxonomic knowledge in different settings (including hypernymy, hyponymy, and synonymy detection, and word sense disambiguation). This choice is motivated by fact that the science domain is considered particularly challenging for QA, and existing science benchmarks are known to involve widespread use of such knowledge (see, for analysis), which is also arguably fundamental to more complex forms of reasoning."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "37be0d479480211291e068d0d3823ad0c13321d3",
+    "paper_id": "1909.09587",
+    "text": "What is the model performance on target language reading comprehension?",
+    "gold_answers": [
+      "Table Table",
+      "when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8 F1 score is only 44.1 for the model training on Zh-En"
+    ],
+    "gold_evidence": [
+      "In the lower half of Table, the results are obtained by the translated training data. First, we found that when testing on English and Chinese, translation always degrades the performance (En v.s. En-XX, Zh v.s. Zh-XX). Even though we translate the training data into the same language as testing data, using the untranslated data still yield better results. For example, when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8, while the F1 score is only 44.1 for the model training on Zh-En. This shows that translation degrades the quality of data. There are some exceptions when testing on Korean. Translating the English training data into Chinese, Japanese and Korean still improve the performance on Korean. We also found that when translated into the same language, the English training data is always better than the Chinese data (En-XX v.s. Zh-XX), with only one exception (En-Fr v.s. Zh-Fr when testing on KorQuAD). This may be because we have less Chinese training data than English. These results show that the quality and the size of dataset are much more important than whether the training and testing are in the same language or not.",
+      "Table shows the result of different models trained on either Chinese or English and tested on Chinese. In row (f), multi-BERT is fine-tuned on English but tested on Chinese, which achieves competitive performance compared with QANet trained on Chinese. We also find that multi-BERT trained on English has relatively lower EM compared with the model with comparable F1 scores. This shows that the model learned with zero-shot can roughly identify the answer spans in context but less accurate. In row (c), we fine-tuned a BERT model pre-trained on English monolingual corpus (English BERT) on Chinese RC training data directly by appending fastText-initialized Chinese word embeddings to the original word embeddings of English-BERT. Its F1 score is even lower than that of zero-shot transferring multi-BERT (rows (c) v.s. (e)). The result implies multi-BERT does acquire better cross-lingual capability through pre-training on multilingual corpus. Table shows the results of multi-BERT fine-tuned on different languages and then tested on English, Chinese and Korean. The top half of the table shows the results of training data without translation. It is not surprising that when the training and testing sets are in the same language, the best results are achieved, and multi-BERT shows transfer capability when training and testing sets are in different languages, especially between Chinese and Korean."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "a3d9b101765048f4b61cbd3eaa2439582ebb5c77",
+    "paper_id": "1909.09587",
+    "text": "What source-target language pairs were used in this work? ",
+    "gold_answers": [
+      "En-Fr, En-Zh, En-Jp, En-Kr, Zh-En, Zh-Fr, Zh-Jp, Zh-Kr to English, Chinese or Korean",
+      "English Chinese",
+      "English Chinese Korean we translated the English and Chinese datasets into more languages, with Google Translate"
+    ],
+    "gold_evidence": [
+      "In the lower half of Table, the results are obtained by the translated training data. First, we found that when testing on English and Chinese, translation always degrades the performance (En v.s. En-XX, Zh v.s. Zh-XX). Even though we translate the training data into the same language as testing data, using the untranslated data still yield better results. For example, when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8, while the F1 score is only 44.1 for the model training on Zh-En. This shows that translation degrades the quality of data. There are some exceptions when testing on Korean. Translating the English training data into Chinese, Japanese and Korean still improve the performance on Korean. We also found that when translated into the same language, the English training data is always better than the Chinese data (En-XX v.s. Zh-XX), with only one exception (En-Fr v.s. Zh-Fr when testing on KorQuAD). This may be because we have less Chinese training data than English. These results show that the quality and the size of dataset are much more important than whether the training and testing are in the same language or not.",
+      "Next, to construct a diverse cross-lingual RC dataset with compromised quality, we translated the English and Chinese datasets into more languages, with Google Translate. An obvious issue with this method is that some examples might no longer have a recoverable span. To solve the problem, we use fuzzy matching to find the most possible answer, which calculates minimal edit distance between translated answer and all possible spans. If the minimal edit distance is larger than min(10, lengths of translated answer - 1), we drop the examples during training, and treat them as noise when testing. In this way, we can recover more than 95% of examples. The following generated datasets are recovered with same setting.",
+      "We have training and testing sets in three different languages: English, Chinese and Korean. The English dataset is SQuAD. The Chinese dataset is DRCD, a Chinese RC dataset with 30,000+ examples in the training set and 10,000+ examples in the development set. The Korean dataset is KorQuAD, a Korean RC dataset with 60,000+ examples in the training set and 10,000+ examples in the development set, created in exactly the same procedure as SQuAD. We always use the development sets of SQuAD, DRCD and KorQuAD for testing since the testing sets of the corpora have not been released yet."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "009ce6f2bea67e7df911b3f93443b23467c9f4a1",
+    "paper_id": "1909.09587",
+    "text": "What model is used as a baseline?  ",
+    "gold_answers": [
+      "pre-trained multi-BERT",
+      "QANet  fine-tuned a BERT model"
+    ],
+    "gold_evidence": [
+      "Multi-BERT has showcased its ability to enable cross-lingual zero-shot learning on the natural language understanding tasks including XNLI, NER, POS, Dependency Parsing, and so on. We now seek to know if a pre-trained multi-BERT has ability to solve RC tasks in the zero-shot setting.",
+      "Reading Comprehension (RC) has become a central task in natural language processing, with great practical value in various industries. In recent years, many large-scale RC datasets in English, have nourished the development of numerous powerful and diverse RC models. The state-of-the-art model on SQuAD, one of the most widely used RC benchmarks, even surpasses human-level performance. Nonetheless, RC on languages other than English has been limited due to the absence of sufficient training data. Although some efforts have been made to create RC datasets for Chinese, and Korean, it is not feasible to collect RC datasets for every language since annotation efforts to collect a new RC dataset are often far from trivial. Therefore, the setup of transfer learning, especially zero-shot learning, is of extraordinary importance.",
+      "Table shows the result of different models trained on either Chinese or English and tested on Chinese. In row (f), multi-BERT is fine-tuned on English but tested on Chinese, which achieves competitive performance compared with QANet trained on Chinese. We also find that multi-BERT trained on English has relatively lower EM compared with the model with comparable F1 scores. This shows that the model learned with zero-shot can roughly identify the answer spans in context but less accurate. In row (c), we fine-tuned a BERT model pre-trained on English monolingual corpus (English BERT) on Chinese RC training data directly by appending fastText-initialized Chinese word embeddings to the original word embeddings of English-BERT. Its F1 score is even lower than that of zero-shot transferring multi-BERT (rows (c) v.s. (e)). The result implies multi-BERT does acquire better cross-lingual capability through pre-training on multilingual corpus. Table shows the results of multi-BERT fine-tuned on different languages and then tested on English, Chinese and Korean. The top half of the table shows the results of training data without translation. It is not surprising that when the training and testing sets are in the same language, the best results are achieved, and multi-BERT shows transfer capability when training and testing sets are in different languages, especially between Chinese and Korean."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "55569d0a4586d20c01268a80a7e31a17a18198e2",
+    "paper_id": "1909.09587",
+    "text": "what does the model learn in zero-shot setting?",
+    "gold_answers": [
+      "we simply adopted the official training script of BERT, with default hyperparameters, to fine-tune each model until training loss converged"
+    ],
+    "gold_evidence": [
+      "The pre-trained multi-BERT is the official released one. This multi-lingual version of BERT were pre-trained on corpus in 104 languages. Data in different languages were simply mixed in batches while pre-training, without additional effort to align between languages. When fine-tuning, we simply adopted the official training script of BERT, with default hyperparameters, to fine-tune each model until training loss converged.",
+      "We have training and testing sets in three different languages: English, Chinese and Korean. The English dataset is SQuAD. The Chinese dataset is DRCD, a Chinese RC dataset with 30,000+ examples in the training set and 10,000+ examples in the development set. The Korean dataset is KorQuAD, a Korean RC dataset with 60,000+ examples in the training set and 10,000+ examples in the development set, created in exactly the same procedure as SQuAD. We always use the development sets of SQuAD, DRCD and KorQuAD for testing since the testing sets of the corpora have not been released yet."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "23b2901264bda91045258b5d4120879ae292e950",
+    "paper_id": "1911.02855",
+    "text": "What are method improvements of F1 for paraphrase identification?",
+    "gold_answers": [
+      "Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP",
+      "+0.58"
+    ],
+    "gold_evidence": [
+      "Experiments::: Paraphrase Identification::: Results",
+      "Paraphrases are textual expressions that have the same semantic meaning using different surface words. Paraphrase identification (PI) is the task of identifying whether two sentences have the same meaning or not. We use BERT and XLNet as backbones and report F1 score for comparison. Hyperparameters are tuned on the development set of each dataset.",
+      "Table shows the results for PI task. We find that replacing the training objective with DSC introduces performance boost for both BERT and XLNet. Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "b5bc34e1e381dbf972d0b594fe8c66ff75305d71",
+    "paper_id": "1911.02855",
+    "text": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+    "gold_answers": [
+      "English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively",
+      "For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively"
+    ],
+    "gold_evidence": [
+      "For the NER task, we consider both Chinese datasets, i.e., OntoNotes4.0 and MSRA, and English datasets, i.e., CoNLL2003 and OntoNotes5.0.",
+      "Table shows experimental results on NER datasets. For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. We observe huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively. As far as we are concerned, we are setting new SOTA performances on all of the four NER datasets."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "72f7ef55e150e16dcf97fe443aff9971a32414ef",
+    "paper_id": "1911.02855",
+    "text": "What are method's improvements of F1 w.r.t. baseline BERT tagger for Chinese POS datasets?",
+    "gold_answers": [
+      "+1.86 in terms of F1 score on CTB5 +1.80 on CTB6 +2.19 on UD1.4",
+      "+1.86"
+    ],
+    "gold_evidence": [
+      "Table presents the experimental results on the POS task. As can be seen, the proposed DSC loss outperforms the best baseline results by a large margin, i.e., outperforming BERT-tagger by +1.86 in terms of F1 score on CTB5, +1.80 on CTB6 and +2.19 on UD1.4. As far as we are concerned, we are achieving SOTA performances on the three datasets. Weighted cross entropy and focal loss only gain a little performance improvement on CTB5 and CTB6, and the dice loss obtains huge gain on CTB5 but not on CTB6, which indicates the three losses are not consistently robust in resolving the data imbalance issue. The proposed DSC loss performs robustly on all the three datasets."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "20e38438471266ce021817c6364f6a46d01564f2",
+    "paper_id": "1911.02855",
+    "text": "How are weights dynamically adjusted?",
+    "gold_answers": [
+      "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+      "associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds"
+    ],
+    "gold_evidence": [
+      "A close look at Eq.DISPLAY_FORM14 reveals that it actually mimics the idea of focal loss (FL for short) for object detection in vision. Focal loss was proposed for one-stage object detector to handle foreground-background tradeoff encountered during training. It down-weights the loss assigned to well-classified examples by adding a $(1-p)^{\\beta }$ factor, leading the final loss to be $(1-p)^{\\beta }\\log p$.",
+      "Comparing Eq.DISPLAY_FORM14 with Eq.DISPLAY_FORM22, we can see that Eq.DISPLAY_FORM14 is actually a soft form of $F1$, using a continuous $p$ rather than the binary $\\mathbb {I}( p_{i1}>0.5)$. This gap isn't a big issue for balanced datasets, but is extremely detrimental if a big proportion of training examples are easy-negative ones: easy-negative examples can easily dominate training since their probabilities can be pushed to 0 fairly easily. Meanwhile, the model can hardly distinguish between hard-negative examples and positive ones, which has a huge negative effect on the final F1 performance.",
+      "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+      "Only using dice loss or Tversky index is not enough since they are unable to address the dominating influence of easy-negative examples. This is intrinsically because dice loss is actually a hard version of the F1 score. Taking the binary classification task as an example, at test time, an example will be classified as negative as long as its probability is smaller than 0.5, but training will push the value to 0 as much as possible. This gap isn't a big issue for balanced datasets, but is extremely detrimental if a big proportion of training examples are easy-negative ones: easy-negative examples can easily dominate training since their probabilities can be pushed to 0 fairly easily. Meanwhile, the model can hardly distinguish between hard-negative examples and positive ones. Inspired by the idea of focal loss in computer vision, we propose a dynamic weight adjusting strategy, which associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds. This strategy helps to deemphasize confident examples during training as their $p$ approaches the value of 1, makes the model attentive to hard-negative examples, and thus alleviates the dominating effect of easy-negative examples.",
+      "To address this issue, we propose to multiply the soft probability $p$ with a decaying factor $(1-p)$, changing Eq.DISPLAY_FORM22 to the following form:"
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "5c88d601e8fca96bffebfa9ef22331ecf31c6d75",
+    "paper_id": "2003.04642",
+    "text": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+    "gold_answers": [
+      "Yes",
+      "No"
+    ],
+    "gold_evidence": [
+      "In this paper, we introduce a novel framework to characterise machine reading comprehension gold standards. This framework has potential applications when comparing different gold standards, considering the design choices for a new gold standard and performing qualitative error analyses for a proposed approach."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "71bd5db79635d48a0730163a9f2e8ef19a86cd66",
+    "paper_id": "2003.04642",
+    "text": "What features are absent from MRC gold standards that can result in potential lexical ambiguity?",
+    "gold_answers": [
+      "Restrictivity Factivity Coreference",
+      "semantics-altering grammatical modifiers"
+    ],
+    "gold_evidence": [
+      "Furthermore we applied the framework to analyse popular state-of-the-art gold standards for machine reading comprehension: We reveal issues with their factual correctness, show the presence of lexical cues and we observe that semantics-altering grammatical modifiers are missing in all of the investigated gold standards. Studying how to introduce those modifiers into gold standards and observing whether state-of-the-art MRC models are capable of performing reading comprehension on text containing them, is a future research goal.",
+      "We recognise features that add ambiguity to the supporting facts, for example when information is only expressed implicitly by using an Ellipsis. As opposed to redundant words, we annotate Restrictivity and Factivity modifiers, words and phrases whose presence does change the meaning of a sentence with regard to the expected answer, and occurrences of intra- or inter-sentence Coreference in supporting facts (that is relevant to the question). Lastly, we mark ambiguous syntactic features, when their resolution is required in order to obtain the answer. Concretely, we mark argument collection with con- and disjunctions (Listing) and ambiguous Prepositions, Coordination Scope and Relative clauses/Adverbial phrases/Appositions."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "9ecde59ffab3c57ec54591c3c7826a9188b2b270",
+    "paper_id": "2003.04642",
+    "text": "What modern MRC gold standards are analyzed?",
+    "gold_answers": [
+      "fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations",
+      "MSMARCO, HOTPOTQA, RECORD, MULTIRC, NEWSQA, and DROP."
+    ],
+    "gold_evidence": [
+      "We select contemporary MRC benchmarks to represent all four commonly used problem definitions. In selecting relevant datasets, we do not consider those that are considered “solved”, i.e. where the state of the art performance surpasses human performance, as is the case with SQuAD. Concretely, we selected gold standards that fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations, and bucket them according to the answer selection styles as described in Section We randomly draw one from each bucket and add two randomly drawn datasets from the candidate pool. This leaves us with the datasets described in Table. For a more detailed description, we refer to Appendix."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "005cca3c8ab6c3a166e315547a2259020f318ffb",
+    "paper_id": "2003.04642",
+    "text": "How does proposed qualitative annotation schema looks like?",
+    "gold_answers": [
+      "The resulting taxonomy of the framework is shown in Figure",
+      ""
+    ],
+    "gold_evidence": [
+      "In this section we describe a methodology to categorise gold standards according to linguistic complexity, required reasoning and background knowledge, and their factual correctness. Specifically, we use those dimensions as high-level categories of a qualitative annotation schema for annotating question, expected answer and the corresponding context. We further enrich the qualitative annotations by a metric based on lexical cues in order to approximate a lower bound for the complexity of the reading comprehension task. By sampling entries from each gold standard and annotating them, we obtain measurable results and thus are able to make observations about the challenges present in that gold standard data.",
+      "The resulting taxonomy of the framework is shown in Figure. The full catalogue of features, their description, detailed annotation guideline as well as illustrating examples can be found in Appendix."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "9b97805a0c093df405391a85e4d3ab447671c86a",
+    "paper_id": "1904.07904",
+    "text": "What evaluation metrics were used?",
+    "gold_answers": [
+      "Exact Match (EM) Macro-averaged F1 scores (F1)",
+      "Exact Match (EM) and Macro-averaged F1 scores (F1)"
+    ],
+    "gold_evidence": [
+      "The most intuitive way to evaluate the text answer is to directly compute the Exact Match (EM) and Macro-averaged F1 scores (F1) between the predicted text answer and the ground-truth text answer. We used the standard evaluation script from SQuAD to evaluate the performance."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "38f58f13c7f23442d5952c8caf126073a477bac0",
+    "paper_id": "1904.07904",
+    "text": "What was the score of the proposed model?",
+    "gold_answers": [
+      "Best results authors obtain is EM 51.10 and F1 63.11",
+      "EM Score of 51.10"
+    ],
+    "gold_evidence": [
+      "To better demonstrate the effectiveness of the proposed model, we compare with baselines and show the results in Table. The baselines are: (a) trained on S-SQuAD, (b) trained on T-SQuAD and then fine-tuned on S-SQuAD, and (c) previous best model trained on S-SQuAD by using Dr.QA. We also compare to the approach proposed by Lan et al. in the row (d). This approach is originally proposed for spoken language understanding, and we adopt the same approach on the setting here. The approach models domain-specific features from the source and target domains separately by two different embedding encoders with a shared embedding encoder for modeling domain-general features. The domain-general parameters are adversarially trained by domain discriminator."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "7ee5c45b127fb284a4a9e72bb9b980a602f7445a",
+    "paper_id": "1904.07904",
+    "text": "What was the previous best model?",
+    "gold_answers": [
+      "(c) previous best model trained on S-SQuAD by using Dr.QA"
+    ],
+    "gold_evidence": [
+      "Row (e) is the model that the weights of all layers are tied between the source domain and the target domain. Row (f) uses the same architecture as row (e) with an additional domain discriminator applied to the embedding encoder. It can be found that row (f) outperforms row (e), indicating that the proposed domain adversarial learning is helpful. Therefore, our following experiments contain domain adversarial learning. The proposed approach (row (f)) outperforms previous best model (row (c)) by 2% EM score and over 1.5% F1 score. We also show the results of applying the domain discriminator to the top of context query attention layer in row (g), which obtains poor performance. To sum it up, incorporating adversarial learning by applying the domain discriminator on top of the embedding encoder layer is effective.",
+      "To better demonstrate the effectiveness of the proposed model, we compare with baselines and show the results in Table. The baselines are: (a) trained on S-SQuAD, (b) trained on T-SQuAD and then fine-tuned on S-SQuAD, and (c) previous best model trained on S-SQuAD by using Dr.QA. We also compare to the approach proposed by Lan et al. in the row (d). This approach is originally proposed for spoken language understanding, and we adopt the same approach on the setting here. The approach models domain-specific features from the source and target domains separately by two different embedding encoders with a shared embedding encoder for modeling domain-general features. The domain-general parameters are adversarially trained by domain discriminator."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "ddf5e1f600b9ce2e8f63213982ef4209bab01fd8",
+    "paper_id": "1904.07904",
+    "text": "Which datasets did they use for evaluation?",
+    "gold_answers": [
+      "Spoken-SQuAD testing set",
+      "Spoken-SQuAD"
+    ],
+    "gold_evidence": [
+      "Spoken-SQuAD is chosen as the target domain data for training and testing. Spoken-SQuAD is an automatically generated corpus in which the document is in spoken form and the question is in text form. The reference transcriptions are from SQuAD. There are 37,111 and 5,351 question answer pairs in the training and testing sets respectively, and the word error rate (WER) of both sets is around 22.7%.",
+      "The original SQuAD, Text-SQuAD, is chosen as the source domain data, where only question answering pairs appearing in Spoken-SQuAD are utilized. In our task setting, during training we train the proposed QA model on both Text-SQuAD and Spoken-SQuAD training sets. While in the testing stage, we evaluate the performance on Spoken-SQuAD testing set."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "ceb4bac1f6c506b5dab37607354530faee02ccac",
+    "paper_id": "1910.05603",
+    "text": "What is the performance reported for the best models in the VLSP 2018 and VLSP 2019 challenges?",
+    "gold_answers": [],
+    "gold_evidence": [],
+    "unanswerable": true
+  },
+  {
+    "question_id": "91bc8c0bc1634045177065536dd311f89134630b",
+    "paper_id": "1910.05603",
+    "text": "Is the model tested against any baseline?",
+    "gold_answers": [
+      "No",
+      "No"
+    ],
+    "gold_evidence": [
+      "For each domain text data, we train an n-gram language modelBIBREF1 that is optimized for that domain. As the results, we have more than 10 language models. These language models are combined based on perplexity calculated on a small text of a domain that we want to optimize for.",
+      "To further improve the performance, we adopt system combination on the decoding lattice level. By combining systems, we can take advantage of the strength of each model that is optimized for different domains. The results for 2 test sets is showed on Table and."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "fe1dcd6ef1f8618bbceee418f07cafe63a8efe08",
+    "paper_id": "1910.05603",
+    "text": "What is the language model combination technique used in the paper?",
+    "gold_answers": [
+      "system combination on the decoding lattice level combination weights",
+      "system combination on the decoding lattice level"
+    ],
+    "gold_evidence": [
+      "As we can see, for both test sets, system combination significantly reduce the WER. The best result for vlsp2018 of 4.85% WER is obtained by the combination weights 0.6:0.4 where 0.6 is given to the general language model and 0.4 is given to the conversation one. On the vlsp2019 set, the ratio is change slightly by 0.7:0.3 to deliver the best result of 15.09%.",
+      "To further improve the performance, we adopt system combination on the decoding lattice level. By combining systems, we can take advantage of the strength of each model that is optimized for different domains. The results for 2 test sets is showed on Table and."
+    ],
+    "unanswerable": false
+  },
+  {
+    "question_id": "53f74250948015c394e7b8438a2041fdeb330911",
+    "paper_id": "1910.05603",
+    "text": "What are the deep learning architectures used in the task?",
+    "gold_answers": [
+      "DNN-based acoustic model"
+    ],
+    "gold_evidence": [
+      "We adopt a DNN-based acoustic model with 11 hidden layers and the alignment used to train the model is derived from a HMM-GMM model trained with SAT criterion. In a conventional Gaussian Mixture Model - Hidden Markov Model (GMM-HMM) acoustic model, the state emission log-likelihood of the observation feature vector $o_t$ for certain tied state $s_j$ of HMMs at time $t$ is computed as"
+    ],
+    "unanswerable": false
+  }
+]

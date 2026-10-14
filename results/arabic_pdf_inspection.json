@@ -1,0 +1,958 @@
+{
+  "created_at": "2026-10-11T00:25:20",
+  "settings": {
+    "folder": "data\\arabic\\humyn",
+    "sample_count": 8,
+    "ocr_languages": "ara+eng",
+    "agreement": "Share of distinct normalized words of one reading that also appear in the other; no ground truth is involved"
+  },
+  "files": [
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-1.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-2.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-3.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-4.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-5.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-6.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-7.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-8.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-9.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-10.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-11.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-12.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-13.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-14.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-15.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-16.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-17.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-18.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-19.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-20.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-21.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-22.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-23.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-24.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-25.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-26.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-27.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-28.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-29.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-30.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-31.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-32.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-33.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-34.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-35.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-36.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-37.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-38.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-39.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-40.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-41.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-42.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-43.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-44.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-45.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-46.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-47.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-48.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-49.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-50.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-51.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-52.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-53.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-54.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-55.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-56.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-57.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-58.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-59.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-60.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-61.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-62.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-63.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-64.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-65.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-66.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-67.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-68.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-69.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-70.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-71.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-72.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-73.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-74.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-75.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-76.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-77.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-78.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-79.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-80.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-81.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-82.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-83.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-84.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-85.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-86.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-87.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-88.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-89.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-90.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-91.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-92.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-93.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-94.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-95.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-96.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-97.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-98.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-99.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-100.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-101.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-102.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-103.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-104.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-105.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-106.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-107.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-108.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-109.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-110.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-111.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-112.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-113.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-114.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-115.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-116.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-117.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-118.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-119.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-120.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-121.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-122.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-123.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-124.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-125.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-126.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-127.pdf",
+      "pages": 1,
+      "text_chars": 201,
+      "arabic_share": 0.0,
+      "images": 2
+    }
+  ],
+  "comparisons": [
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-1.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 283,
+      "layer_words_found_in_ocr": 0.957,
+      "ocr_words_found_in_layer": 0.524
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-19.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 408,
+      "layer_words_found_in_ocr": 0.913,
+      "ocr_words_found_in_layer": 0.309
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-37.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 524,
+      "layer_words_found_in_ocr": 0.913,
+      "ocr_words_found_in_layer": 0.263
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-55.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 598,
+      "layer_words_found_in_ocr": 0.913,
+      "ocr_words_found_in_layer": 0.219
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-73.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 484,
+      "layer_words_found_in_ocr": 0.957,
+      "ocr_words_found_in_layer": 0.282
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-91.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 303,
+      "layer_words_found_in_ocr": 0.957,
+      "ocr_words_found_in_layer": 0.478
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-109.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 655,
+      "layer_words_found_in_ocr": 0.913,
+      "ocr_words_found_in_layer": 0.25
+    },
+    {
+      "file": "549_01_Lessons_in_Arabic_Language-127.pdf",
+      "layer_chars": 201,
+      "ocr_chars": 320,
+      "layer_words_found_in_ocr": 0.87,
+      "ocr_words_found_in_layer": 0.4
+    }
+  ]
+}

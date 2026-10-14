@@ -1,0 +1,523 @@
+{
+  "created_at": "2026-10-09T11:34:51",
+  "settings": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_weight": 0.5,
+    "chunk_sizes": [
+      150,
+      200,
+      250,
+      300
+    ],
+    "overlaps": [
+      0,
+      25,
+      50,
+      75
+    ],
+    "max_context_words": 1000,
+    "metric_definitions": {
+      "chunk_ceiling": "Share of questions where a single chunk of the right paper covers the evidence; needs no retrieval",
+      "strict_hits": "A question is a hit if one retrieved chunk covers the evidence (the evaluate.py metric)",
+      "pooled_hit@5": "A question is a hit if the top 5 chunks together cover the evidence, as the model sees them",
+      "context_words": "Average words sent to the model in paper-scoped mode",
+      "score": "Mean of the paper-scoped and global pooled_hit@5"
+    }
+  },
+  "baseline": {
+    "max_chunk_words": 250,
+    "overlap_words": 0,
+    "chunks": 192,
+    "avg_chunk_words": 230.0,
+    "chunk_ceiling": 0.8125,
+    "paper_scoped": {
+      "strict_hits": {
+        "hit@1": 0.2812,
+        "hit@3": 0.4375,
+        "hit@5": 0.6875
+      },
+      "pooled_hit@5": 0.7188,
+      "context_words": 1161
+    },
+    "global": {
+      "strict_hits": {
+        "hit@1": 0.0938,
+        "hit@3": 0.25,
+        "hit@5": 0.4375
+      },
+      "pooled_hit@5": 0.4375,
+      "context_words": 1151
+    },
+    "score": 0.5781
+  },
+  "best": {
+    "max_chunk_words": 250,
+    "overlap_words": 0,
+    "chunks": 192,
+    "avg_chunk_words": 230.0,
+    "chunk_ceiling": 0.8125,
+    "paper_scoped": {
+      "strict_hits": {
+        "hit@1": 0.2812,
+        "hit@3": 0.4375,
+        "hit@5": 0.6875
+      },
+      "pooled_hit@5": 0.7188,
+      "context_words": 1161
+    },
+    "global": {
+      "strict_hits": {
+        "hit@1": 0.0938,
+        "hit@3": 0.25,
+        "hit@5": 0.4375
+      },
+      "pooled_hit@5": 0.4375,
+      "context_words": 1151
+    },
+    "score": 0.5781
+  },
+  "best_within_context_budget": {
+    "max_chunk_words": 200,
+    "overlap_words": 0,
+    "chunks": 240,
+    "avg_chunk_words": 184.0,
+    "chunk_ceiling": 0.8125,
+    "paper_scoped": {
+      "strict_hits": {
+        "hit@1": 0.25,
+        "hit@3": 0.5,
+        "hit@5": 0.625
+      },
+      "pooled_hit@5": 0.6562,
+      "context_words": 925
+    },
+    "global": {
+      "strict_hits": {
+        "hit@1": 0.125,
+        "hit@3": 0.2812,
+        "hit@5": 0.3438
+      },
+      "pooled_hit@5": 0.3438,
+      "context_words": 931
+    },
+    "score": 0.5
+  },
+  "results": [
+    {
+      "max_chunk_words": 250,
+      "overlap_words": 0,
+      "chunks": 192,
+      "avg_chunk_words": 230.0,
+      "chunk_ceiling": 0.8125,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.2812,
+          "hit@3": 0.4375,
+          "hit@5": 0.6875
+        },
+        "pooled_hit@5": 0.7188,
+        "context_words": 1161
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.0938,
+          "hit@3": 0.25,
+          "hit@5": 0.4375
+        },
+        "pooled_hit@5": 0.4375,
+        "context_words": 1151
+      },
+      "score": 0.5781
+    },
+    {
+      "max_chunk_words": 300,
+      "overlap_words": 0,
+      "chunks": 160,
+      "avg_chunk_words": 276.0,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.25,
+          "hit@3": 0.5625,
+          "hit@5": 0.6875
+        },
+        "pooled_hit@5": 0.6875,
+        "context_words": 1411
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.2812,
+          "hit@5": 0.4375
+        },
+        "pooled_hit@5": 0.4375,
+        "context_words": 1414
+      },
+      "score": 0.5625
+    },
+    {
+      "max_chunk_words": 300,
+      "overlap_words": 50,
+      "chunks": 186,
+      "avg_chunk_words": 271.4,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.2812,
+          "hit@3": 0.5,
+          "hit@5": 0.6875
+        },
+        "pooled_hit@5": 0.6875,
+        "context_words": 1415
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.2812,
+          "hit@5": 0.375
+        },
+        "pooled_hit@5": 0.375,
+        "context_words": 1397
+      },
+      "score": 0.5312
+    },
+    {
+      "max_chunk_words": 250,
+      "overlap_words": 50,
+      "chunks": 229,
+      "avg_chunk_words": 225.7,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.1875,
+          "hit@3": 0.5625,
+          "hit@5": 0.6562
+        },
+        "pooled_hit@5": 0.6562,
+        "context_words": 1147
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.0312,
+          "hit@3": 0.3125,
+          "hit@5": 0.375
+        },
+        "pooled_hit@5": 0.375,
+        "context_words": 1130
+      },
+      "score": 0.5156
+    },
+    {
+      "max_chunk_words": 250,
+      "overlap_words": 25,
+      "chunks": 203,
+      "avg_chunk_words": 228.3,
+      "chunk_ceiling": 0.8125,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.25,
+          "hit@3": 0.5,
+          "hit@5": 0.5625
+        },
+        "pooled_hit@5": 0.625,
+        "context_words": 1152
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.1562,
+          "hit@3": 0.2812,
+          "hit@5": 0.375
+        },
+        "pooled_hit@5": 0.4062,
+        "context_words": 1157
+      },
+      "score": 0.5156
+    },
+    {
+      "max_chunk_words": 300,
+      "overlap_words": 25,
+      "chunks": 167,
+      "avg_chunk_words": 275.8,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.2188,
+          "hit@3": 0.5312,
+          "hit@5": 0.6875
+        },
+        "pooled_hit@5": 0.6875,
+        "context_words": 1409
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.0938,
+          "hit@3": 0.25,
+          "hit@5": 0.3438
+        },
+        "pooled_hit@5": 0.3438,
+        "context_words": 1397
+      },
+      "score": 0.5156
+    },
+    {
+      "max_chunk_words": 200,
+      "overlap_words": 0,
+      "chunks": 240,
+      "avg_chunk_words": 184.0,
+      "chunk_ceiling": 0.8125,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.25,
+          "hit@3": 0.5,
+          "hit@5": 0.625
+        },
+        "pooled_hit@5": 0.6562,
+        "context_words": 925
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.2812,
+          "hit@5": 0.3438
+        },
+        "pooled_hit@5": 0.3438,
+        "context_words": 931
+      },
+      "score": 0.5
+    },
+    {
+      "max_chunk_words": 150,
+      "overlap_words": 50,
+      "chunks": 479,
+      "avg_chunk_words": 124.0,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.1562,
+          "hit@3": 0.4062,
+          "hit@5": 0.625
+        },
+        "pooled_hit@5": 0.625,
+        "context_words": 660
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.0938,
+          "hit@3": 0.2188,
+          "hit@5": 0.3438
+        },
+        "pooled_hit@5": 0.3438,
+        "context_words": 659
+      },
+      "score": 0.4844
+    },
+    {
+      "max_chunk_words": 300,
+      "overlap_words": 75,
+      "chunks": 203,
+      "avg_chunk_words": 272.2,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.2812,
+          "hit@3": 0.5625,
+          "hit@5": 0.625
+        },
+        "pooled_hit@5": 0.625,
+        "context_words": 1414
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.0938,
+          "hit@3": 0.3125,
+          "hit@5": 0.3438
+        },
+        "pooled_hit@5": 0.3438,
+        "context_words": 1431
+      },
+      "score": 0.4844
+    },
+    {
+      "max_chunk_words": 250,
+      "overlap_words": 75,
+      "chunks": 260,
+      "avg_chunk_words": 225.5,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.25,
+          "hit@3": 0.4688,
+          "hit@5": 0.5625
+        },
+        "pooled_hit@5": 0.5625,
+        "context_words": 1153
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.1562,
+          "hit@3": 0.25,
+          "hit@5": 0.3438
+        },
+        "pooled_hit@5": 0.3438,
+        "context_words": 1143
+      },
+      "score": 0.4531
+    },
+    {
+      "max_chunk_words": 200,
+      "overlap_words": 75,
+      "chunks": 353,
+      "avg_chunk_words": 179.9,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.1875,
+          "hit@3": 0.3125,
+          "hit@5": 0.5312
+        },
+        "pooled_hit@5": 0.5625,
+        "context_words": 910
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.1875,
+          "hit@5": 0.2812
+        },
+        "pooled_hit@5": 0.3125,
+        "context_words": 911
+      },
+      "score": 0.4375
+    },
+    {
+      "max_chunk_words": 150,
+      "overlap_words": 0,
+      "chunks": 332,
+      "avg_chunk_words": 133,
+      "chunk_ceiling": 0.7812,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.1562,
+          "hit@3": 0.4062,
+          "hit@5": 0.5
+        },
+        "pooled_hit@5": 0.5,
+        "context_words": 673
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.2188,
+          "hit@5": 0.3125
+        },
+        "pooled_hit@5": 0.3125,
+        "context_words": 670
+      },
+      "score": 0.4062
+    },
+    {
+      "max_chunk_words": 200,
+      "overlap_words": 50,
+      "chunks": 303,
+      "avg_chunk_words": 178.4,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.4688,
+          "hit@5": 0.5312
+        },
+        "pooled_hit@5": 0.5312,
+        "context_words": 911
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.0938,
+          "hit@3": 0.2188,
+          "hit@5": 0.2812
+        },
+        "pooled_hit@5": 0.2812,
+        "context_words": 907
+      },
+      "score": 0.4062
+    },
+    {
+      "max_chunk_words": 150,
+      "overlap_words": 75,
+      "chunks": 621,
+      "avg_chunk_words": 125.0,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.25,
+          "hit@3": 0.375,
+          "hit@5": 0.5
+        },
+        "pooled_hit@5": 0.5,
+        "context_words": 651
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.1562,
+          "hit@3": 0.1875,
+          "hit@5": 0.2812
+        },
+        "pooled_hit@5": 0.2812,
+        "context_words": 647
+      },
+      "score": 0.3906
+    },
+    {
+      "max_chunk_words": 200,
+      "overlap_words": 25,
+      "chunks": 261,
+      "avg_chunk_words": 180.5,
+      "chunk_ceiling": 0.8438,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.2188,
+          "hit@3": 0.4062,
+          "hit@5": 0.5
+        },
+        "pooled_hit@5": 0.5,
+        "context_words": 910
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.1875,
+          "hit@5": 0.2812
+        },
+        "pooled_hit@5": 0.2812,
+        "context_words": 909
+      },
+      "score": 0.3906
+    },
+    {
+      "max_chunk_words": 150,
+      "overlap_words": 25,
+      "chunks": 385,
+      "avg_chunk_words": 125.1,
+      "chunk_ceiling": 0.8125,
+      "paper_scoped": {
+        "strict_hits": {
+          "hit@1": 0.125,
+          "hit@3": 0.3438,
+          "hit@5": 0.5
+        },
+        "pooled_hit@5": 0.5,
+        "context_words": 676
+      },
+      "global": {
+        "strict_hits": {
+          "hit@1": 0.0625,
+          "hit@3": 0.1875,
+          "hit@5": 0.25
+        },
+        "pooled_hit@5": 0.25,
+        "context_words": 665
+      },
+      "score": 0.375
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "created_at": "2026-10-08T13:38:36",
+  "source": "QASPER paper ids are arXiv ids; PDFs come from arxiv.org",
+  "papers": [
+    {
+      "id": "1704.06194",
+      "title": "Improved Neural Relation Detection for Knowledge Base Question Answering",
+      "file": "data/pdfs/1704.06194.pdf",
+      "source_url": "https://arxiv.org/pdf/1704.06194",
+      "status": "downloaded",
+      "bytes": 497850,
+      "sha256": "bc34b62565b3c0adb10bd495455c72633f7534283e397ce794e60c0dc3495819"
+    },
+    {
+      "id": "2003.03106",
+      "title": "Sensitive Data Detection and Classification in Spanish Clinical Text: Experiments with BERT",
+      "file": "data/pdfs/2003.03106.pdf",
+      "source_url": "https://arxiv.org/pdf/2003.03106",
+      "status": "downloaded",
+      "bytes": 300931,
+      "sha256": "e2b874aa9653ab7eb23ab8472f073041c384097ccbb405d88df29acf3ace601b"
+    },
+    {
+      "id": "1912.13337",
+      "title": "What Does My QA Model Know? Devising Controlled Probes using Expert Knowledge",
+      "file": "data/pdfs/1912.13337.pdf",
+      "source_url": "https://arxiv.org/pdf/1912.13337",
+      "status": "downloaded",
+      "bytes": 3921849,
+      "sha256": "1ff80ee47dad490f76e2d62e9b1876cd6337b09d68f623c8051dd8dffc4eb6fd"
+    },
+    {
+      "id": "1909.09587",
+      "title": "Zero-shot Reading Comprehension by Cross-lingual Transfer Learning with Multi-lingual Language Representation Model",
+      "file": "data/pdfs/1909.09587.pdf",
+      "source_url": "https://arxiv.org/pdf/1909.09587",
+      "status": "downloaded",
+      "bytes": 207921,
+      "sha256": "7d84ea44e957839008676c367cf7f1065bb53c6ae36947ca3d24ebf012fea84c"
+    },
+    {
+      "id": "1911.02855",
+      "title": "Dice Loss for Data-imbalanced NLP Tasks",
+      "file": "data/pdfs/1911.02855.pdf",
+      "source_url": "https://arxiv.org/pdf/1911.02855",
+      "status": "downloaded",
+      "bytes": 284395,
+      "sha256": "e4bf322de829dfa706cf9fdea34e7cfa4e7a82691396c6280fbd013343931931"
+    },
+    {
+      "id": "2003.04642",
+      "title": "A Framework for Evaluation of Machine Reading Comprehension Gold Standards",
+      "file": "data/pdfs/2003.04642.pdf",
+      "source_url": "https://arxiv.org/pdf/2003.04642",
+      "status": "downloaded",
+      "bytes": 291586,
+      "sha256": "591d2635b92a50f8440f2b47fb0d311db59bb0fe535bea852fa14312cf98a9b1"
+    },
+    {
+      "id": "1904.07904",
+      "title": "Mitigating the Impact of Speech Recognition Errors on Spoken Question Answering by Adversarial Domain Adaptation",
+      "file": "data/pdfs/1904.07904.pdf",
+      "source_url": "https://arxiv.org/pdf/1904.07904",
+      "status": "downloaded",
+      "bytes": 345956,
+      "sha256": "ad9d00fde56bd937f901f2dc443eb70408cadb90d6a0b32bec39dcec1c169856"
+    },
+    {
+      "id": "1910.05603",
+      "title": "VAIS ASR: Building a conversational speech recognition system using language model combination",
+      "file": "data/pdfs/1910.05603.pdf",
+      "source_url": "https://arxiv.org/pdf/1910.05603",
+      "status": "downloaded",
+      "bytes": 172396,
+      "sha256": "f618b4b9c686f01d5da7208d8d5b72d3a4e37bc4c9cd00ae218b45af158ff5d5"
+    }
+  ]
+}

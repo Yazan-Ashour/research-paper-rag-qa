@@ -1,0 +1,205 @@
+{
+  "created_at": "2026-10-12T00:54:38",
+  "settings": {
+    "embedding_model": "BAAI/bge-m3",
+    "hybrid_dense_weight": 1.0,
+    "articles": 8,
+    "questions": 144,
+    "chunk_words": 200,
+    "ngram_size": 3,
+    "ground_truth": "The ARCD paragraphs used to generate the PDFs, so extraction is scored against the exact source text",
+    "metric_definitions": {
+      "word_recall": "Mean share of each paragraph's distinct normalized words found in the extracted text",
+      "ngram_recall": "Mean share of each paragraph's normalized word 3-grams found in the extracted text, which is sensitive to word order",
+      "evidence_ceiling": "Share of questions whose paragraph has 3-gram recall of at least 0.5; the ceiling for retrieval",
+      "hit@k": "A question is a hit if one retrieved chunk covers at least half of its paragraph"
+    }
+  },
+  "results": [
+    {
+      "source": "digital",
+      "extractor": "pymupdf",
+      "extraction_seconds": 0.14,
+      "chunks": 29,
+      "extraction": {
+        "word_recall": 0.8812,
+        "ngram_recall": 0.6881,
+        "evidence_ceiling": 0.875
+      },
+      "retrieval": {
+        "dense": {
+          "paper_scoped": {
+            "hit@1": 0.5347,
+            "hit@3": 0.7292,
+            "hit@5": 0.7292
+          },
+          "global": {
+            "hit@1": 0.5208,
+            "hit@3": 0.7153,
+            "hit@5": 0.7222
+          }
+        },
+        "hybrid": {
+          "paper_scoped": {
+            "hit@1": 0.5347,
+            "hit@3": 0.7292,
+            "hit@5": 0.7292
+          },
+          "global": {
+            "hit@1": 0.5208,
+            "hit@3": 0.7153,
+            "hit@5": 0.7222
+          }
+        }
+      }
+    },
+    {
+      "source": "digital",
+      "extractor": "pypdf",
+      "extraction_seconds": 1.26,
+      "chunks": 24,
+      "extraction": {
+        "word_recall": 0.8811,
+        "ngram_recall": 0.7975,
+        "evidence_ceiling": 0.9375
+      },
+      "retrieval": {
+        "dense": {
+          "paper_scoped": {
+            "hit@1": 0.6111,
+            "hit@3": 0.8333,
+            "hit@5": 0.8333
+          },
+          "global": {
+            "hit@1": 0.5903,
+            "hit@3": 0.8056,
+            "hit@5": 0.8194
+          }
+        },
+        "hybrid": {
+          "paper_scoped": {
+            "hit@1": 0.6111,
+            "hit@3": 0.8333,
+            "hit@5": 0.8333
+          },
+          "global": {
+            "hit@1": 0.5903,
+            "hit@3": 0.8056,
+            "hit@5": 0.8194
+          }
+        }
+      }
+    },
+    {
+      "source": "digital",
+      "extractor": "ocr_ara",
+      "extraction_seconds": 28.94,
+      "chunks": 29,
+      "extraction": {
+        "word_recall": 0.9648,
+        "ngram_recall": 0.8933,
+        "evidence_ceiling": 1.0
+      },
+      "retrieval": {
+        "dense": {
+          "paper_scoped": {
+            "hit@1": 0.7083,
+            "hit@3": 0.9028,
+            "hit@5": 0.9167
+          },
+          "global": {
+            "hit@1": 0.6736,
+            "hit@3": 0.8889,
+            "hit@5": 0.9028
+          }
+        },
+        "hybrid": {
+          "paper_scoped": {
+            "hit@1": 0.7083,
+            "hit@3": 0.9028,
+            "hit@5": 0.9167
+          },
+          "global": {
+            "hit@1": 0.6736,
+            "hit@3": 0.8889,
+            "hit@5": 0.9028
+          }
+        }
+      }
+    },
+    {
+      "source": "scan",
+      "extractor": "pymupdf",
+      "extraction_seconds": 0.1,
+      "chunks": 0,
+      "extraction": {
+        "word_recall": 0.0,
+        "ngram_recall": 0.0,
+        "evidence_ceiling": 0.0
+      },
+      "retrieval": {
+        "dense": {
+          "paper_scoped": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0
+          },
+          "global": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0
+          }
+        },
+        "hybrid": {
+          "paper_scoped": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0
+          },
+          "global": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0
+          }
+        }
+      }
+    },
+    {
+      "source": "scan",
+      "extractor": "ocr_ara",
+      "extraction_seconds": 31.06,
+      "chunks": 29,
+      "extraction": {
+        "word_recall": 0.9706,
+        "ngram_recall": 0.9072,
+        "evidence_ceiling": 1.0
+      },
+      "retrieval": {
+        "dense": {
+          "paper_scoped": {
+            "hit@1": 0.7431,
+            "hit@3": 0.9514,
+            "hit@5": 0.9583
+          },
+          "global": {
+            "hit@1": 0.7153,
+            "hit@3": 0.9375,
+            "hit@5": 0.9444
+          }
+        },
+        "hybrid": {
+          "paper_scoped": {
+            "hit@1": 0.7431,
+            "hit@3": 0.9514,
+            "hit@5": 0.9583
+          },
+          "global": {
+            "hit@1": 0.7153,
+            "hit@3": 0.9375,
+            "hit@5": 0.9444
+          }
+        }
+      }
+    }
+  ]
+}

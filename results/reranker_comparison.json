@@ -1,0 +1,334 @@
+{
+  "created_at": "2026-10-14T14:44:35",
+  "settings": {
+    "embedding_model": "BAAI/bge-m3",
+    "reranker": "BAAI/bge-reranker-v2-m3",
+    "candidate_sizes": [
+      10,
+      20,
+      30
+    ],
+    "num_chunks": 192,
+    "note": "Same hit definition as evaluate.py. Scores after reranking are probabilities."
+  },
+  "first_stage_recall": {
+    "english_paper_scoped": {
+      "recall@5": 0.6875,
+      "recall@10": 0.7812,
+      "recall@20": 0.8125,
+      "recall@30": 0.8125
+    },
+    "english_global": {
+      "recall@5": 0.4688,
+      "recall@10": 0.5312,
+      "recall@20": 0.5938,
+      "recall@30": 0.5938
+    },
+    "arabic_paper_scoped": {
+      "recall@5": 0.7188,
+      "recall@10": 0.8125,
+      "recall@20": 0.8125,
+      "recall@30": 0.8125
+    },
+    "arabic_global": {
+      "recall@5": 0.5,
+      "recall@10": 0.5312,
+      "recall@20": 0.5625,
+      "recall@30": 0.625
+    }
+  },
+  "configurations": {
+    "english_paper_scoped": {
+      "no_reranker": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 6,
+          "hit@3": 18,
+          "hit@5": 22
+        },
+        "hit_rates": {
+          "hit@1": 0.1875,
+          "hit@3": 0.5625,
+          "hit@5": 0.6875
+        },
+        "seconds_per_question": 0.18
+      },
+      "rerank_10": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 7,
+          "hit@3": 13,
+          "hit@5": 20
+        },
+        "hit_rates": {
+          "hit@1": 0.2188,
+          "hit@3": 0.4062,
+          "hit@5": 0.625
+        },
+        "seconds_per_question": 11.61,
+        "vs_baseline_hit@5": {
+          "gained": 1,
+          "lost": 3
+        }
+      },
+      "rerank_20": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 8,
+          "hit@3": 14,
+          "hit@5": 20
+        },
+        "hit_rates": {
+          "hit@1": 0.25,
+          "hit@3": 0.4375,
+          "hit@5": 0.625
+        },
+        "seconds_per_question": 8.35,
+        "vs_baseline_hit@5": {
+          "gained": 2,
+          "lost": 4
+        }
+      },
+      "rerank_30": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 8,
+          "hit@3": 14,
+          "hit@5": 20
+        },
+        "hit_rates": {
+          "hit@1": 0.25,
+          "hit@3": 0.4375,
+          "hit@5": 0.625
+        },
+        "seconds_per_question": 6.06,
+        "vs_baseline_hit@5": {
+          "gained": 2,
+          "lost": 4
+        }
+      }
+    },
+    "english_global": {
+      "no_reranker": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 2,
+          "hit@3": 12,
+          "hit@5": 15
+        },
+        "hit_rates": {
+          "hit@1": 0.0625,
+          "hit@3": 0.375,
+          "hit@5": 0.4688
+        },
+        "seconds_per_question": 0.2
+      },
+      "rerank_10": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 5,
+          "hit@3": 9,
+          "hit@5": 14
+        },
+        "hit_rates": {
+          "hit@1": 0.1562,
+          "hit@3": 0.2812,
+          "hit@5": 0.4375
+        },
+        "seconds_per_question": 7.44,
+        "vs_baseline_hit@5": {
+          "gained": 2,
+          "lost": 3
+        }
+      },
+      "rerank_20": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 6,
+          "hit@3": 10,
+          "hit@5": 14
+        },
+        "hit_rates": {
+          "hit@1": 0.1875,
+          "hit@3": 0.3125,
+          "hit@5": 0.4375
+        },
+        "seconds_per_question": 8.71,
+        "vs_baseline_hit@5": {
+          "gained": 2,
+          "lost": 3
+        }
+      },
+      "rerank_30": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 6,
+          "hit@3": 11,
+          "hit@5": 14
+        },
+        "hit_rates": {
+          "hit@1": 0.1875,
+          "hit@3": 0.3438,
+          "hit@5": 0.4375
+        },
+        "seconds_per_question": 10.62,
+        "vs_baseline_hit@5": {
+          "gained": 2,
+          "lost": 3
+        }
+      }
+    },
+    "arabic_paper_scoped": {
+      "no_reranker": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 8,
+          "hit@3": 19,
+          "hit@5": 23
+        },
+        "hit_rates": {
+          "hit@1": 0.25,
+          "hit@3": 0.5938,
+          "hit@5": 0.7188
+        },
+        "seconds_per_question": 0.17
+      },
+      "rerank_10": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 7,
+          "hit@3": 18,
+          "hit@5": 21
+        },
+        "hit_rates": {
+          "hit@1": 0.2188,
+          "hit@3": 0.5625,
+          "hit@5": 0.6562
+        },
+        "seconds_per_question": 11.19,
+        "vs_baseline_hit@5": {
+          "gained": 1,
+          "lost": 3
+        }
+      },
+      "rerank_20": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 9,
+          "hit@3": 19,
+          "hit@5": 22
+        },
+        "hit_rates": {
+          "hit@1": 0.2812,
+          "hit@3": 0.5938,
+          "hit@5": 0.6875
+        },
+        "seconds_per_question": 8.16,
+        "vs_baseline_hit@5": {
+          "gained": 1,
+          "lost": 2
+        }
+      },
+      "rerank_30": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 9,
+          "hit@3": 18,
+          "hit@5": 22
+        },
+        "hit_rates": {
+          "hit@1": 0.2812,
+          "hit@3": 0.5625,
+          "hit@5": 0.6875
+        },
+        "seconds_per_question": 5.1,
+        "vs_baseline_hit@5": {
+          "gained": 1,
+          "lost": 2
+        }
+      }
+    },
+    "arabic_global": {
+      "no_reranker": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 4,
+          "hit@3": 11,
+          "hit@5": 16
+        },
+        "hit_rates": {
+          "hit@1": 0.125,
+          "hit@3": 0.3438,
+          "hit@5": 0.5
+        },
+        "seconds_per_question": 0.16
+      },
+      "rerank_10": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 8,
+          "hit@3": 13,
+          "hit@5": 14
+        },
+        "hit_rates": {
+          "hit@1": 0.25,
+          "hit@3": 0.4062,
+          "hit@5": 0.4375
+        },
+        "seconds_per_question": 6.48,
+        "vs_baseline_hit@5": {
+          "gained": 0,
+          "lost": 2
+        }
+      },
+      "rerank_20": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 6,
+          "hit@3": 10,
+          "hit@5": 14
+        },
+        "hit_rates": {
+          "hit@1": 0.1875,
+          "hit@3": 0.3125,
+          "hit@5": 0.4375
+        },
+        "seconds_per_question": 9.07,
+        "vs_baseline_hit@5": {
+          "gained": 0,
+          "lost": 2
+        }
+      },
+      "rerank_30": {
+        "questions": 32,
+        "hit_counts": {
+          "hit@1": 5,
+          "hit@3": 11,
+          "hit@5": 14
+        },
+        "hit_rates": {
+          "hit@1": 0.1562,
+          "hit@3": 0.3438,
+          "hit@5": 0.4375
+        },
+        "seconds_per_question": 10.05,
+        "vs_baseline_hit@5": {
+          "gained": 1,
+          "lost": 3
+        }
+      }
+    }
+  },
+  "refusal_scores": {
+    "in_scope_min": 0.0181,
+    "in_scope_median": 0.827,
+    "out_of_scope_max": 0.0353,
+    "out_of_scope_scores": [
+      0.0135,
+      0.0191,
+      0.0009,
+      0.0353,
+      0.0105
+    ]
+  }
+}

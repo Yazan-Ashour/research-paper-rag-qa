@@ -1,0 +1,799 @@
+{
+  "created_at": "2026-10-12T14:01:38",
+  "settings": {
+    "embedding_model": "BAAI/bge-m3",
+    "dense_weight": 1.0,
+    "corpus": "English QASPER papers (saved index); the questions are the Arabic translations",
+    "retrieval": "as configured in the saved index, paper-scoped for in-scope questions, top 5 chunks, identical context for every model",
+    "temperature": 0.1,
+    "max_tokens": 400,
+    "sample_seed": 42,
+    "in_scope_questions": 20,
+    "out_of_scope_questions": 5,
+    "metric_definitions": {
+      "arabic_answer_rate": "Share of non-refused answers written mostly in Arabic letters",
+      "stray_script_rate": "Share of non-refused answers containing letters that are neither Arabic nor Latin (garbled output)",
+      "citation_rate": "Share of non-refused answers containing a [n] citation",
+      "anchor_recall": "Mean share of the gold answer's numbers and acronyms (KBQA, F1, 0.5) found in the Arabic answer, over questions whose gold answer has any; refusals and empty answers count as 0",
+      "false_refusal_rate": "Share of in-scope questions where the model wrongly refused",
+      "correct_refusal_rate": "Share of out-of-scope questions the model refused",
+      "empty_answer_rate": "Share of in-scope questions with an empty answer"
+    },
+    "scoring_note": "Gold answers are English, so token F1 is not meaningful; read the saved answers to judge correctness"
+  },
+  "skipped_models": [],
+  "models": {
+    "llama3.2:3b": {
+      "summary": {
+        "arabic_answer_rate": 1.0,
+        "stray_script_rate": 0.0588,
+        "citation_rate": 0.0,
+        "anchor_recall": 0.4464,
+        "anchor_questions": 14,
+        "false_refusal_rate": 0.15,
+        "correct_refusal_rate": 0.4,
+        "empty_answer_rate": 0.0,
+        "avg_seconds_per_answer": 2.75,
+        "errors": 0
+      },
+      "in_scope_details": [
+        {
+          "question": "ما هي مجموعات البيانات السريرية المستخدمة في الورقة البحثية؟",
+          "question_en": "What are the clinical datasets used in the paper?",
+          "answer": "يتم استخدام Corpus NUBES-PHI و MEDDOCAN في الورقة البحثية.",
+          "gold_answers": [
+            "MEDDOCAN NUBes-PHI",
+            "MEDDOCAN NUBes"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 0.5,
+          "error": null
+        },
+        {
+          "question": "في أي مجموعات اختبار مرجعية حقّقوا أفضل أداء حتى الآن؟",
+          "question_en": "On which benchmarks they achieve the state of the art?",
+          "answer": "أدّى team Yih et al. إلى أفضل أداء حتى الآن في مجموعات اختبار مرجعية SimpleQuestions وWebQSP.",
+          "gold_answers": [
+            "SimpleQuestions WebQSP",
+            "WebQSP SimpleQuestions"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 1.6,
+          "error": null
+        },
+        {
+          "question": "ما هي المعايير الذهبية الحديثة لـ MRC التي جرى تحليلها؟",
+          "question_en": "What modern MRC gold standards are analyzed?",
+          "answer": "المعايير الذهبية الحديثة لـ MRC التي جرى تحليلها هي: معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير لتحليل المعايير الذهبية الحديثة، معايير",
+          "gold_answers": [
+            "fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations",
+            "MSMARCO, HOTPOTQA, RECORD, MULTIRC, NEWSQA, and DROP."
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.0,
+          "seconds": 9.2,
+          "error": null
+        },
+        {
+          "question": "هل تخضع مجموعات البيانات المبنية آلياً لمراقبة الجودة؟",
+          "question_en": "Are the automatically constructed datasets subject to quality control?",
+          "answer": "تجري مراقبة الجودة في مجموعة البيانات المبنية آلياً، ولكنها لا تتمكن من تصحيح الأخطاء بشكل دقيق. يُستخدم crowdsourcing لتحديد أداء الإنسان في مجموعة البيانات الرئيسية، ولكن يُعتبر هذا المنهج مُحدودًا فيما يتعلق بالجودة.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 2.4,
+          "error": null
+        },
+        {
+          "question": "ما هي معماريات التعلم العميق المستخدمة في هذه المهمة؟",
+          "question_en": "What are the deep learning architectures used in the task?",
+          "answer": "يستخدم المعماريات التعلمية العميقة 11 طبقات مخفية في المॉडيل الصوتي.",
+          "gold_answers": [
+            "DNN-based acoustic model"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": true,
+          "anchor_recall": 0.0,
+          "seconds": 1.52,
+          "error": null
+        },
+        {
+          "question": "ما هو أفضل نموذج سابق؟",
+          "question_en": "What was the previous best model?",
+          "answer": "النموذج الذي أظهر أفضل أداء هو Dr.QA، حيث أظهره النموذج في (c) أفضل أداء من (a) و (b) و (d) من حيث EM score (2%) و F1 score (1.5%).",
+          "gold_answers": [
+            "(c) previous best model trained on S-SQuAD by using Dr.QA"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.5,
+          "seconds": 2.1,
+          "error": null
+        },
+        {
+          "question": "ما هو أداء نموذج BERT في هذه المهمة؟",
+          "question_en": "What is the performance of BERT on the task?",
+          "answer": "أداء نموذج BERT في هذه المهمة يظهر أنه يؤدي بشكل جيد في تحديد المعلومات الحساسة في الملفات الطبية، حيث يفوز بجميع الأماكن باستثناء CRF و spaCy. يظهر أيضًا أن BERT يؤدي بشكل أفضل من CRF و spaCy، حيث يفوز ب 0.968 و 0.967 F1-score على التوالي في NUBES-PHI، و 0.968 و 0.972 F1-score على التوالي في MEDDOCAN 2019.",
+          "gold_answers": [
+            "F1 scores are: HUBES-PHI: Detection(0.965), Classification relaxed (0.95), Classification strict (0.937) Medoccan: Detection(0.972), Classification (0.967)",
+            "BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated Table"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.6,
+          "seconds": 3.63,
+          "error": null
+        },
+        {
+          "question": "هل جرى اختبار النموذج مقابل أي نموذج أساسي للمقارنة؟",
+          "question_en": "Is the model tested against any baseline?",
+          "answer": "لا، لم أجد أي إجابة في المستندات المقدمة حول ما إذا جرى اختبار النموذج مقابل أي نموذج أساسي للمقارنة.",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "refused": true,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 1.81,
+          "error": null
+        },
+        {
+          "question": "ما هو المكوّن الأساسي لأنظمة KBQA؟",
+          "question_en": "What is te core component for KBQA?",
+          "answer": "المكوّن الأساسي لأنظمة KBQA هو Relation Detection.",
+          "gold_answers": [
+            "answer questions by obtaining information from KB tuples",
+            "hierarchical matching between questions and relations with residual learning"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.0,
+          "seconds": 1.19,
+          "error": null
+        },
+        {
+          "question": "هل حاولوا تصحيح المعايير الذهبية (gold standards) لفهم المقروء الآلي (MRC) بناءً على نتائجهم؟",
+          "question_en": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "answer": "لم أجد أي إجابة في المستندات المقدمة حول ما حاولوا تصحيح المعايير الذهبية لفهم المقروء الآلي بناءً على نتائجهم.",
+          "gold_answers": [
+            "Yes",
+            "No"
+          ],
+          "refused": true,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 1.57,
+          "error": null
+        },
+        {
+          "question": "ما هي تحسينات مقياس F1 التي حققتها الطريقة في مهمة تحديد إعادة الصياغة (paraphrase identification)؟",
+          "question_en": "What are method improvements of F1 for paraphrase identification?",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "gold_answers": [
+            "Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP",
+            "+0.58"
+          ],
+          "refused": true,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.0,
+          "seconds": 1.4,
+          "error": null
+        },
+        {
+          "question": "ما الذي يرمز إليه الاختصار KBQA؟",
+          "question_en": "What does KBQA abbreviate for",
+          "answer": "يرمز الاختصار KBQA إلى نظام استفسار المعرفة.",
+          "gold_answers": [
+            "Knowledge Base Question Answering",
+            "Knowledge Base Question Answering"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 1.19,
+          "error": null
+        },
+        {
+          "question": "ما هي تحسينات F1 التي حققتها الطريقة في مهمة التعرّف على الكيانات المسمّاة (NER) لمجموعات البيانات الإنجليزية والصينية؟",
+          "question_en": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "answer": "تحسنت الطريقة F1 في مهمة التعرّف على الكيانات المسمّاة (NER) بمقدار 0.29، 0.96، 0.97، و 2.36 على التوالي على CoNLL2003، OntoNotes5.0، MSRA، و OntoNotes4.0، على التوالي.",
+          "gold_answers": [
+            "English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively",
+            "For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.9,
+          "seconds": 3.14,
+          "error": null
+        },
+        {
+          "question": "ما هو أداء النموذج في فهم المقروء باللغة الهدف؟",
+          "question_en": "What is the model performance on target language reading comprehension?",
+          "answer": "يظهر النموذج أداءً جيدًا في فهم المقروء باللغة الهدف، حيث يصل إجمالي إمتياز النموذج (EM) إلى 88.68 في اللغة الإنجليزية واللغة الصينية، و 25.67 في اللغة الصينية واللغة الصينية.",
+          "gold_answers": [
+            "Table Table",
+            "when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8 F1 score is only 44.1 for the model training on Zh-En"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.0,
+          "seconds": 2.4,
+          "error": null
+        },
+        {
+          "question": "ماذا يستخدمون في الإطار المقترح؟",
+          "question_en": "What they use in their propsoed framework?",
+          "answer": "يستخدمون deep bidirectional LSTMs (BiLSTMs) لتعلم مستويات مختلفة من تعبيرات السؤال لتحقيق تحليل متسلسلي بين المعلومات.",
+          "gold_answers": [
+            "break the relation names into word sequences relation-level and word-level relation representations bidirectional LSTMs (BiLSTMs) residual learning method",
+            "break the relation names into word sequences for question-relation matching build both relation-level and word-level relation representations use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations residual learning method for sequence matching a simple KBQA implementation composed of two-step relation detection"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 1.66,
+          "error": null
+        },
+        {
+          "question": "ما هي تقنية دمج النماذج اللغوية المستخدمة في الورقة؟",
+          "question_en": "What is the language model combination technique used in the paper?",
+          "answer": "تستخدم تقنية دمج النماذج اللغوية التي تمثلها في الورقة تقنية دمج النماذج اللغوية المزودة بالصيغة الصغيرة (SMALL) التي تمثلها في الورقة.",
+          "gold_answers": [
+            "system combination on the decoding lattice level combination weights",
+            "system combination on the decoding lattice level"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 2.15,
+          "error": null
+        },
+        {
+          "question": "كيف تُعدَّل الأوزان ديناميكياً؟",
+          "question_en": "How are weights dynamically adjusted?",
+          "answer": "نستخدم استراتيجية تعديل الأوزان الديناميكية لتعديل الأوزان، حيث يتم تعديل الأوزان بناءً على (1 −p)، حيث يقل الأوزان لسهل الأمثلة ويزداد لامثلة الصعبة، مما يساعد في تقليل تأثير الأمثلة السهلة.",
+          "gold_answers": [
+            "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+            "associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.25,
+          "seconds": 2.61,
+          "error": null
+        },
+        {
+          "question": "كيف يبدو مخطط التوسيم النوعي المقترح؟",
+          "question_en": "How does proposed qualitative annotation schema looks like?",
+          "answer": "المخطط المقترح يظهر كيفية تحليل معايير معادلة القراءة الحاسوبية (MRC) وتصنيفها. يُظهر المخطط أن معايير MRC تفتقر إلى معايير معادلة معادلة، ويتضمن تحليل معايير معادلة القراءة الحاسوبية وتصنيفها. يُظهر المخطط أن معايير MRC تفتقر إلى معايير معادلة معادلة، ويتضمن تحليل معايير معادلة القراءة الحاسوبية وتصنيفها.",
+          "gold_answers": [
+            "The resulting taxonomy of the framework is shown in Figure",
+            ""
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 3.58,
+          "error": null
+        },
+        {
+          "question": "ما هي أزواج اللغات (المصدر والهدف) المستخدمة في هذا العمل؟",
+          "question_en": "What source-target language pairs were used in this work? ",
+          "answer": "تم استخدام أزواج اللغات (المصدر والهدف) التالية في هذا العمل: إنجليزي - الصيني، وإنجليزي - الكوري، وإنجليزي - الصيني، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي - الكوري، وإنجليزي",
+          "gold_answers": [
+            "En-Fr, En-Zh, En-Jp, En-Kr, Zh-En, Zh-Fr, Zh-Jp, Zh-Kr to English, Chinese or Korean",
+            "English Chinese"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.0,
+          "seconds": 9.66,
+          "error": null
+        },
+        {
+          "question": "ما هي مجموعات البيانات التي استخدموها في التقييم؟",
+          "question_en": "Which datasets did they use for evaluation?",
+          "answer": "المجموعات البيانات التي استخدموها في التقييم هي Text-SQuAD و Spoken-SQuAD.",
+          "gold_answers": [
+            "Spoken-SQuAD testing set",
+            "Spoken-SQuAD"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": false,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 1.59,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "ما هي نقطة غليان الماء عند مستوى سطح البحر؟",
+          "answer": "الجواب هو: 100.0.",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "من كتب رواية دون كيخوته؟",
+          "answer": "يُعتبر Mike Kelley (American television writer/producer) ك مؤلف رواية دون كيخوته.",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "كيف أعدّ عجينة الخبز في المنزل؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما هي عاصمة أستراليا؟",
+          "answer": "الجواب هو Smyrna. [2] Smyrna هي مدينة تقع في ولاية جورجيا في الولايات المتحدة، وترتفع عن سطح البحر 305 مترًا. [1]",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "ما الفرق بين لغة بايثون ولغة جافا؟",
+          "answer": "لا يوجد أي إجابة في المستندات المقدمة حول الفرق بين لغة بايثون ولغة جافا.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    },
+    "gemma3:4b": {
+      "summary": {
+        "arabic_answer_rate": 1.0,
+        "stray_script_rate": 0.0,
+        "citation_rate": 1.0,
+        "anchor_recall": 0.6024,
+        "anchor_questions": 14,
+        "false_refusal_rate": 0.0,
+        "correct_refusal_rate": 0.8,
+        "empty_answer_rate": 0.0,
+        "avg_seconds_per_answer": 9.5,
+        "errors": 0
+      },
+      "in_scope_details": [
+        {
+          "question": "ما هي مجموعات البيانات السريرية المستخدمة في الورقة البحثية؟",
+          "question_en": "What are the clinical datasets used in the paper?",
+          "answer": "تستخدم الورقة البحثية مجموعتين من البيانات السريرية، وهما: NUBES-PHI و MEDDOCAN [1, 3, 5]. NUBES-PHI تتكون من حوالي 7,000 تقريرًا طبيًا إسبانيًا تم إضافتها إليها معلومات حساسة، بينما MEDDOCAN هي مجموعة بيانات تركيبية تم إنشاؤها من خلال خبراء في المستندات الطبية [2, 3].",
+          "gold_answers": [
+            "MEDDOCAN NUBes-PHI",
+            "MEDDOCAN NUBes"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 7.58,
+          "error": null
+        },
+        {
+          "question": "في أي مجموعات اختبار مرجعية حقّقوا أفضل أداء حتى الآن؟",
+          "question_en": "On which benchmarks they achieve the state of the art?",
+          "answer": "لقد حققوا أفضل أداء حتى الآن في مجموعتي اختبار SimpleQuestions و WebQSP [1, 2, 3].  أظهرت النتائج أن النموذج HR-BiLSTM حقق نتائج متقدمة في كلا المجموعتين، حيث بلغ أعلى أداء 93.3% في SimpleQuestions و 92.9% في WebQSP [2].",
+          "gold_answers": [
+            "SimpleQuestions WebQSP",
+            "WebQSP SimpleQuestions"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 7.49,
+          "error": null
+        },
+        {
+          "question": "ما هي المعايير الذهبية الحديثة لـ MRC التي جرى تحليلها؟",
+          "question_en": "What modern MRC gold standards are analyzed?",
+          "answer": "الجواب: تم تحليل ست مجموعات بيانات حديثة لـ MRC، وهي: SQUAD، RACE، NewsQA، TriviaQA، NarrativeQA، و MultiRC [1].  تضمنت هذه المجموعات بيانات من عام 2016 إلى 2019، وكانت تحتوي على ما لا يقل عن 20 اقتباسًا، وتم اختيارها بناءً على أساليب اختيار الإجابات [1].  كما تم اختيار 50 مجموعة من الأسئلة والإجابات والفقرات بشكل عشوائي من مجموعات التطوير المتاحة لهذه المجموعات [2].",
+          "gold_answers": [
+            "fit our problem definition and were published in the years 2016 to 2019, have at least $(2019 - publication\\ year) \\times 20$ citations",
+            "MSMARCO, HOTPOTQA, RECORD, MULTIRC, NEWSQA, and DROP."
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 10.25,
+          "error": null
+        },
+        {
+          "question": "هل تخضع مجموعات البيانات المبنية آلياً لمراقبة الجودة؟",
+          "question_en": "Are the automatically constructed datasets subject to quality control?",
+          "answer": "بالتأكيد، إليك الإجابة باللغة العربية بناءً على النصوص المقدمة:\n\nنعم، تخضع مجموعات البيانات التي تم إنشاؤها تلقائيًا لمراقبة الجودة، ولكن بطريقة مختلفة عن تلك التي يتم إنشاؤها من خلال التجميع. [3] يوضح النص أنهم يستخدمون crowdsourcing للحصول على تقديرات محافظة لأداء الإنسان على مجموعات التقييم الرئيسية الخاصة بهم، وذلك للمقارنة مع أداء النماذج، مع الإشارة إلى أن Khot et al. (2020) يستخدمون ممارسات قياسية في إنشاء مجموعات MCQA. [3]",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 10.97,
+          "error": null
+        },
+        {
+          "question": "ما هي معماريات التعلم العميق المستخدمة في هذه المهمة؟",
+          "question_en": "What are the deep learning architectures used in the task?",
+          "answer": "استنادًا إلى المستندات المقدمة، فإن المعماريات المستخدمة في هذه المهمة هي: نموذج التعلم العميق (DNN-based acoustic model) مع 11 طبقة مخفية [1]. كما تم استخدام نموذج HMM-GMM مع معيار SAT للتدريب [1].",
+          "gold_answers": [
+            "DNN-based acoustic model"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 6.38,
+          "error": null
+        },
+        {
+          "question": "ما هو أفضل نموذج سابق؟",
+          "question_en": "What was the previous best model?",
+          "answer": "النموذج الأفضل السابق هو النموذج (c) الذي تم تدريبه على S-SQuAD، والذي حقق نتيجة 54.83 في EM و 66.45 في F1 [1].  أظهرت التجارب أن هذا النموذج حقق تحسنًا بنسبة 2% في درجة EM و أكثر من 1.5% في درجة F1 مقارنة بالنموذج (f) الذي يستخدم التعلم المنافسي [1].",
+          "gold_answers": [
+            "(c) previous best model trained on S-SQuAD by using Dr.QA"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.5,
+          "seconds": 8.5,
+          "error": null
+        },
+        {
+          "question": "ما هو أداء نموذج BERT في هذه المهمة؟",
+          "question_en": "What is the performance of BERT on the task?",
+          "answer": "أداء نموذج BERT في هذه المهمة هو أنه يظهر قوة عالية في الحصول على نتائج جيدة دون الحاجة إلى تكييف خاص باللغة أو المجال، وذلك من خلال التدريب على البيانات المصنفة المقدمة [1، 4]. عندما تم تدريبه على 1% من مجموعة البيانات (230 مثالًا تدريبيًا)، فقد تكبد خسارة في درجة F1 تبلغ 7 نقاط فقط، بينما تكبدت نماذج CRF و spaCy خسائر تبلغ 32 و 39 نقطة على التوالي [2]. بالإضافة إلى ذلك، أظهر النموذج قوة عالية في الحفاظ على مستوى عالٍ من الاستدعاء (recall)، وهو أمر مرغوب فيه بشكل خاص عند إخفاء البيانات الحساسة، حيث أن تسريب البيانات الحساسة عن طريق الخطأ قد يكون أكثر خطورة من التشويه المفرط للنصوص غير الحساسة [5].",
+          "gold_answers": [
+            "F1 scores are: HUBES-PHI: Detection(0.965), Classification relaxed (0.95), Classification strict (0.937) Medoccan: Detection(0.972), Classification (0.967)",
+            "BERT remains only 0.3 F1-score points behind, and would have achieved the second position among all the MEDDOCAN shared task competitors. Taking into account that only 3% of the gold labels remain incorrectly annotated Table"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.2,
+          "seconds": 15.73,
+          "error": null
+        },
+        {
+          "question": "هل جرى اختبار النموذج مقابل أي نموذج أساسي للمقارنة؟",
+          "question_en": "Is the model tested against any baseline?",
+          "answer": "بالتأكيد، إليك الإجابة بناءً على النصوص المقدمة: [4] و [5]\n\nنعم، جرى اختبار النظام مقابل نموذج أساسي للمقارنة. فقد تم اختبار النظام مقابل نموذجين أساسيين: نموذج لغوي عام (General LM) ونموذج لغوي للمحادثة (Conversation LM) [4]، بالإضافة إلى استخدام بيانات صوتية تبلغ حوالي 3000 ساعة من الكلام من مختلف المجالات وأنماط الكلام [5].",
+          "gold_answers": [
+            "No",
+            "No"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 9.03,
+          "error": null
+        },
+        {
+          "question": "ما هو المكوّن الأساسي لأنظمة KBQA؟",
+          "question_en": "What is te core component for KBQA?",
+          "answer": "الأساس هو الكشف عن العلاقات (العلاقة). يوضح النص أن أنظمة KBQA تعتمد على مهمتين رئيسيتين: ربط الكلمات (n-grams) في الأسئلة مع الكيانات في قاعدة المعرفة (KB)، وتحديد العلاقة (relation) التي يشير إليها السؤال في قاعدة المعرفة (KB) [1]. بالإضافة إلى ذلك، يوضح النص أن هناك تحديات كبيرة في الكشف عن العلاقات في أنظمة KBQA مقارنة بالكشف عن العلاقات العامة بسبب عدد العلاقات الكبير في قواعد المعرفة (KB) مثل Freebase (6,000 علاقة) والعديد من الأسئلة تتطلب سلسلة من العلاقات بدلاً من علاقة واحدة [1, 2].",
+          "gold_answers": [
+            "answer questions by obtaining information from KB tuples",
+            "hierarchical matching between questions and relations with residual learning"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 12.24,
+          "error": null
+        },
+        {
+          "question": "هل حاولوا تصحيح المعايير الذهبية (gold standards) لفهم المقروء الآلي (MRC) بناءً على نتائجهم؟",
+          "question_en": "Have they made any attempt to correct MRC gold standards according to their findings? ",
+          "answer": "حاولوا تحليل المعايير الذهبية لفهم المقروء الآلي (MRC) بناءً على نتائجهم [1، 4]. وقد كشفوا عن مشاكل في دقة الحقائق، ووجود إشارات لغوية، ونقص في المعدّلات النحوية التي تغير المعنى في المعايير الذهبية المستخدمة [1، 4]. بالإضافة إلى ذلك، قاموا بتحرير مجموعة بيانات تتكون من 300 فقرة، أسئلة وإجابات، مع إرفاقها بتعليقات مفصلة باستخدام إطارهم المقترح، مما يمثل محاولة أولية لتطوير منهجية تقييم مشتركة للمعايير الذهبية لفهم المقروء الآلي [4].",
+          "gold_answers": [
+            "Yes",
+            "No"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 12.36,
+          "error": null
+        },
+        {
+          "question": "ما هي تحسينات مقياس F1 التي حققتها الطريقة في مهمة تحديد إعادة الصياغة (paraphrase identification)؟",
+          "question_en": "What are method improvements of F1 for paraphrase identification?",
+          "answer": "لقد حققت الطريقة تحسينات في مقياس F1 في مهمة تحديد إعادة الصياغة (paraphrase identification) بـ +1.46 على مجموعة بيانات QuoRef و +1.41 على مجموعة بيانات QuoRef [1].  كما حققت الطريقة نتائج 87.65 على مقياس F1 في مجموعة بيانات SQuAD v2.0 و 89.51 على مقياس F1 في مجموعة بيانات SQuAD v2.0 [1].",
+          "gold_answers": [
+            "Using DSC loss improves the F1 score by +0.58 for MRPC and +0.73 for QQP",
+            "+0.58"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.16666666666666666,
+          "seconds": 10.37,
+          "error": null
+        },
+        {
+          "question": "ما الذي يرمز إليه الاختصار KBQA؟",
+          "question_en": "What does KBQA abbreviate for",
+          "answer": "نظام الاستعلام عن المعرفة القائم على المعرفة (Knowledge Base Question Answering) [1].",
+          "gold_answers": [
+            "Knowledge Base Question Answering",
+            "Knowledge Base Question Answering"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 3.67,
+          "error": null
+        },
+        {
+          "question": "ما هي تحسينات F1 التي حققتها الطريقة في مهمة التعرّف على الكيانات المسمّاة (NER) لمجموعات البيانات الإنجليزية والصينية؟",
+          "question_en": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+          "answer": "أظهرت الطريقة تحسينات كبيرة في نتائج F1 في مهمة التعرّف على الكيانات المسمّاة (NER) على مجموعات البيانات الإنجليزية والصينية [4, 5].  في مجموعات البيانات الإنجليزية، حققت الطريقة تحسينات +0.84 و +0.96 و +0.97 و +2.36 على مجموعات بيانات SQuAD v1.1، SQuAD v2.0 و QuoRef على التوالي، بينما في مجموعات البيانات الصينية، حققت تحسينات +1.86 و +1.80 و +2.19 على مجموعات بيانات CTB5، CTB6 و UD1.4 على التوالي [5].",
+          "gold_answers": [
+            "English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively",
+            "For English datasets including CoNLL2003 and OntoNotes5.0, our proposed method outperforms BERT-MRCBIBREF38 by +0.29 and +0.96 respectively. huge performance boosts on Chinese datasets, achieving F1 improvements by +0.97 and +2.36 on MSRA and OntoNotes4.0, respectively"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.4,
+          "seconds": 14.75,
+          "error": null
+        },
+        {
+          "question": "ما هو أداء النموذج في فهم المقروء باللغة الهدف؟",
+          "question_en": "What is the model performance on target language reading comprehension?",
+          "answer": "أداء النموذج في فهم المقروء باللغة الهدف هو أن الأداء يتدهور عند ترجمة البيانات إلى اللغة الهدف [2]. كما أن الأداء ينخفض بشكل كبير عند اختبار النموذج على لغات لم يتم تدريبه عليها [2].",
+          "gold_answers": [
+            "Table Table",
+            "when testing on English, the F1 score of the model training on Chinese (Zh) is 53.8 F1 score is only 44.1 for the model training on Zh-En"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.0,
+          "seconds": 5.49,
+          "error": null
+        },
+        {
+          "question": "ماذا يستخدمون في الإطار المقترح؟",
+          "question_en": "What they use in their propsoed framework?",
+          "answer": "الاستجابة: بناءً على المستندات المقدمة، يركز هذا العمل على تطوير نموذج لأسئلة الكيانات المعروفة (KBQA) باستخدام تقنيات مثل الشبكات العصبية المتكررة ثنائية الاتجاه (BiLSTMs) والتعلم المتبقي. يحدد المستند أن هناك حاجة إلى معالجة التناقضات في نتائج ربط الكيانات (entity linking) من خلال تطبيق عتبة خاصة (θ = 1) على القيود المتعلقة بالتواريخ، بالإضافة إلى تصفية القيود المرتبطة بعقد الإجابة (answer nodes) بناءً على أنواع العلاقات. كما أن المستند يوضح أن هناك حاجة إلى مطابقة تسلسلية بين الكلمات في السؤال والكيانات في قاعدة المعرفة (KB) بسبب الاختلافات في طول الجمل ( [1] ).",
+          "gold_answers": [
+            "break the relation names into word sequences relation-level and word-level relation representations bidirectional LSTMs (BiLSTMs) residual learning method",
+            "break the relation names into word sequences for question-relation matching build both relation-level and word-level relation representations use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations residual learning method for sequence matching a simple KBQA implementation composed of two-step relation detection"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.6666666666666666,
+          "seconds": 14.66,
+          "error": null
+        },
+        {
+          "question": "ما هي تقنية دمج النماذج اللغوية المستخدمة في الورقة؟",
+          "question_en": "What is the language model combination technique used in the paper?",
+          "answer": "استخدمت الورقة تقنية دمج النماذج اللغوية (Language Model Combination Technique) [2].  أظهرت الدراسة أن استخدام نسب وزن 0.6:0.4 للنموذج اللغوي العام والنموذج اللغوي الخاص بالمحادثة أدى إلى تحسين أداء التعرف على الكلام في مجموعة بيانات VLSP 2019 بنسبة 15.09% [2].",
+          "gold_answers": [
+            "system combination on the decoding lattice level combination weights",
+            "system combination on the decoding lattice level"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 8.27,
+          "error": null
+        },
+        {
+          "question": "كيف تُعدَّل الأوزان ديناميكياً؟",
+          "question_en": "How are weights dynamically adjusted?",
+          "answer": "يُعدَّل الأوزان ديناميكياً عن طريق ربط كل مثال تدريبي بوزن يتناسب مع (1 −p)، ويتحول هذا الوزن ديناميكياً مع تقدم التدريب [3].  الهدف من هذا التعديل هو إضعاف التركيز على الأمثلة الواثقة (ذات الاحتمالية p تقترب من 1) مع زيادة التركيز على الأمثلة الصعبة (التي تزيد احتماليةها من الوصول إلى 0 أو 1) [3].",
+          "gold_answers": [
+            "One can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.",
+            "associates each training example with a weight in proportion to $(1-p)$, and this weight dynamically changes as training proceeds"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.5,
+          "seconds": 9.9,
+          "error": null
+        },
+        {
+          "question": "كيف يبدو مخطط التوسيم النوعي المقترح؟",
+          "question_en": "How does proposed qualitative annotation schema looks like?",
+          "answer": "يظهر مخطط التوسيم النوعي المقترح في المقطع [5]. يوضح المقطع الفهرس الكامل للميزات، ووصفها، والإرشادات التفصيلية للتوسيم، بالإضافة إلى أمثلة توضيحية، ويمكن العثور عليها في الملحق أ [5].",
+          "gold_answers": [
+            "The resulting taxonomy of the framework is shown in Figure",
+            ""
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": null,
+          "seconds": 5.89,
+          "error": null
+        },
+        {
+          "question": "ما هي أزواج اللغات (المصدر والهدف) المستخدمة في هذا العمل؟",
+          "question_en": "What source-target language pairs were used in this work? ",
+          "answer": "استخدمت هذه الدراسة أزواج اللغات التالية في عملها [1، 2]: الإنجليزية والصينية، والإنجليزية والكورية، والكورية والصينية.  تم استخدام الإنجليزية كبيانات مصدر في العديد من التجارب، بينما تم استخدام الصينية والكورية كبيانات هدف [1، 2].",
+          "gold_answers": [
+            "En-Fr, En-Zh, En-Jp, En-Kr, Zh-En, Zh-Fr, Zh-Jp, Zh-Kr to English, Chinese or Korean",
+            "English Chinese"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 0.0,
+          "seconds": 6.94,
+          "error": null
+        },
+        {
+          "question": "ما هي مجموعات البيانات التي استخدموها في التقييم؟",
+          "question_en": "Which datasets did they use for evaluation?",
+          "answer": "استخدم الباحثون مجموعات بيانات متعددة في التقييم [1، 2، 4]. لقد استخدموا SQuAD (Text-SQuAD و Spoken-SQuAD) بالإضافة إلى مجموعة بيانات تم إنشاؤها تلقائيًا من SQuAD باستخدام Google Text-to-Speech (TTS) والتي تسمى Spoken-SQuAD [4]. بالإضافة إلى ذلك، استخدموا مجموعة بيانات ODSQA التي تم تسجيلها بواسطة متحدثين حقيقيين [5].",
+          "gold_answers": [
+            "Spoken-SQuAD testing set",
+            "Spoken-SQuAD"
+          ],
+          "refused": false,
+          "empty": false,
+          "cited": true,
+          "in_arabic": true,
+          "stray_script": false,
+          "anchor_recall": 1.0,
+          "seconds": 9.57,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "ما هي نقطة غليان الماء عند مستوى سطح البحر؟",
+          "answer": "تُحدد المعلومات المقدمة أنواعًا مختلفة من الإجابات التي تم تصنيفها بناءً على محتوى النص.  تتضمن هذه الأنواع: \"span\" (نص مستخرج من النص)، \"paraphrasing\" (إعادة صياغة الإجابة)، \"unanswerable\" (غير قابلة للإجابة)، \"generated\" (تم إنشاؤها)، و \"supporting fact\" (حقيقة داعمة).  بالإضافة إلى ذلك، توجد جداول (الجداول 5-7) تعرض نسبًا مئوية لنتائج التصنيف بناءً على عينات من البيانات، مع التركيز على دقة الإجابات (مثل \"factual correctness\") وخصائصها (مثل \"knowledge\" أو \"world\").",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "من كتب رواية دون كيخوته؟",
+          "answer": "من كتب رواية دون كيخوته؟ (Min kataba riwayata don Qixote?)\n\nلا توجد إجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "كيف أعدّ عجينة الخبز في المنزل؟",
+          "answer": "لا توجد إجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما هي عاصمة أستراليا؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما الفرق بين لغة بايثون ولغة جافا؟",
+          "answer": "لا يوجد إجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    }
+  }
+}

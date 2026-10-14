@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ar01",
+    "title": "أوروبا",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D8%A7",
+    "pdf": "data/arabic/pdfs/ar01.pdf",
+    "questions": 18
+  },
+  {
+    "id": "ar02",
+    "title": "الصين",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B5%D9%8A%D9%86",
+    "pdf": "data/arabic/pdfs/ar02.pdf",
+    "questions": 18
+  },
+  {
+    "id": "ar03",
+    "title": "الهند",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%87%D9%86%D8%AF",
+    "pdf": "data/arabic/pdfs/ar03.pdf",
+    "questions": 18
+  },
+  {
+    "id": "ar04",
+    "title": "حرب أكتوبر",
+    "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B1%D8%A8_%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1",
+    "pdf": "data/arabic/pdfs/ar04.pdf",
+    "questions": 18
+  },
+  {
+    "id": "ar05",
+    "title": "سرطان",
+    "url": "https://ar.wikipedia.org/wiki/%D8%B3%D8%B1%D8%B7%D8%A7%D9%86",
+    "pdf": "data/arabic/pdfs/ar05.pdf",
+    "questions": 18
+  },
+  {
+    "id": "ar06",
+    "title": "غزوة بدر",
+    "url": "https://ar.wikipedia.org/wiki/%D8%BA%D8%B2%D9%88%D8%A9_%D8%A8%D8%AF%D8%B1",
+    "pdf": "data/arabic/pdfs/ar06.pdf",
+    "questions": 18
+  },
+  {
+    "id": "ar07",
+    "title": "فلسطين",
+    "url": "https://ar.wikipedia.org/wiki/%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86",
+    "pdf": "data/arabic/pdfs/ar07.pdf",
+    "questions": 18
+  },
+  {
+    "id": "ar08",
+    "title": "كرة القدم",
+    "url": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D9%85",
+    "pdf": "data/arabic/pdfs/ar08.pdf",
+    "questions": 18
+  }
+]

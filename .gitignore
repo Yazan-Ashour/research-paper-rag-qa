@@ -4,3 +4,9 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
+data/arabic/humyn/
+data/pdfs/
+data/text/ 
+data/arabic/text/ 
+data/arabic/pdfs/ 
+data/arabic/scans/  

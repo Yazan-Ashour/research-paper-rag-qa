@@ -5,7 +5,7 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 
 from data_prep import build_corpus, word_count
-from evaluate import COVERAGE_THRESHOLD, ngrams
+from evaluation.evaluate import COVERAGE_THRESHOLD, ngrams
 from reporting import save_report
 from vector_store import VectorStore
 

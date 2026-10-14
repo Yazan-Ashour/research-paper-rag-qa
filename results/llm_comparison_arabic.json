@@ -1,0 +1,1412 @@
+{
+  "created_at": "2026-10-12T01:21:34",
+  "settings": {
+    "embedding_model": "BAAI/bge-m3",
+    "corpus": "Arabic article PDFs (scan) read with ocr_ara",
+    "retrieval": "dense only, paper-scoped, top 5 chunks, identical context for every model",
+    "top_k": 5,
+    "temperature": 0.1,
+    "max_tokens": 400,
+    "sample_seed": 42,
+    "in_scope_questions": 20,
+    "out_of_scope_questions": 5,
+    "scoring": "F1 and recall use normalized tokens against the ARCD answer spans; read the saved answers too, because token overlap undervalues correct paraphrases"
+  },
+  "ranking_by_mean_recall": [
+    "gemma3:4b",
+    "llama3.2:3b",
+    "qwen2.5:3b",
+    "gemma4:e4b"
+  ],
+  "skipped_models": [],
+  "models": {
+    "llama3.2:3b": {
+      "summary": {
+        "mean_f1": 0.4583,
+        "mean_recall": 0.7609,
+        "citation_rate": 0.35,
+        "false_refusal_rate": 0.0,
+        "correct_refusal_rate": 0.6,
+        "avg_seconds_per_answer": 1.26,
+        "errors": 0,
+        "empty_answer_rate": 0.0,
+        "arabic_answer_rate": 1.0
+      },
+      "in_scope_details": [
+        {
+          "question": "ما اسم جمهورية الصين الشعبية باللغة الصينية؟",
+          "answer": "جمهورية الصين الشعبية (بالصينية المبسطة: تشونغهوا رنمين غونغهيغو؛ بالصينية التقليدية: )",
+          "gold_answers": [
+            "中华人民共和国"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.91,
+          "error": null
+        },
+        {
+          "question": "كم ولاية فى الهند؟",
+          "answer": "تتألف الهند من 28 ولاية. [1]",
+          "gold_answers": [
+            "تتألف من 28 ولاية"
+          ],
+          "f1": 0.8,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.91,
+          "error": null
+        },
+        {
+          "question": "ما معني كلمة اْوربا؟",
+          "answer": "تعني كلمة أوربًا (باليونانيّة: أوربā) الوجه العريضء، وتعبر عن شبه جزيرة كبيرة تكون الجزء الغربي الممتد من أوراسيا بين جبال الأورال وجبال القوقاز وبحر قزوين من الشرق والمحيط الأطلسي من الغرب والبحر الأبيض المتوسط والبحر الأسود ومنطقة القوقاز من الجنوب والمحيط المتجمد الشمالي من الشمال.",
+          "gold_answers": [
+            "وتعني الوجه العريض،"
+          ],
+          "f1": 0.0417,
+          "recall": 0.3333,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 2.84,
+          "error": null
+        },
+        {
+          "question": "ماذا وجد الرسول عندما وصل \"ذا العشيرة؟",
+          "answer": "لم يجد الرسول محمداً أي شيء عند \"ذا العشيرة\"، فقد فاتته العير.",
+          "gold_answers": [
+            "فلما وصل مكاناً يُسمى \"ذا العشيرة\" وجد العير قد فاتته بأيام."
+          ],
+          "f1": 0.3478,
+          "recall": 0.3636,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.18,
+          "error": null
+        },
+        {
+          "question": "من كان قاءد المسلمين؟",
+          "answer": "كان قائداً للمسلمين رسول الإسلام محمدء.",
+          "gold_answers": [
+            "المسلمين بقيادة رسول الإسلام محمد،"
+          ],
+          "f1": 0.3636,
+          "recall": 0.4,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.93,
+          "error": null
+        },
+        {
+          "question": "ما طول الساحل الشرقى للصين؟",
+          "answer": "يبلغ طول الساحل الشرقي للصين 14,500 كيلومتر. [2]",
+          "gold_answers": [
+            "14,500 كيلومتر"
+          ],
+          "f1": 0.5,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.18,
+          "error": null
+        },
+        {
+          "question": "كم شخص مات بالصرطان فى 2007؟",
+          "answer": "مات 7.6 مليون شخص مريض بالسرطان في العالم في عام 2007.",
+          "gold_answers": [
+            "7.6 مليون شخص"
+          ],
+          "f1": 0.5,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.97,
+          "error": null
+        },
+        {
+          "question": "في أي قرن بدأت الثورة الصناعية؟",
+          "answer": "بدأت الثورة الصناعية في نهاية القرن الثامن عشر.",
+          "gold_answers": [
+            "في نهاية القرن الثامن عشر،"
+          ],
+          "f1": 0.7692,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.8,
+          "error": null
+        },
+        {
+          "question": "ما صفات الورم الخبيث؟",
+          "answer": "يتميز الورم الخبيث بنمو محدد وعدم القدرة على الغزو وليس له القدرة على الانتقال أو النقلية.",
+          "gold_answers": [
+            "القدرة على غزو Invasion الأنسجة المجاورة وتدميرها، أو الانتقال إلى أنسجة بعيدة"
+          ],
+          "f1": 0.2857,
+          "recall": 0.3333,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.9,
+          "error": null
+        },
+        {
+          "question": "كم يبلغ عدد الللاعبين في فريق كرة القدم؟",
+          "answer": "يبلغ عدد اللاعبين في فريق كرة القدم أحد عشر لاعبًا. [1]",
+          "gold_answers": [
+            "أحد عشر لاعباً"
+          ],
+          "f1": 0.4286,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.93,
+          "error": null
+        },
+        {
+          "question": "ما ترتيب الهند فى الانفاق العسكرى؟",
+          "answer": "تعد الهند المرتبة السادسة في الإنفاق العسكرى بين الدول.",
+          "gold_answers": [
+            "تحتل الهند المرتبة السادسة في الإنفاق العسكري بين الدول."
+          ],
+          "f1": 0.8889,
+          "recall": 0.8889,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.98,
+          "error": null
+        },
+        {
+          "question": "كم اقليم فى الهند؟",
+          "answer": "تتألف الهند من 28 ولاية وسبعة أقاليم اتحادية. [1]",
+          "gold_answers": [
+            "وسبعة أقاليم"
+          ],
+          "f1": 0.3636,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.65,
+          "error": null
+        },
+        {
+          "question": "ما تعريف السرطان؟",
+          "answer": "يُعرّف السرطان بأنه نمو غير طبيعي لنسيج من أنسجة الجسم، وهو مجموعة من الأمراض التي تتميز خلاياها بالعدائية Aggressive، وهي الخلايا المنقسمة لها القدرة على غزو الأنسجة المجاورة وتدميرها أو الانتقال إلى أنسجة بعيدة في عملية نطلق عليها اسم النقلية. [1] [2]",
+          "gold_answers": [
+            "مجموعة من الأمراض التي تتميز خلاياها بالعدائية Aggressive (وهو النمو والانقسام الخلوي غير المحدود)،"
+          ],
+          "f1": 0.3571,
+          "recall": 0.7143,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 2.32,
+          "error": null
+        },
+        {
+          "question": "متي وقعت غزوة بدر؟",
+          "answer": "وقعت غزوة بدر في السابع عشر من رمضان في العام الثاني من الهجرة (الموافق 13 مارس 624م).",
+          "gold_answers": [
+            "هي غزوة وقعت في السابع عشر من رمضان في العام الثاني من الهجرة"
+          ],
+          "f1": 0.8,
+          "recall": 0.9231,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.36,
+          "error": null
+        },
+        {
+          "question": "لماذا سميت غزوة بدر بهاذا الاسم؟",
+          "answer": "تم تسمية غزوة بدر بهذا الاسم نسبةً إلى منطقة بدر التي وقعت المعركة فيها وبدر بئرٌ مشهورةٌ تقع بين مكة والمدينة المنورة.",
+          "gold_answers": [
+            "وقد سُميت بهذا الاسم نسبةً إلى منطقة بدر التي وقعت المعركة فيها،"
+          ],
+          "f1": 0.5882,
+          "recall": 0.8333,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.07,
+          "error": null
+        },
+        {
+          "question": "من كان يقود القافلة؟",
+          "answer": "كان أبو سفيان بن حربء يقود القافلة. [1]",
+          "gold_answers": [
+            "أبو سفيان"
+          ],
+          "f1": 0.4,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.06,
+          "error": null
+        },
+        {
+          "question": "ماهي العلمة الأكثر تداولا في القارة الأوروبية؟",
+          "answer": "العلمة الأكثر تداولا في القارة الأوروبية هي العملة اليورو.",
+          "gold_answers": [
+            "عملة اليورو"
+          ],
+          "f1": 0.1818,
+          "recall": 0.5,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.1,
+          "error": null
+        },
+        {
+          "question": "ماذا احتلت اسرائيل في الحرب الثالثة؟",
+          "answer": "احتلت إسرائيل شبه جزيرة سيناء من مصر وهضبة الجولان من سوريا إلى جانب الضفة الغربية من الأردن بالإضافة إلى قطاع غزة الخاضع آنذاك لحكم عسكري مصري.",
+          "gold_answers": [
+            "جانب الضفة الغربية من الأردن بالإضافة إلى قطاع غزة الخاضع آنذاك لحكم عسكري مصري."
+          ],
+          "f1": 0.7,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.98,
+          "error": null
+        },
+        {
+          "question": "متي أدخلت الصين الاصلاحات الاقتصادية القائمة علي اقتصاد السوق؟",
+          "answer": "دخلت جمهورية الصين الشعبية في نزاعات سياسية مع جمهورية الصين حول قضايا السيادة والوضع منذ إدخال إصلاحات اقتصادية قائمة على نظام السوق في عام 1978.",
+          "gold_answers": [
+            "عام 1978"
+          ],
+          "f1": 0.1481,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.86,
+          "error": null
+        },
+        {
+          "question": "من كانت غزوة بدر بين؟",
+          "answer": "غزوة بدر كانت بين المسلمين بقيادة رسول الإسلام محمدء وقبيلة قريش ومن حالفها من العرب بقيادة عمرو بن هشام المخزومي القرشي. [1] [2]",
+          "gold_answers": [
+            "بين المسلمين بقيادة رسول الإسلام محمد، وقبيلة قريش ومن حالفها من العرب بقيادة عمرو"
+          ],
+          "f1": 0.7027,
+          "recall": 0.9286,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.3,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "ما هي نقطة غليان الماء عند مستوى سطح البحر؟",
+          "answer": "417 متراً تحت مستوى البحر في البحر الميت هي نقطة غليان الماء عند مستوى سطح البحر.",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "من كتب رواية دون كيخوته؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "كيف أعدّ عجينة الخبز في المنزل؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما هي عاصمة أستراليا؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما الفرق بين لغة بايثون ولغة جافا؟",
+          "answer": "لا أجد أي فرق بين لغة بايثون ولغة جافا في هذه المستندات المقدمة.",
+          "refused": false,
+          "error": null
+        }
+      ]
+    },
+    "gemma3:4b": {
+      "summary": {
+        "mean_f1": 0.3921,
+        "mean_recall": 0.7863,
+        "citation_rate": 0.85,
+        "false_refusal_rate": 0.0,
+        "correct_refusal_rate": 0.6,
+        "avg_seconds_per_answer": 4.92,
+        "errors": 0,
+        "empty_answer_rate": 0.0,
+        "arabic_answer_rate": 1.0
+      },
+      "in_scope_details": [
+        {
+          "question": "ما اسم جمهورية الصين الشعبية باللغة الصينية؟",
+          "answer": "الجمهورية الشعبية الصينية تسمى تشونغوا (الصينية المبسطة: تشونغوا؛ بالصينية التقليدية: تشونغوا) [1]. يقطنها أكثر من 1.338 مليار نسمة وهي الدولة الأكثر سكانًا في العالم [1].",
+          "gold_answers": [
+            "中华人民共和国"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 14.15,
+          "error": null
+        },
+        {
+          "question": "كم ولاية فى الهند؟",
+          "answer": "توجد 28 ولاية في الهند [1].",
+          "gold_answers": [
+            "تتألف من 28 ولاية"
+          ],
+          "f1": 0.4,
+          "recall": 0.5,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 2.16,
+          "error": null
+        },
+        {
+          "question": "ما معني كلمة اْوربا؟",
+          "answer": "كلمة أوروبا (أوربا) أصلها إغريقي (باليونانيّة: 1770 مناعا) وتعني الوجه ‎«ives pall‏ [1]. وتصل مساحة القارة لحوالي 10.180 مليون (7.1 90 من مساحة الأرض) [1, 2].",
+          "gold_answers": [
+            "وتعني الوجه العريض،"
+          ],
+          "f1": 0.129,
+          "recall": 0.6667,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 5.72,
+          "error": null
+        },
+        {
+          "question": "ماذا وجد الرسول عندما وصل \"ذا العشيرة؟",
+          "answer": "وجد الرسول العير قد فاتته بأيام [3].",
+          "gold_answers": [
+            "فلما وصل مكاناً يُسمى \"ذا العشيرة\" وجد العير قد فاتته بأيام."
+          ],
+          "f1": 0.5556,
+          "recall": 0.4545,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 2.17,
+          "error": null
+        },
+        {
+          "question": "من كان قاءد المسلمين؟",
+          "answer": "كان رسول الإسلام محمد قائداً للمسلمين في غزوة بدر [2]. كان عدد المسلمين في غزوة بدر ثلاثة مئة وثلاثة عشر [3]، وكانوا معهم فرسان وسبعون [3].",
+          "gold_answers": [
+            "المسلمين بقيادة رسول الإسلام محمد،"
+          ],
+          "f1": 0.2581,
+          "recall": 0.8,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 4.06,
+          "error": null
+        },
+        {
+          "question": "ما طول الساحل الشرقى للصين؟",
+          "answer": "الساحل الشرقي للصين يبلغ طوله 14,500 كيلومتر [2].  تعتبر جمهورية الصين الشعبية الدولة الأكثر سكانًا في العالم حيث يقطنها أكثر من 1.338 مليار نسمة [1, 3].  تتميز الصين بمساحة إجمالية تبلغ 9.6 مليون كيلومتر مربع [1, 3] وتتنوع فيها المناظر الطبيعية من غابات وسهول وصحاري.",
+          "gold_answers": [
+            "14,500 كيلومتر"
+          ],
+          "f1": 0.1176,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 8.12,
+          "error": null
+        },
+        {
+          "question": "كم شخص مات بالصرطان فى 2007؟",
+          "answer": "7.6 مليون شخص [2].",
+          "gold_answers": [
+            "7.6 مليون شخص"
+          ],
+          "f1": 0.8889,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.63,
+          "error": null
+        },
+        {
+          "question": "في أي قرن بدأت الثورة الصناعية؟",
+          "answer": "بدأت الثورة الصناعية في نهاية القرن الثامن عشر [1].",
+          "gold_answers": [
+            "في نهاية القرن الثامن عشر،"
+          ],
+          "f1": 0.7143,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 2.26,
+          "error": null
+        },
+        {
+          "question": "ما صفات الورم الخبيث؟",
+          "answer": "الورم الخبيث يتميز بنمو غير محدود للخلايا والانقسام الخلوي، بالإضافة إلى قدرته على غزو الأنسجة المجاورة وتدميرها أو الانتقال إلى أنسجة بعيدة [1, 2, 3].",
+          "gold_answers": [
+            "القدرة على غزو Invasion الأنسجة المجاورة وتدميرها، أو الانتقال إلى أنسجة بعيدة"
+          ],
+          "f1": 0.5405,
+          "recall": 0.8333,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 3.93,
+          "error": null
+        },
+        {
+          "question": "كم يبلغ عدد الللاعبين في فريق كرة القدم؟",
+          "answer": "أحد عشر لاعباً في كل فريق [1, 2, 3].",
+          "gold_answers": [
+            "أحد عشر لاعباً"
+          ],
+          "f1": 0.5,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 7.45,
+          "error": null
+        },
+        {
+          "question": "ما ترتيب الهند فى الانفاق العسكرى؟",
+          "answer": "تعتبر الهند قوة عسكرية إقليمية تصنف ضمن الدول المالكة للأسلحة النووية [1]، وهي تحتل المرتبة السادسة في الإنفاق العسكري بين الدول [1]، مما يدل على أهمية دورها العسكري.",
+          "gold_answers": [
+            "تحتل الهند المرتبة السادسة في الإنفاق العسكري بين الدول."
+          ],
+          "f1": 0.4865,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 4.68,
+          "error": null
+        },
+        {
+          "question": "كم اقليم فى الهند؟",
+          "answer": "توجد سبعة أقاليم اتحادية في الهند [1].",
+          "gold_answers": [
+            "وسبعة أقاليم"
+          ],
+          "f1": 0.2222,
+          "recall": 0.5,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.73,
+          "error": null
+        },
+        {
+          "question": "ما تعريف السرطان؟",
+          "answer": "السرطان هو مجموعة من الأمراض التي تتميز خلاياها بالعدائية (Aggressive) وهي نمو وانقسام خلوي غير محدود [1، 2]. هذه الخلايا لديها القدرة على غزو الأنسجة المجاورة وتدميرها أو الانتقال إلى أنسجة بعيدة [1، 2]. السرطان يصيب جميع الأعضاء تقريبًا ويمكن أن يصيب الإنسان في جميع مراحل العمر [2].",
+          "gold_answers": [
+            "مجموعة من الأمراض التي تتميز خلاياها بالعدائية Aggressive (وهو النمو والانقسام الخلوي غير المحدود)،"
+          ],
+          "f1": 0.2903,
+          "recall": 0.6429,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 6.61,
+          "error": null
+        },
+        {
+          "question": "متي وقعت غزوة بدر؟",
+          "answer": "وقعَت غزوة بدر في السابع عشر من رمضان في العام الثاني من الهجرة (الموافق 13 مارس 624م) [1].",
+          "gold_answers": [
+            "هي غزوة وقعت في السابع عشر من رمضان في العام الثاني من الهجرة"
+          ],
+          "f1": 0.7742,
+          "recall": 0.9231,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 3.4,
+          "error": null
+        },
+        {
+          "question": "لماذا سميت غزوة بدر بهاذا الاسم؟",
+          "answer": "تم تسمية غزوة بدر بهذا الاسم نسبةً إلى منطقة بدر التي وقعت فيها المعركة [1]. وبدر بئرٌ مشهورةٌ تقع بين مكة والمدينة المنورة [1].",
+          "gold_answers": [
+            "وقد سُميت بهذا الاسم نسبةً إلى منطقة بدر التي وقعت المعركة فيها،"
+          ],
+          "f1": 0.5556,
+          "recall": 0.8333,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 3.41,
+          "error": null
+        },
+        {
+          "question": "من كان يقود القافلة؟",
+          "answer": "أبو سفيان بن حرب [1]. كانت القافلة قافلة تجارية كبيرة قادمة من الشام تحمل أموالاً عظيمة لقريش، وكان يقودها أبو سفيان ويراعيها بين ثلاثين وأربعين رجلاً [1].",
+          "gold_answers": [
+            "أبو سفيان"
+          ],
+          "f1": 0.1379,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 5.32,
+          "error": null
+        },
+        {
+          "question": "ماهي العلمة الأكثر تداولا في القارة الأوروبية؟",
+          "answer": "تعد عملة اليورو هي العملة الأكثر تداولاً في القارة الأوروبية [1]. بحلول عام 1900، كان نصيب أوروبا حوالي 9025 من مجمل سكان العالم [1]، وتعد القارة الثالثة من حيث عدد السكان في العالم حيث يزيد عدد سكانها عن 700 مليون نسمة [2].",
+          "gold_answers": [
+            "عملة اليورو"
+          ],
+          "f1": 0.0909,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 5.97,
+          "error": null
+        },
+        {
+          "question": "ماذا احتلت اسرائيل في الحرب الثالثة؟",
+          "answer": "احتلت إسرائيل في الحرب الثالثة شبه جزيرة سيناء من مصر وهضبة الجولان من سوريا إلى جانب الضفة الغربية من الأردن بالإضافة إلى قطاع غزة [2, 3, 4].",
+          "gold_answers": [
+            "جانب الضفة الغربية من الأردن بالإضافة إلى قطاع غزة الخاضع آنذاك لحكم عسكري مصري."
+          ],
+          "f1": 0.439,
+          "recall": 0.6429,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 4.46,
+          "error": null
+        },
+        {
+          "question": "متي أدخلت الصين الاصلاحات الاقتصادية القائمة علي اقتصاد السوق؟",
+          "answer": "منذ إدخال إصلاحات اقتصادية قائمة على نظام السوق في عام 1978 [1].",
+          "gold_answers": [
+            "عام 1978"
+          ],
+          "f1": 0.2857,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 3.31,
+          "error": null
+        },
+        {
+          "question": "من كانت غزوة بدر بين؟",
+          "answer": "غزوة بدر بين المسلمين بقيادة رسول الإسلام محمدء وقبيلة قريش ومن حالفها من العرب بقيادة عمرو بن هشام المخزومي القرشي [1]. كان عدد المسلمين ثلاثمائة وبضعة عشر [2]، بينما كان عدد قريش مئتا فرساء [2]، وكان يقود العير أبو سفيان بن حرب [2].",
+          "gold_answers": [
+            "بين المسلمين بقيادة رسول الإسلام محمد، وقبيلة قريش ومن حالفها من العرب بقيادة عمرو"
+          ],
+          "f1": 0.4561,
+          "recall": 0.9286,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 7.84,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "ما هي نقطة غليان الماء عند مستوى سطح البحر؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "من كتب رواية دون كيخوته؟",
+          "answer": "لقد كتب ميغيل دي ثيربانتس رواية دون كيخوته [1, 2, 3, 4].",
+          "refused": false,
+          "error": null
+        },
+        {
+          "question": "كيف أعدّ عجينة الخبز في المنزل؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما هي عاصمة أستراليا؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما الفرق بين لغة بايثون ولغة جافا؟",
+          "answer": "لا يوجد معلومات حول الفرق بين لغة بايثون ولغة جافا في النصوص المقدمة [1-5].",
+          "refused": false,
+          "error": null
+        }
+      ]
+    },
+    "gemma4:e4b": {
+      "summary": {
+        "mean_f1": 0.0,
+        "mean_recall": 0.0,
+        "citation_rate": 0.0,
+        "false_refusal_rate": 0.0,
+        "correct_refusal_rate": 1.0,
+        "avg_seconds_per_answer": 23.81,
+        "errors": 0,
+        "empty_answer_rate": 1.0,
+        "arabic_answer_rate": 0.0
+      },
+      "in_scope_details": [
+        {
+          "question": "ما اسم جمهورية الصين الشعبية باللغة الصينية؟",
+          "answer": "",
+          "gold_answers": [
+            "中华人民共和国"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 22.58,
+          "error": null
+        },
+        {
+          "question": "كم ولاية فى الهند؟",
+          "answer": "",
+          "gold_answers": [
+            "تتألف من 28 ولاية"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 24.59,
+          "error": null
+        },
+        {
+          "question": "ما معني كلمة اْوربا؟",
+          "answer": "",
+          "gold_answers": [
+            "وتعني الوجه العريض،"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 24.05,
+          "error": null
+        },
+        {
+          "question": "ماذا وجد الرسول عندما وصل \"ذا العشيرة؟",
+          "answer": "",
+          "gold_answers": [
+            "فلما وصل مكاناً يُسمى \"ذا العشيرة\" وجد العير قد فاتته بأيام."
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 26.06,
+          "error": null
+        },
+        {
+          "question": "من كان قاءد المسلمين؟",
+          "answer": "",
+          "gold_answers": [
+            "المسلمين بقيادة رسول الإسلام محمد،"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 25.75,
+          "error": null
+        },
+        {
+          "question": "ما طول الساحل الشرقى للصين؟",
+          "answer": "",
+          "gold_answers": [
+            "14,500 كيلومتر"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 23.09,
+          "error": null
+        },
+        {
+          "question": "كم شخص مات بالصرطان فى 2007؟",
+          "answer": "",
+          "gold_answers": [
+            "7.6 مليون شخص"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 23.04,
+          "error": null
+        },
+        {
+          "question": "في أي قرن بدأت الثورة الصناعية؟",
+          "answer": "",
+          "gold_answers": [
+            "في نهاية القرن الثامن عشر،"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 23.89,
+          "error": null
+        },
+        {
+          "question": "ما صفات الورم الخبيث؟",
+          "answer": "",
+          "gold_answers": [
+            "القدرة على غزو Invasion الأنسجة المجاورة وتدميرها، أو الانتقال إلى أنسجة بعيدة"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 21.64,
+          "error": null
+        },
+        {
+          "question": "كم يبلغ عدد الللاعبين في فريق كرة القدم؟",
+          "answer": "",
+          "gold_answers": [
+            "أحد عشر لاعباً"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 22.99,
+          "error": null
+        },
+        {
+          "question": "ما ترتيب الهند فى الانفاق العسكرى؟",
+          "answer": "",
+          "gold_answers": [
+            "تحتل الهند المرتبة السادسة في الإنفاق العسكري بين الدول."
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 24.03,
+          "error": null
+        },
+        {
+          "question": "كم اقليم فى الهند؟",
+          "answer": "",
+          "gold_answers": [
+            "وسبعة أقاليم"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 23.16,
+          "error": null
+        },
+        {
+          "question": "ما تعريف السرطان؟",
+          "answer": "",
+          "gold_answers": [
+            "مجموعة من الأمراض التي تتميز خلاياها بالعدائية Aggressive (وهو النمو والانقسام الخلوي غير المحدود)،"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 20.14,
+          "error": null
+        },
+        {
+          "question": "متي وقعت غزوة بدر؟",
+          "answer": "",
+          "gold_answers": [
+            "هي غزوة وقعت في السابع عشر من رمضان في العام الثاني من الهجرة"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 24.35,
+          "error": null
+        },
+        {
+          "question": "لماذا سميت غزوة بدر بهاذا الاسم؟",
+          "answer": "",
+          "gold_answers": [
+            "وقد سُميت بهذا الاسم نسبةً إلى منطقة بدر التي وقعت المعركة فيها،"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 24.27,
+          "error": null
+        },
+        {
+          "question": "من كان يقود القافلة؟",
+          "answer": "",
+          "gold_answers": [
+            "أبو سفيان"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 23.97,
+          "error": null
+        },
+        {
+          "question": "ماهي العلمة الأكثر تداولا في القارة الأوروبية؟",
+          "answer": "",
+          "gold_answers": [
+            "عملة اليورو"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 24.85,
+          "error": null
+        },
+        {
+          "question": "ماذا احتلت اسرائيل في الحرب الثالثة؟",
+          "answer": "",
+          "gold_answers": [
+            "جانب الضفة الغربية من الأردن بالإضافة إلى قطاع غزة الخاضع آنذاك لحكم عسكري مصري."
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 25.28,
+          "error": null
+        },
+        {
+          "question": "متي أدخلت الصين الاصلاحات الاقتصادية القائمة علي اقتصاد السوق؟",
+          "answer": "",
+          "gold_answers": [
+            "عام 1978"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 25.71,
+          "error": null
+        },
+        {
+          "question": "من كانت غزوة بدر بين؟",
+          "answer": "",
+          "gold_answers": [
+            "بين المسلمين بقيادة رسول الإسلام محمد، وقبيلة قريش ومن حالفها من العرب بقيادة عمرو"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": true,
+          "in_arabic": false,
+          "seconds": 22.73,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "ما هي نقطة غليان الماء عند مستوى سطح البحر؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "من كتب رواية دون كيخوته؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "كيف أعدّ عجينة الخبز في المنزل؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما هي عاصمة أستراليا؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما الفرق بين لغة بايثون ولغة جافا؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    },
+    "qwen2.5:3b": {
+      "summary": {
+        "mean_f1": 0.4213,
+        "mean_recall": 0.6086,
+        "citation_rate": 0.5,
+        "false_refusal_rate": 0.0,
+        "correct_refusal_rate": 1.0,
+        "avg_seconds_per_answer": 0.76,
+        "errors": 0,
+        "empty_answer_rate": 0.0,
+        "arabic_answer_rate": 0.9
+      },
+      "in_scope_details": [
+        {
+          "question": "ما اسم جمهورية الصين الشعبية باللغة الصينية؟",
+          "answer": "جمهورية الصين الشعبية",
+          "gold_answers": [
+            "中华人民共和国"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.12,
+          "error": null
+        },
+        {
+          "question": "كم ولاية فى الهند؟",
+          "answer": "28 ولاية",
+          "gold_answers": [
+            "تتألف من 28 ولاية"
+          ],
+          "f1": 0.6667,
+          "recall": 0.5,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.56,
+          "error": null
+        },
+        {
+          "question": "ما معني كلمة اْوربا؟",
+          "answer": "أصل كلمة اْوربا (Uy sl) إغريقي (باليونانيّة: (0000770اع) وتعني الوجه العريض. [2]",
+          "gold_answers": [
+            "وتعني الوجه العريض،"
+          ],
+          "f1": 0.4,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.1,
+          "error": null
+        },
+        {
+          "question": "ماذا وجد الرسول عندما وصل \"ذا العشيرة؟",
+          "answer": "وجد الرسول العير التي كانت متوجهة من الشام إلى مكة. [2]",
+          "gold_answers": [
+            "فلما وصل مكاناً يُسمى \"ذا العشيرة\" وجد العير قد فاتته بأيام."
+          ],
+          "f1": 0.1818,
+          "recall": 0.1818,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.79,
+          "error": null
+        },
+        {
+          "question": "من كان قاءد المسلمين؟",
+          "answer": "الرسول محمد كان قائد المسلمين في غزوة بدر. [3]",
+          "gold_answers": [
+            "المسلمين بقيادة رسول الإسلام محمد،"
+          ],
+          "f1": 0.2857,
+          "recall": 0.4,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.75,
+          "error": null
+        },
+        {
+          "question": "ما طول الساحل الشرقى للصين؟",
+          "answer": "14,500 كيلومتر. هذا المعلومة ورد في [2] من مستندات المقدمة.",
+          "gold_answers": [
+            "14,500 كيلومتر"
+          ],
+          "f1": 0.4286,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.04,
+          "error": null
+        },
+        {
+          "question": "كم شخص مات بالصرطان فى 2007؟",
+          "answer": "7.6 مليون شخص ماتوا بالسرطان في العالم في عام 2007، وفقًا للمجتمع الأمريكي للسرطان (ACS). [2]",
+          "gold_answers": [
+            "7.6 مليون شخص"
+          ],
+          "f1": 0.381,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.85,
+          "error": null
+        },
+        {
+          "question": "في أي قرن بدأت الثورة الصناعية؟",
+          "answer": "1102",
+          "gold_answers": [
+            "في نهاية القرن الثامن عشر،"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": false,
+          "seconds": 0.41,
+          "error": null
+        },
+        {
+          "question": "ما صفات الورم الخبيث؟",
+          "answer": "الورم الخبيث يتميز بالعدائية (Aggressive) والنمو والانقسام الخلوي غير المحدود، والقدرة على غزو الأنسجة المجاورة وتدميرها أو الانتقال إلى أنسجة بعيدة في عملية نقلية.",
+          "gold_answers": [
+            "القدرة على غزو Invasion الأنسجة المجاورة وتدميرها، أو الانتقال إلى أنسجة بعيدة"
+          ],
+          "f1": 0.5556,
+          "recall": 0.8333,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.83,
+          "error": null
+        },
+        {
+          "question": "كم يبلغ عدد الللاعبين في فريق كرة القدم؟",
+          "answer": "11 لاعب في كل فريق [1]",
+          "gold_answers": [
+            "أحد عشر لاعباً"
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.62,
+          "error": null
+        },
+        {
+          "question": "ما ترتيب الهند فى الانفاق العسكرى؟",
+          "answer": "الثانية",
+          "gold_answers": [
+            "تحتل الهند المرتبة السادسة في الإنفاق العسكري بين الدول."
+          ],
+          "f1": 0.0,
+          "recall": 0.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.54,
+          "error": null
+        },
+        {
+          "question": "كم اقليم فى الهند؟",
+          "answer": "سبعة أقاليم اتحادية",
+          "gold_answers": [
+            "وسبعة أقاليم"
+          ],
+          "f1": 0.4,
+          "recall": 0.5,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.21,
+          "error": null
+        },
+        {
+          "question": "ما تعريف السرطان؟",
+          "answer": "السرطان هو مجموعة من الأمراض التي تتميز خلاياها بالعدائية (Aggressive) (وهو النمو والانقسام الخلوي غير المحدود) هذه الخلايا المنقسمة لها القدرة على غزو (Invasion) الأنسجة المجاورة وتدميرها أو الانتقال إلى أنسجة بعيدة في عملية نطلق عليها اسم النقلية. السرطان هو نمو الخلايا وانتشارها بشكل لا يمكن التحكّم فيه ويمكن أن يصيب كل أعضاء الجسم تقريبًا.",
+          "gold_answers": [
+            "مجموعة من الأمراض التي تتميز خلاياها بالعدائية Aggressive (وهو النمو والانقسام الخلوي غير المحدود)،"
+          ],
+          "f1": 0.4058,
+          "recall": 1.0,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.91,
+          "error": null
+        },
+        {
+          "question": "متي وقعت غزوة بدر؟",
+          "answer": "غزوة بدر وقعت في السابع عشر من رمضان في العام الثاني من الهجرة (الموافق 13 مارس 624م). [1] [2]",
+          "gold_answers": [
+            "هي غزوة وقعت في السابع عشر من رمضان في العام الثاني من الهجرة"
+          ],
+          "f1": 0.75,
+          "recall": 0.9231,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.08,
+          "error": null
+        },
+        {
+          "question": "لماذا سميت غزوة بدر بهاذا الاسم؟",
+          "answer": "غزوة بدر سميت بهذا الاسم نسبةً إلى منطقة بدر التي وقعت المعركة فيه.",
+          "gold_answers": [
+            "وقد سُميت بهذا الاسم نسبةً إلى منطقة بدر التي وقعت المعركة فيها،"
+          ],
+          "f1": 0.8,
+          "recall": 0.8333,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.39,
+          "error": null
+        },
+        {
+          "question": "من كان يقود القافلة؟",
+          "answer": "أبو سفيان بن حرب كان يقود القافلة. [1]",
+          "gold_answers": [
+            "أبو سفيان"
+          ],
+          "f1": 0.4,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.61,
+          "error": null
+        },
+        {
+          "question": "ماهي العلمة الأكثر تداولا في القارة الأوروبية؟",
+          "answer": "اليورو",
+          "gold_answers": [
+            "عملة اليورو"
+          ],
+          "f1": 0.6667,
+          "recall": 0.5,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.53,
+          "error": null
+        },
+        {
+          "question": "ماذا احتلت اسرائيل في الحرب الثالثة؟",
+          "answer": "في الحرب الثالثة احتلت إسرائيل شبه جزيرة سيناء من مصر وهضبة الجولان من سوريا إلى جانب الضفة الغربية من الأردن بالإضافة إلى قطاع غزة الخاضع آنذاك لحكم عسكري مصري. [3]",
+          "gold_answers": [
+            "جانب الضفة الغربية من الأردن بالإضافة إلى قطاع غزة الخاضع آنذاك لحكم عسكري مصري."
+          ],
+          "f1": 0.6364,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 1.43,
+          "error": null
+        },
+        {
+          "question": "متي أدخلت الصين الاصلاحات الاقتصادية القائمة علي اقتصاد السوق؟",
+          "answer": "1978",
+          "gold_answers": [
+            "عام 1978"
+          ],
+          "f1": 0.6667,
+          "recall": 0.5,
+          "refused": false,
+          "cited": false,
+          "empty": false,
+          "in_arabic": false,
+          "seconds": 0.71,
+          "error": null
+        },
+        {
+          "question": "من كانت غزوة بدر بين؟",
+          "answer": "الغزوة كانت بين المسلمين بقيادة رسول الإسلام محمد، وقبيلة قريش ومن حالفها من العرب بقيادة عمرو بن هشام المخزومي القرشي. [1]",
+          "gold_answers": [
+            "بين المسلمين بقيادة رسول الإسلام محمد، وقبيلة قريش ومن حالفها من العرب بقيادة عمرو"
+          ],
+          "f1": 0.8,
+          "recall": 1.0,
+          "refused": false,
+          "cited": true,
+          "empty": false,
+          "in_arabic": true,
+          "seconds": 0.68,
+          "error": null
+        }
+      ],
+      "out_of_scope_details": [
+        {
+          "question": "ما هي نقطة غليان الماء عند مستوى سطح البحر؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "من كتب رواية دون كيخوته؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "كيف أعدّ عجينة الخبز في المنزل؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما هي عاصمة أستراليا؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        },
+        {
+          "question": "ما الفرق بين لغة بايثون ولغة جافا؟",
+          "answer": "لم أجد الإجابة في المستندات المقدمة.",
+          "refused": true,
+          "error": null
+        }
+      ]
+    }
+  }
+}

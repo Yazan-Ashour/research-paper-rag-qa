@@ -1,0 +1,169 @@
+{
+  "created_at": "2026-10-09T12:09:13",
+  "settings": {
+    "papers": 8,
+    "evaluated_questions": 32,
+    "ngram_size": 4,
+    "metric_definitions": {
+      "paragraph_recall": "Mean share of each QASPER paragraph's word 4-grams found in the extracted text",
+      "paragraphs_fully_recovered": "Share of paragraphs with recall of at least 0.9",
+      "questions_with_recoverable_evidence": "Share of questions where some gold evidence paragraph has recall of at least 0.5; this is the ceiling for retrieval hit rate"
+    },
+    "ground_truth": "QASPER's own clean paragraph text; citations were removed from the PDF text before scoring"
+  },
+  "ranking": [
+    "pymupdf",
+    "ocr",
+    "pypdf"
+  ],
+  "extractors": {
+    "pypdf": {
+      "paragraph_recall": 0.7621,
+      "paragraphs_fully_recovered": 0.4586,
+      "questions_with_recoverable_evidence": 0.9062,
+      "pages": 86,
+      "total_seconds": 4.73,
+      "per_paper": {
+        "1704.06194": {
+          "paragraph_recall": 0.8064,
+          "characters": 49675,
+          "seconds": 0.59
+        },
+        "2003.03106": {
+          "paragraph_recall": 0.9422,
+          "characters": 43167,
+          "seconds": 0.44
+        },
+        "1912.13337": {
+          "paragraph_recall": 0.4085,
+          "characters": 67535,
+          "seconds": 0.64
+        },
+        "1909.09587": {
+          "paragraph_recall": 0.9448,
+          "characters": 26589,
+          "seconds": 0.48
+        },
+        "1911.02855": {
+          "paragraph_recall": 0.5973,
+          "characters": 45302,
+          "seconds": 0.53
+        },
+        "2003.04642": {
+          "paragraph_recall": 0.8879,
+          "characters": 86599,
+          "seconds": 1.65
+        },
+        "1904.07904": {
+          "paragraph_recall": 0.917,
+          "characters": 21743,
+          "seconds": 0.24
+        },
+        "1910.05603": {
+          "paragraph_recall": 0.9404,
+          "characters": 9607,
+          "seconds": 0.15
+        }
+      }
+    },
+    "pymupdf": {
+      "paragraph_recall": 0.7879,
+      "paragraphs_fully_recovered": 0.5439,
+      "questions_with_recoverable_evidence": 0.9062,
+      "pages": 86,
+      "total_seconds": 0.31,
+      "per_paper": {
+        "1704.06194": {
+          "paragraph_recall": 0.8191,
+          "characters": 49702,
+          "seconds": 0.05
+        },
+        "2003.03106": {
+          "paragraph_recall": 0.9542,
+          "characters": 42907,
+          "seconds": 0.03
+        },
+        "1912.13337": {
+          "paragraph_recall": 0.4291,
+          "characters": 67571,
+          "seconds": 0.06
+        },
+        "1909.09587": {
+          "paragraph_recall": 0.9458,
+          "characters": 26278,
+          "seconds": 0.03
+        },
+        "1911.02855": {
+          "paragraph_recall": 0.6511,
+          "characters": 45565,
+          "seconds": 0.04
+        },
+        "2003.04642": {
+          "paragraph_recall": 0.9457,
+          "characters": 85115,
+          "seconds": 0.07
+        },
+        "1904.07904": {
+          "paragraph_recall": 0.9214,
+          "characters": 21758,
+          "seconds": 0.02
+        },
+        "1910.05603": {
+          "paragraph_recall": 0.9395,
+          "characters": 9511,
+          "seconds": 0.01
+        }
+      }
+    },
+    "ocr": {
+      "paragraph_recall": 0.7792,
+      "paragraphs_fully_recovered": 0.5514,
+      "questions_with_recoverable_evidence": 0.9062,
+      "pages": 86,
+      "total_seconds": 187.92,
+      "per_paper": {
+        "1704.06194": {
+          "paragraph_recall": 0.8078,
+          "characters": 49558,
+          "seconds": 26.59
+        },
+        "2003.03106": {
+          "paragraph_recall": 0.9561,
+          "characters": 42114,
+          "seconds": 22.25
+        },
+        "1912.13337": {
+          "paragraph_recall": 0.4224,
+          "characters": 68043,
+          "seconds": 36.67
+        },
+        "1909.09587": {
+          "paragraph_recall": 0.9248,
+          "characters": 26382,
+          "seconds": 14.81
+        },
+        "1911.02855": {
+          "paragraph_recall": 0.6415,
+          "characters": 45453,
+          "seconds": 25.19
+        },
+        "2003.04642": {
+          "paragraph_recall": 0.9302,
+          "characters": 86086,
+          "seconds": 45.14
+        },
+        "1904.07904": {
+          "paragraph_recall": 0.9165,
+          "characters": 21920,
+          "seconds": 11.8
+        },
+        "1910.05603": {
+          "paragraph_recall": 0.9311,
+          "characters": 9633,
+          "seconds": 5.47
+        }
+      }
+    }
+  },
+  "skipped": {}
+}

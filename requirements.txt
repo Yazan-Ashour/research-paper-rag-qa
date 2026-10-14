@@ -6,3 +6,8 @@ openai
 python-dotenv
 rank-bm25
 streamlit
+requests
+pymupdf 
+pypdf 
+uharfbuzz
+fpdf2

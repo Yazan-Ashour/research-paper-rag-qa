@@ -1,7 +1,25 @@
+import json
 import re
 from collections import namedtuple
+from pathlib import Path
 
-from datasets import load_dataset
+from pdf_extraction import (
+    SPACE_BEFORE_PUNCT_PATTERN,
+    WHITESPACE_PATTERN,
+    clean_page_text,
+    extract_pages,
+)
+
+DATA_DIR = Path("data")
+PDF_DIR = DATA_DIR / "pdfs"
+QASPER_DIR = DATA_DIR / "qasper"
+TEXT_DIR = DATA_DIR / "text"
+ARABIC_DIR = DATA_DIR / "arabic"
+ARABIC_PDF_DIR = ARABIC_DIR / "pdfs"
+ARABIC_SCAN_DIR = ARABIC_DIR / "scans"
+ARABIC_TEXT_DIR = ARABIC_DIR / "text"
+PAPERS_FILE = "papers.json"
+QUESTIONS_FILE = "questions.json"
 
 DATASET_NAME = "allenai/qasper"
 DATASET_REVISION = "refs/convert/parquet"
@@ -9,6 +27,9 @@ SPLIT = "validation"
 NUM_PAPERS = 8
 MIN_QUESTIONS = 4
 MAX_CHUNK_WORDS = 250
+OVERLAP_WORDS = 0
+EXTRACTOR = "pymupdf"
+MAX_BIBLIOGRAPHY_DENSITY = 0.05
 TOPIC_KEYWORDS = (
     "retrieval",
     "question answering",
@@ -19,19 +40,27 @@ TOPIC_KEYWORDS = (
 
 NOISE_PATTERN = re.compile(r"\b(?:BIBREF|FIGREF|TABREF|SECREF|INLINEFORM|DISPLAYFORM)\d*\b")
 EMPTY_BRACKETS_PATTERN = re.compile(r"[\(\[]\s*[,;\s]*[\)\]]")
-SPACE_BEFORE_PUNCT_PATTERN = re.compile(r"\s+([,.;:!?])")
-WHITESPACE_PATTERN = re.compile(r"\s+")
-SENTENCE_PATTERN = re.compile(r"(?<=[.!?])\s+")
-FLOAT_PREFIX = "FLOAT SELECTED"
 REPEATED_COMMAS_PATTERN = re.compile(r"(?:\s*,){2,}")
 COMMA_BEFORE_PERIOD_PATTERN = re.compile(r",\s*\.")
-
+SENTENCE_PATTERN = re.compile(r"(?<=[.!?\u061f])\s+")
+BIBLIOGRAPHY_PATTERN = re.compile(
+    r"\b(?:19|20)\d{2}[a-z]?\b|\bet al\b|\bproceedings\b|\barxiv\b|\bpreprint\b"
+    r"|\bpages\b|\bpp\b|\bvol(?:ume)?\b|\bjournal\b|\bconference\b|\bworkshop\b"
+    r"|\bassociation for computational\b|(?-i:\bIn [A-Z]{3,}\b)|\b\d{1,4}\s*[-\u2013]\s*\d{1,4}\b",
+    re.IGNORECASE,
+)
+REFERENCES_HEADING_PATTERN = re.compile(
+    r"^[ \t]*(?:\d+\.?[ \t]+)?(?:bibliographical[ \t]+references|references|bibliography)[ \t]*$",
+    re.IGNORECASE | re.MULTILINE,
+)
+FLOAT_PREFIX = "FLOAT SELECTED"
 
 Chunk = namedtuple("Chunk", ["chunk_id", "paper_id", "title", "section", "text"])
 Question = namedtuple(
     "Question",
     ["question_id", "paper_id", "text", "gold_answers", "gold_evidence", "unanswerable"],
 )
+Unit = namedtuple("Unit", ["page", "text", "words"])
 
 
 def clean_text(text):
@@ -49,43 +78,6 @@ def word_count(text):
     return len(text.split())
 
 
-def split_long_text(text, max_words):
-    """Split text into sentence-aligned pieces of at most max_words words."""
-    if word_count(text) <= max_words:
-        return [text]
-
-    pieces = []
-    current = []
-    current_words = 0
-    for sentence in SENTENCE_PATTERN.split(text):
-        sentence_words = word_count(sentence)
-        if current and current_words + sentence_words > max_words:
-            pieces.append(" ".join(current))
-            current, current_words = [], 0
-        current.append(sentence)
-        current_words += sentence_words
-    if current:
-        pieces.append(" ".join(current))
-    return pieces
-
-
-def merge_pieces(pieces, max_words):
-    """Greedily merge consecutive pieces into chunks of at most max_words words."""
-    chunks = []
-    current = []
-    current_words = 0
-    for piece in pieces:
-        piece_words = word_count(piece)
-        if current and current_words + piece_words > max_words:
-            chunks.append(" ".join(current))
-            current, current_words = [], 0
-        current.append(piece)
-        current_words += piece_words
-    if current:
-        chunks.append(" ".join(current))
-    return chunks
-
-
 def select_papers(dataset, num_papers, min_questions, keywords):
     """Return the first papers matching the topic keywords with enough questions."""
     selected = []
@@ -97,35 +89,6 @@ def select_papers(dataset, num_papers, min_questions, keywords):
         if len(selected) == num_papers:
             break
     return selected
-
-
-def chunk_paper(paper, max_words=MAX_CHUNK_WORDS):
-    """Convert a paper into section-aware chunks, starting with its abstract."""
-    paper_id = paper["id"]
-    title = paper["title"]
-    sections = [("Abstract", [paper["abstract"]])]
-    sections.extend(
-        zip(paper["full_text"]["section_name"], paper["full_text"]["paragraphs"])
-    )
-
-    chunks = []
-    for section_name, paragraphs in sections:
-        pieces = []
-        for paragraph in paragraphs:
-            cleaned = clean_text(paragraph)
-            if cleaned:
-                pieces.extend(split_long_text(cleaned, max_words))
-        for text in merge_pieces(pieces, max_words):
-            chunks.append(
-                Chunk(
-                    chunk_id=f"{paper_id}-{len(chunks)}",
-                    paper_id=paper_id,
-                    title=title,
-                    section=clean_text(section_name) or "Untitled",
-                    text=text,
-                )
-            )
-    return chunks
 
 
 def format_answer(annotation):
@@ -173,29 +136,140 @@ def extract_questions(paper):
     return questions
 
 
-def build_corpus(max_words=MAX_CHUNK_WORDS):
-    """Load QASPER and return the selected papers, their chunks, and test questions."""
-    dataset = load_dataset(DATASET_NAME, revision=DATASET_REVISION, split=SPLIT)
-    papers = select_papers(dataset, NUM_PAPERS, MIN_QUESTIONS, TOPIC_KEYWORDS)
+def read_json(path):
+    """Read a JSON file from the data directory with a helpful error if it is missing."""
+    if not path.exists():
+        raise FileNotFoundError(f"{path} not found. Run 'python download_data.py' first.")
+    with open(path, encoding="utf-8") as file:
+        return json.load(file)
 
+
+def load_papers():
+    """Load the saved QASPER paper records (id, title, abstract and reference text)."""
+    return read_json(QASPER_DIR / PAPERS_FILE)
+
+
+def load_questions():
+    """Load the saved evaluation questions."""
+    return [Question(**record) for record in read_json(QASPER_DIR / QUESTIONS_FILE)]
+
+
+def pdf_path(paper_id):
+    """Return the local PDF path for a paper id."""
+    return PDF_DIR / f"{paper_id.replace('/', '_')}.pdf"
+
+
+def page_units(page_number, text, max_words):
+    """Split page text into sentence units, windowing any unit longer than max_words."""
+    units = []
+    for sentence in SENTENCE_PATTERN.split(text):
+        words = sentence.split()
+        for start in range(0, len(words), max_words):
+            window = words[start:start + max_words]
+            units.append(Unit(page_number, " ".join(window), len(window)))
+    return units
+
+
+def group_units(units, max_words, overlap_words):
+    """Group consecutive units into chunks of at most max_words, repeating up to overlap_words."""
+    groups = []
+    start = 0
+    while start < len(units):
+        end = start
+        words = 0
+        while end < len(units) and (end == start or words + units[end].words <= max_words):
+            words += units[end].words
+            end += 1
+        groups.append(units[start:end])
+        if end >= len(units):
+            break
+        next_start = end
+        carried = 0
+        while next_start - 1 > start and carried + units[next_start - 1].words <= overlap_words:
+            next_start -= 1
+            carried += units[next_start].words
+        start = next_start
+    return groups
+
+
+def is_bibliography(text):
+    """Return True if the text is dense with years, venues and other reference-list markers."""
+    matches = len(BIBLIOGRAPHY_PATTERN.findall(text))
+    return matches / max(word_count(text), 1) > MAX_BIBLIOGRAPHY_DENSITY
+
+
+def trim_references(pages):
+    """Drop the reference list and return the kept (page_number, text) pairs and dropped word count."""
+    kept = []
+    dropped_words = 0
+    in_references = False
+    for number, text in enumerate(pages, start=1):
+        if in_references:
+            if is_bibliography(clean_page_text(text)):
+                dropped_words += word_count(text)
+                continue
+            in_references = False
+        match = None if in_references else REFERENCES_HEADING_PATTERN.search(text)
+        if match is None:
+            kept.append((number, text))
+            continue
+        kept.append((number, text[:match.start()]))
+        dropped_words += word_count(text[match.start():])
+        in_references = True
+    return kept, dropped_words
+
+
+def chunk_pdf(paper, extractor, max_words, overlap_words):
+    """Extract a paper's PDF and return its page-aware chunks and the word count of dropped references."""
+    path = pdf_path(paper["id"])
+    if not path.exists():
+        raise FileNotFoundError(f"{path} not found. Run 'python download_data.py' first.")
+    pages, dropped_words = trim_references(extract_pages(path, extractor, TEXT_DIR))
+    units = []
+    for number, raw_text in pages:
+        units.extend(page_units(number, clean_page_text(raw_text), max_words))
+
+    chunks = [
+        Chunk(
+            chunk_id=f"{paper['id']}-{index}",
+            paper_id=paper["id"],
+            title=paper["title"],
+            section=f"Page {group[0].page}",
+            text=" ".join(unit.text for unit in group),
+        )
+        for index, group in enumerate(group_units(units, max_words, overlap_words))
+    ]
+    return chunks, dropped_words
+
+
+def build_corpus(max_words=MAX_CHUNK_WORDS, overlap_words=OVERLAP_WORDS, extractor=EXTRACTOR):
+    """Load the saved papers and questions and return the papers, PDF chunks and questions."""
+    papers = load_papers()
     chunks = []
-    questions = []
     for paper in papers:
-        chunks.extend(chunk_paper(paper, max_words))
-        questions.extend(extract_questions(paper))
-    return papers, chunks, questions
+        paper_chunks, _ = chunk_pdf(paper, extractor, max_words, overlap_words)
+        chunks.extend(paper_chunks)
+    return papers, chunks, load_questions()
 
-
-papers, chunks, questions = build_corpus()
 
 def main():
-    """Build the corpus and print a short summary."""
-    papers, chunks, questions = build_corpus()
+    """Build the corpus from the local PDFs and print a short summary."""
+    papers = load_papers()
+    questions = load_questions()
+    chunks = []
+    dropped_words = 0
+    for paper in papers:
+        paper_chunks, dropped = chunk_pdf(paper, EXTRACTOR, MAX_CHUNK_WORDS, OVERLAP_WORDS)
+        chunks.extend(paper_chunks)
+        dropped_words += dropped
+        print(f"  {paper['id']}: {len(paper_chunks)} chunks, {dropped} reference words removed")
+    print(f"Extractor: {EXTRACTOR}")
     print(f"Papers: {len(papers)}")
     print(f"Chunks: {len(chunks)}")
+    print(f"Reference words removed: {dropped_words}")
     print(f"Questions: {len(questions)}")
-    print(f"Unanswerable questions: {sum(q.unanswerable for q in questions)}")
     print(f"Average chunk length: {sum(word_count(c.text) for c in chunks) / len(chunks):.0f} words")
+    print(f"\nSample chunk [{chunks[1].title} | {chunks[1].section}]:\n{chunks[1].text[:300]}")
 
 
 if __name__ == "__main__":
