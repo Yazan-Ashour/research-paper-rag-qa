@@ -224,13 +224,10 @@ Each choice was compared on the same questions, and the details, tables and JSON
 **Arabic**
 - The Arabic documents are **generated PDFs** containing only ARCD's paragraphs, so they are cleaner and easier than real ones. The text layers produced by the generator are scrambled, which is a property of that tool and not of all Arabic PDFs. The eight articles make a small corpus, so hit@5 flatters.
 - The real-PDF check (HumynLabs) is qualitative: one drill-based textbook, not suitable for question answering.
-- The Arabic questions over the English papers are translations prepared with AI assistance and not yet reviewed by a second native speaker. The answers cannot be scored against Arabic gold answers.
-- The final app searches only the QASPER papers. Arabic documents are not indexed in it.
 
 **Models and generation**
 - Small models sometimes cite the wrong passage number, and `gemma3:4b` once attached fabricated citations to an answer it gave from its own knowledge. Refusal of out-of-scope questions is not fully reliable (80% for gemma, 40% for llama in Arabic).
 - `gemma3:4b` is verbose and about three to four times slower than `llama3.2:3b`.
-- Retrieval scores are normalized per query, so they cannot detect out-of-scope questions; refusals depend on the model. Reranker scores separated 5 out-of-scope questions cleanly (all below 0.04, against an in-scope median of 0.83), but that is too small a test to rely on, so it is not used.
 
 **Interface**
 - Highlighting is a word-overlap heuristic, not model attribution. Across languages it can only match numbers and acronyms, so it sometimes marks a sentence that mentions the right name without containing the evidence.
@@ -303,7 +300,6 @@ research-paper-rag-qa/
 │   ├── compare_llms_arabic.py      Arabic language-model comparison
 │   ├── compare_llms_crosslingual.py  Arabic questions over the English papers
 │   └── grid_search.py              Early retrieval-settings search (superseded)
-├── docs/EXPERIMENTS.md             Full evaluation write-up and reproduction commands
 ├── data/                           Papers, questions, manifest (PDFs and caches are generated)
 ├── index/                          FAISS index, chunks and model settings
 ├── results/                        JSON evidence reports
@@ -318,8 +314,6 @@ research-paper-rag-qa/
 
 - **Ollama context window.** Ollama's default context is 4,096 tokens, and input beyond it is silently truncated. Arabic text uses more tokens per word. If answers look cut off or ignore the instructions, raise the limit with the `OLLAMA_CONTEXT_LENGTH` environment variable (for example 8192) and restart Ollama.
 - **Model not found (404).** Run `ollama list` and pull the model named in `.env`.
-- **`gemma4:e4b` fails to pull.** It needs a recent Ollama version. It is not used by the final system.
-- **`ModuleNotFoundError` in a moved script.** Run it from the project root as a module, for example `python -m evaluation.evaluate`, not as `python evaluation/evaluate.py`.
 - **Tesseract not found.** Install it and check `tesseract --list-langs`. The Arabic data (`ara`) is needed for Arabic OCR.
 - **Streamlit prints many `torchvision` import errors.** They are harmless. Create `.streamlit/config.toml` containing `[server]` and `fileWatcherType = "none"`.
 - **Arabic looks disconnected or reversed in the Windows console.** That is the terminal. Open the saved JSON or text files in an editor, or use the web app.
@@ -330,4 +324,3 @@ research-paper-rag-qa/
 - QASPER: Dasigi et al. (2021), *A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers* (CC BY 4.0). The papers are from arXiv and belong to their authors.
 - ARCD: Mozannar et al. (2019), Arabic Reading Comprehension Dataset. Its paragraphs come from Arabic Wikipedia (CC BY-SA); check the dataset card for its own license.
 - HumynLabs Arabic Documents Dataset (PDF): see its dataset card; the files are not redistributed here.
-- Models: BAAI `bge-m3` and `bge-reranker-v2-m3`, Meta `llama3.2:3b` and Google `gemma3:4b` (served by Ollama); see their model cards for license terms.
